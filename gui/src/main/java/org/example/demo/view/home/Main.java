@@ -3,7 +3,6 @@ package org.example.demo.view.home;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.io.IOException;
 
 /*
     Il seguente metodo viene utilizzato per visualizzare
@@ -14,7 +13,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
 
         Homepage root = new Regular();
         Scene scene = new Scene(root.show());

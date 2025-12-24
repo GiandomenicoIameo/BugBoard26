@@ -5,12 +5,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.demo.view.card.CardIssue;
 import org.example.demo.view.home.Homepage;
-import java.io.IOException;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
 
         View view = Homepage.createAdministrator();
         Scene scene = new Scene(((Homepage) view).show());
