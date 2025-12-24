@@ -5,7 +5,7 @@ import java.io.IOException;
 
 class Login extends Access {
 
-    public Login() {
+    Login() {
         FXMLLoader loader;
         loader = new FXMLLoader(getClass().
                 getResource("login.fxml"));
