@@ -3,9 +3,7 @@ package org.example.demo.view.home;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import org.example.demo.view.card.CardIssue;
 
 /*
     Il seguente metodo viene utilizzato per visualizzare
