@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 import org.example.demo.view.Component;
 import org.example.demo.view.card.CardIssue;
-
 import java.io.IOException;
 
 class Administrator extends Homepage {

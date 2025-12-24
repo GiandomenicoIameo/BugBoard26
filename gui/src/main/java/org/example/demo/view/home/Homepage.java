@@ -19,7 +19,7 @@ public abstract class Homepage extends View {
 
     @FXML
     protected void signOut(ActionEvent e) {
-        System.exit( 0 );
+        System.exit(0);
     }
 
     public Parent show() {
