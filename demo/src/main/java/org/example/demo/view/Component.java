@@ -5,6 +5,4 @@ import java.util.List;
 
 public class Component {
     List<Component> list = new ArrayList<>();
-
-
 }
