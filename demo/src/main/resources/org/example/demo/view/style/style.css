@@ -1,0 +1,83 @@
+.head {
+    -fx-background-color: rgba(56, 109, 204, 0.04);
+}
+
+.btn-home:focused {
+     -fx-background-color: rgba(73, 69, 79, 0.12);
+}
+
+.btn-home, .btn-assignments, .btn-issues,
+.btn-codespace, .btn-projects, .btn-discussions, .btn-settings,
+.btn-appearance, .btn-logout, .btn-comment, .btn-send,
+.btn-add, .btn-favourite, .btn-labels, .btn-priority {
+        -fx-text-fill: #49454F;             /* Colore icona e testo: Grigio M3 */
+        -fx-background-color: transparent;  /* Sfondo invisibile a riposo */
+        -fx-background-radius: 50px;        /* Cerchio perfetto (o usa valori minori per rettangoli) */
+        -fx-cursor: hand;
+        -fx-padding: 10px;                  /* Padding per dare spazio all'alone */
+}
+
+.btn-home:hover, .btn-assignments:hover, .btn-issues:hover,
+.btn-discussions:hover, .btn-codespace:hover, .btn-settings:hover,
+.btn-appearance:hover, .btn-logout:hover, .btn-projects:hover,
+.btn-comment:hover, .btn-send:hover, .btn-add:hover, .btn-labels:hover, .btn-priority:hover {
+    -fx-background-color: rgba(73, 69, 79, 0.08);
+}
+
+.btn-home:pressed, .btn-assignments:pressed, .btn-issues:pressed,
+.btn-codespace:pressed, .btn-projects:pressed, .btn-discussions:pressed, .btn-settings:pressed,
+.btn-appearance:pressed, .btn-logout:pressed, .btn-comment:pressed, .btn-send:pressed, .btn-add:pressed,
+.btn-labels:pressed, .btn-priority:pressed {
+    -fx-background-color: rgba(73, 69, 79, 0.12);
+}
+
+.sidebar-access {
+    -fx-background-color: #87CEEB;
+}
+
+ .username-text, .password-text {
+    -fx-background-color: transparent;
+    -fx-border-color:  rgba(73, 69, 79, 0.50);
+    -fx-border-width: 1px;
+    -fx-border-radius: 50px;
+}
+
+.btn-signin {
+    -fx-cursor: hand;
+    -fx-background-color: #386DCC;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+}
+
+.btn-signin:hover {
+    -fx-background-color: #3262B7;
+}
+
+.btn-signin:pressed {
+    -fx-background-color: #2C56A3;
+}
+
+.username-text:focused, .password-text:focused {
+    -fx-border-color: #386DCC;
+
+    -fx-border-width: 2px;
+    -fx-border-radius: 50px;
+
+    -fx-background-insets: 0;
+    -fx-focused-color: transparent;
+}
+
+.card-login {
+    -fx-border-color:  rgba(73, 69, 79, 0.40);
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+}
+
+/*
+.icon-favourite {
+    -fx-image: url("/org/example/demo/view/icons/favourite.png");
+}
+
+-icon-favourite-active {
+    -fx-image: url("/org/example/demo/view/icons/favourite-red.png");
+} */

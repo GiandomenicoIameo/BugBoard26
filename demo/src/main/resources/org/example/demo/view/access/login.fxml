@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1500.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <StackPane layoutX="6.0" layoutY="6.0" prefHeight="580.0" prefWidth="497.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="6.0">
+            <children>
+                <AnchorPane maxHeight="543.0" maxWidth="510.0" minHeight="543.0" minWidth="510.0" prefHeight="543.0" prefWidth="510.0" styleClass="card-login">
+                    <children>
+                        <TextField layoutX="96.0" layoutY="128.0" prefHeight="59.0" prefWidth="310.0" promptText="Username or email address" styleClass="username-text" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+                            <font>
+                                <Font name="Inter Regular" size="18.0" />
+                            </font>
+                        </TextField>
+                        <Button layoutX="96.0" layoutY="304.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-signin" text="Sign in" textFill="WHITE" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="94.0">
+                            <font>
+                                <Font name="Inter Regular" size="18.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="96.0" layoutY="32.0" prefHeight="44.0" prefWidth="319.0" text=" Sign in or create account " AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="94.0">
+                            <font>
+                                <Font name="Inter Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Separator layoutX="96.0" layoutY="407.0" prefHeight="0.0" prefWidth="319.0" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="94.0" />
+                        <PasswordField layoutX="99.0" layoutY="203.0" prefHeight="59.0" prefWidth="319.0" promptText="Password" styleClass="password-text" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="97.0">
+                            <font>
+                                <Font name="Inter Regular" size="18.0" />
+                            </font>
+                        </PasswordField>
+                        <Label layoutX="96.0" layoutY="473.0" prefHeight="28.0" prefWidth="188.0" text="New to BugBoard26?" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="225.0">
+                            <font>
+                                <Font name="Inter Regular" size="18.0" />
+                            </font>
+                        </Label>
+                        <Hyperlink layoutX="276.0" layoutY="472.0" prefHeight="31.0" prefWidth="174.0" text="Create an account" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="59.0">
+                            <font>
+                                <Font name="Inter Regular" size="18.0" />
+                            </font>
+                        </Hyperlink>
+                    </children>
+                </AnchorPane>
+                <ImageView fitHeight="114.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+                    <image>
+                        <Image url="@../icons/leonardo.png" />
+                    </image>
+                    <StackPane.margin>
+                        <Insets top="50.0" />
+                    </StackPane.margin>
+                </ImageView>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>
