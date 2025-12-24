@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
 
-        View view = Homepage.createAdministrator();
+        View view = Homepage.createRegular();
         Scene scene = new Scene(((Homepage) view).show());
 
         CardIssue card1 = new CardIssue();

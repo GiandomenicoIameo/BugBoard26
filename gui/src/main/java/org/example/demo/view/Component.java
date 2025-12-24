@@ -1,8 +1,13 @@
 package org.example.demo.view;
 
+import javafx.scene.Parent;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Component {
-    List<Component> list = new ArrayList<>();
+    protected List<Component> list = new ArrayList<>();
+
+    protected Parent getRoot() {
+        return null;
+    }
 }

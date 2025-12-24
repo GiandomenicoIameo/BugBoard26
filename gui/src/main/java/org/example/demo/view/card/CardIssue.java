@@ -36,6 +36,7 @@ public class CardIssue extends Component {
         }
     }
 
+    @Override
     public VBox getRoot() {
         return root;
     }

@@ -1,16 +1,9 @@
 package org.example.demo.view.home;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.VBox;
-import org.example.demo.view.Component;
-import org.example.demo.view.card.CardIssue;
 import java.io.IOException;
 
 class Administrator extends Homepage {
-
-    @FXML
-    private VBox cardContainer;
 
     Administrator() {
 
@@ -25,17 +18,6 @@ class Administrator extends Homepage {
         } catch (IOException e) {
             throw new RuntimeException("Impossibile " +
                     "caricare la vista", e);
-        }
-    }
-
-    @Override
-    protected void viewComponents() {
-        //cardContainer.getChildren().clear();
-
-        for(Component component : components) {
-            if(component instanceof CardIssue)
-                cardContainer.getChildren().
-                        add(((CardIssue)component).getRoot());
         }
     }
 }

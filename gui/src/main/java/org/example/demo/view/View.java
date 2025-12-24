@@ -1,17 +1,18 @@
 package org.example.demo.view;
 
-import java.util.ArrayList;
-import java.util.List;
+import javafx.scene.Node;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class View {
-    protected List<Component> components = new ArrayList<>();
+    protected Map<Component, Node> components = new HashMap<>();
 
     protected void addComponent(Component component) {
-        components.add(component);
+        components.put(component,component.getRoot());
     }
 
     protected void viewComponents() {
-        for(Component component : components)
-            System.out.println(component);
+        System.out.println(components);
     }
 }
