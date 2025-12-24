@@ -28,6 +28,7 @@ class Administrator extends Homepage {
         }
     }
 
+    @Override
     protected void viewComponents() {
         //cardContainer.getChildren().clear();
 
