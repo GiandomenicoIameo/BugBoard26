@@ -3,6 +3,7 @@ package org.example.demo.view.home;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
+import org.example.demo.view.Component;
 import org.example.demo.view.card.CardIssue;
 
 import java.io.IOException;
@@ -28,11 +29,13 @@ class Administrator extends Homepage {
         }
     }
 
-//    protected void viewCards() {
-//        //cardContainer.getChildren().clear();
-//
-//        for(CardIssue card : cards) {
-//            cardContainer.getChildren().add(card.getRoot());
-//        }
-//    }
+    protected void viewComponents() {
+        //cardContainer.getChildren().clear();
+
+        for(Component component : components) {
+            if(component instanceof CardIssue)
+                cardContainer.getChildren().
+                        add(((CardIssue)component).getRoot());
+        }
+    }
 }

@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        View view = Homepage.createRegular();
+        View view = Homepage.createAdministrator();
         Scene scene = new Scene(((Homepage) view).show());
 
         CardIssue card1 = new CardIssue();

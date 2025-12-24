@@ -34,7 +34,8 @@ class Regular extends Homepage {
 
         for(Component component : components) {
             if(component instanceof CardIssue)
-                cardContainer.getChildren().add(((CardIssue)component).getRoot());
+                cardContainer.getChildren().
+                        add(((CardIssue)component).getRoot());
         }
     }
 
