@@ -1,17 +1,15 @@
 package org.example.demo.view.card;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import org.example.demo.view.Component;
-
 import java.util.Objects;
 
-public class CardIssue extends Component {
+public class IssueCard extends Card {
 
     @FXML
     private Button favourite;
@@ -20,24 +18,12 @@ public class CardIssue extends Component {
     @FXML
     private VBox root;
 
-    public CardIssue() {
-
-        FXMLLoader loader;
-        loader = new FXMLLoader(getClass().
-                getResource("/org/example/demo/view/card/card-issue.fxml"));
-
-        loader.setController(this);
-
-        try {
-            loader.load();
-        } catch (Exception e) {
-            System.out.println("Ecco l'errore: ");
-            e.printStackTrace();
-        }
+    IssueCard() {
+        super("card-issue.fxml");
     }
 
     @Override
-    public VBox getRoot() {
+    public Parent getRoot() {
         return root;
     }
 

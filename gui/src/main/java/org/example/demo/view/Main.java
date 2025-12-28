@@ -3,7 +3,7 @@ package org.example.demo.view;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.example.demo.view.card.CardIssue;
+import org.example.demo.view.card.Card;
 import org.example.demo.view.home.Homepage;
 
 public class Main extends Application {
@@ -11,18 +11,26 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
 
-        View view = Homepage.createRegular();
-        Scene scene = new Scene(((Homepage) view).show());
+        View view = Homepage.createAdministrator();
 
-        CardIssue card1 = new CardIssue();
-        CardIssue card2 = new CardIssue();
-        CardIssue card3 = new CardIssue();
+        //Creazione della card che consente la creazione
+        //di una Issue.
+        Component card1 = Card.createNewIssueCard();
 
+        Component card2 = Card.createIssueCard();
+        Component card3 = Card.createIssueCard();
+        Component card4 = Card.createIssueCard();
+
+        //Aggiunta delle card alla schermata Homepage.
         view.addComponent(card1);
         view.addComponent(card2);
         view.addComponent(card3);
+        view.addComponent(card4);
 
-        view.viewComponents();
+        //Visualizzazione dei componenti della homepage.
+        view.componentsView();
+
+        Scene scene = new Scene(view.showView());
 
         stage.setTitle("BugBoard26");
         stage.setScene(scene);

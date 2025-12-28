@@ -1,24 +1,27 @@
 package org.example.demo.view.home;
 
-import javafx.fxml.FXMLLoader;
-import java.io.IOException;
-
+import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
+import org.example.demo.view.Component;
+import org.example.demo.view.card.NewIssueCard;
 
 class Regular extends Homepage {
 
+    @FXML
+    private VBox cardCreateContainer;
+
     Regular() {
+        super("regular-homepage.fxml");
+    }
 
-        FXMLLoader loader;
-        loader = new FXMLLoader(getClass().
-                getResource("regular-homepage.fxml"));
+    @Override
+    protected void componentsView() {
+        super.componentsView();
 
-        loader.setController(this);
-
-        try {
-            this.view = loader.load();
-        } catch (IOException e) {
-            throw new RuntimeException("Impossibile " +
-                    "caricare la vista", e);
+        for(Component component : components.keySet()) {
+            if(component.getInstance() instanceof NewIssueCard)
+                cardCreateContainer.getChildren().
+                        add(component.getRoot());
         }
     }
 }

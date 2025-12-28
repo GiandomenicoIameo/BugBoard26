@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage stage) {
 
         Homepage root = new Regular();
-        Scene scene = new Scene(root.show());
+        Scene scene = new Scene(root.showView());
 
         stage.setTitle("BugBoard26");
         stage.setScene(scene);

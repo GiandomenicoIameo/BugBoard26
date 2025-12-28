@@ -29,7 +29,8 @@
                            </Label>
                         </children>
                      </Pane>
-                     <fx:include source="../card/card-create-issue.fxml" />
+                     <VBox fx:id="cardCreateContainer">
+                     </VBox>
                      <Pane prefHeight="147.0" prefWidth="1025.0">
                         <children>
                            <Label layoutY="92.0" text="Feed" textFill="#49454f">

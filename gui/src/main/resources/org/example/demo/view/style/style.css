@@ -81,3 +81,7 @@
 -icon-favourite-active {
     -fx-image: url("/org/example/demo/view/icons/favourite-red.png");
 } */
+
+.label-bugboard {
+    -fx-font-family: 'Segoe UI Light';
+}

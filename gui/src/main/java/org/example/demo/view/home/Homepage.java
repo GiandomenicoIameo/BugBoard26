@@ -2,20 +2,34 @@ package org.example.demo.view.home;
 
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
-import javafx.scene.Node;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
+import org.example.demo.view.Component;
 import org.example.demo.view.View;
-import java.util.Collection;
-
+import org.example.demo.view.card.IssueCard;
+import java.io.IOException;
 
 public abstract class Homepage extends View {
-
-    protected Parent view;
 
     @FXML
     private VBox cardContainer;
 
+    protected Homepage(String path) {
+        FXMLLoader loader = new FXMLLoader(getClass().
+                getResource(path));
+
+        loader.setController(this);
+
+        try {
+            view = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException("Impossibile " +
+                    "caricare la vista", e);
+        }
+    }
+
+    // Qui ho utilizzato il pattern Factory.
     public static Homepage createRegular() {
         return new Regular();
     }
@@ -29,15 +43,24 @@ public abstract class Homepage extends View {
         System.exit(0);
     }
 
-    public Parent show() {
-        return view;
+    @Override
+    protected void componentsView() {
+       // Collection<Node> nodes = components.values();
+
+        for(Component component : components.keySet()) {
+            if(component.getInstance() instanceof IssueCard)
+                cardContainer.getChildren().
+                        add(component.getRoot());
+        }
+        //cardContainer.getChildren().clear();
+        //cardCreateContainer.getChildren().addAll(nodes);
     }
 
+    // Il seguente metodo deve essere utilizzato solo per
+    // mostrare l'interfaccia grafica di Homepage quando viene
+    // invocata nel main di Homepage. Alla fine deve essere eliminato.
     @Override
-    protected void viewComponents() {
-        Collection<Node> nodes = components.values();
-
-        //cardContainer.getChildren().clear();
-        cardContainer.getChildren().addAll(nodes);
+    protected Parent showView() {
+        return super.showView();
     }
 }

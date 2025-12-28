@@ -4,10 +4,15 @@ import javafx.scene.Parent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Component {
+public abstract class Component {
+
     protected List<Component> list = new ArrayList<>();
 
-    protected Parent getRoot() {
+    public Parent getRoot() {
         return null;
+    }
+
+    public Component getInstance() {
+        return this;
     }
 }

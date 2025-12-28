@@ -1,22 +1,16 @@
 package org.example.demo.view.access;
 
-import javafx.fxml.FXMLLoader;
-import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
 class Login extends Access {
 
     Login() {
-        FXMLLoader loader;
-        loader = new FXMLLoader(getClass().
-                getResource("login.fxml"));
+        super("login.fxml");
+    }
 
-        loader.setController(this);
-
-        try {
-            this.view = loader.load();
-        } catch (IOException e) {
-            throw new RuntimeException("Impossibile " +
-                    "caricare la vista", e);
-        }
+    @FXML
+    protected void signUp(ActionEvent e) {
+        shiftView(e, new Register());
     }
 }

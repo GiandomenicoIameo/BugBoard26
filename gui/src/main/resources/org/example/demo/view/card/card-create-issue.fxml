@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="card-issues" focusTraversable="true" prefHeight="177.0" prefWidth="1014.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;" styleClass="card-create-issue" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" focusTraversable="true" prefHeight="177.0" prefWidth="1014.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;" styleClass="card-create-issue" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="63.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
