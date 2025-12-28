@@ -35,29 +35,30 @@
     -fx-background-color: #87CEEB;
 }
 
- .username-text, .password-text {
+ .username-text, .password-text, .name-text, .re-enter-password-text {
     -fx-background-color: transparent;
     -fx-border-color:  rgba(73, 69, 79, 0.50);
     -fx-border-width: 1px;
     -fx-border-radius: 50px;
 }
 
-.btn-signin {
+.btn-signin, .btn-signup {
     -fx-cursor: hand;
     -fx-background-color: #386DCC;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
 }
 
-.btn-signin:hover {
+.btn-signin:hover, .btn-signup:hover {
     -fx-background-color: #3262B7;
 }
 
-.btn-signin:pressed {
+.btn-signin:pressed, .btn-signup:pressed {
     -fx-background-color: #2C56A3;
 }
 
-.username-text:focused, .password-text:focused {
+.username-text:focused, .password-text:focused,
+.name-text:focused, .re-enter-password-text:focused {
     -fx-border-color: #386DCC;
 
     -fx-border-width: 2px;
@@ -81,7 +82,3 @@
 -icon-favourite-active {
     -fx-image: url("/org/example/demo/view/icons/favourite-red.png");
 } */
-
-.label-bugboard {
-    -fx-font-family: 'Segoe UI Light';
-}

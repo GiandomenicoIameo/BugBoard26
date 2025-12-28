@@ -44,7 +44,7 @@ public abstract class Homepage extends View {
     }
 
     @Override
-    protected void componentsView() {
+    protected void listComponents() {
        // Collection<Node> nodes = components.values();
 
         for(Component component : components.keySet()) {
@@ -60,7 +60,7 @@ public abstract class Homepage extends View {
     // mostrare l'interfaccia grafica di Homepage quando viene
     // invocata nel main di Homepage. Alla fine deve essere eliminato.
     @Override
-    protected Parent showView() {
-        return super.showView();
+    protected Parent show() {
+        return super.show();
     }
 }

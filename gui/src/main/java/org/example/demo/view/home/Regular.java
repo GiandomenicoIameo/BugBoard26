@@ -15,8 +15,8 @@ class Regular extends Homepage {
     }
 
     @Override
-    protected void componentsView() {
-        super.componentsView();
+    protected void listComponents() {
+        super.listComponents();
 
         for(Component component : components.keySet()) {
             if(component.getInstance() instanceof NewIssueCard)

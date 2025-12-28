@@ -11,6 +11,6 @@ class Register extends Access {
 
     @FXML
     protected void signIn(ActionEvent e) {
-        shiftView(e, new Login());
+        skip(new Login());
     }
 }

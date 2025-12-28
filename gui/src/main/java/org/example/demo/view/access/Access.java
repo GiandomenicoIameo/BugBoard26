@@ -24,7 +24,7 @@ public abstract class Access extends View {
         }
     }
 
-    protected Parent showView() {
+    protected Parent show() {
         return view;
     }
 }

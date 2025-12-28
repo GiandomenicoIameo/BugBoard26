@@ -1,7 +1,6 @@
 package org.example.demo.view;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.demo.view.card.Card;
 import org.example.demo.view.home.Homepage;
@@ -28,13 +27,10 @@ public class Main extends Application {
         view.addComponent(card4);
 
         //Visualizzazione dei componenti della homepage.
-        view.componentsView();
+        view.listComponents();
 
-        Scene scene = new Scene(view.showView());
-
-        stage.setTitle("BugBoard26");
-        stage.setScene(scene);
-        stage.show();
+        Sequence.setStage(stage);
+        Sequence.setScene(view.show());
     }
 
     public static void main() {

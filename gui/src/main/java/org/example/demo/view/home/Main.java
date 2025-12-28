@@ -1,8 +1,8 @@
 package org.example.demo.view.home;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.demo.view.Sequence;
 
 /*
     Il seguente metodo viene utilizzato per visualizzare
@@ -15,12 +15,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
 
-        Homepage root = new Regular();
-        Scene scene = new Scene(root.showView());
+        Homepage homepage = new Regular();
 
-        stage.setTitle("BugBoard26");
-        stage.setScene(scene);
-        stage.show();
+        Sequence.setStage(stage);
+        Sequence.setScene(homepage.show());
     }
 
     public static void main() {

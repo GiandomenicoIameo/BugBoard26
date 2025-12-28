@@ -18,7 +18,7 @@
          <children>
             <AnchorPane maxHeight="770.0" maxWidth="510.0" minHeight="543.0" minWidth="490.0" prefHeight="718.0" prefWidth="510.0" styleClass="card-login">
                <children>
-                  <Button layoutX="87.0" layoutY="498.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-signin" text="Create account" textFill="WHITE" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="105.0">
+                  <Button layoutX="87.0" layoutY="498.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-signup" text="Create account" textFill="WHITE" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="105.0">
                      <font>
                         <Font name="Inter Regular" size="18.0" />
                      </font>
@@ -49,12 +49,12 @@
                         <Font name="Inter Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Hyperlink layoutX="308.0" layoutY="651.0" prefHeight="31.0" prefWidth="74.0" text="Sign in" onAction="#signIn">
+                  <Hyperlink layoutX="308.0" layoutY="651.0" onAction="#signIn" prefHeight="31.0" prefWidth="74.0" text="Sign in">
                      <font>
                         <Font name="Inter Regular" size="18.0" />
                      </font>
                   </Hyperlink>
-                  <TextField layoutX="92.0" layoutY="131.0" prefHeight="59.0" prefWidth="315.0" promptText="Your name" styleClass="username-text">
+                  <TextField layoutX="92.0" layoutY="131.0" prefHeight="59.0" prefWidth="315.0" promptText="Your name" styleClass="name-text">
                      <font>
                         <Font name="Inter Regular" size="18.0" />
                      </font>
@@ -69,7 +69,7 @@
                         <Font name="Inter Regular" size="18.0" />
                      </font>
                   </PasswordField>
-                  <PasswordField layoutX="89.0" layoutY="418.0" prefHeight="59.0" prefWidth="319.0" promptText="Re-enter password" styleClass="password-text">
+                  <PasswordField layoutX="89.0" layoutY="418.0" prefHeight="59.0" prefWidth="319.0" promptText="Re-enter password" styleClass="re-enter-password-text">
                      <font>
                         <Font name="Inter Regular" size="18.0" />
                      </font>
