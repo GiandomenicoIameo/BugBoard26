@@ -23,13 +23,15 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
     @FXML private Label name;
     @FXML private Label title;
 
-    private IssueTypology tupologia; // per il test
+    private IssueTypology tipologia; // per il test
+
     @FXML private Label bug;
     @FXML private Label feature;
     @FXML private Label question;
     @FXML private Label documentation;
 
     private IssuePriority priorita; // per il test
+
     @FXML private Label low;
     @FXML private Label medium;
     @FXML private Label high;
@@ -41,6 +43,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
     @FXML private MenuButton issueClose;
 
     private IssueState stato; // per il test
+
     @FXML private Region state;
     @FXML private MenuItem close;
 
@@ -59,14 +62,17 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
                 id.toString());
     }
 
+    // Usato dal Mapper
     public void setTitle(String title) {
         this.title.setText(title);
     }
 
+    // Usato dal Mapper
     public void setName(String name) {
         this.name.setText(name);
     }
 
+    // Usato dal Mapper
     public void setPriority(IssuePriority priority) {
         if(IssuePriority
                 .ALTA == priority)
@@ -80,6 +86,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
         priorita = priority;
     }
 
+    // Usato dal Mapper
     public void setTypology(IssueTypology typology) {
         if(IssueTypology
                 .BUG == typology) {
@@ -95,9 +102,10 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
         else if(IssueTypology
                 .QUESTION  == typology)
             setQuestion();
-        tupologia = typology;
+        tipologia = typology;
     }
 
+    // Usato dal Mapper
     public void setState(IssueState state) {
         if(IssueState.TODO == state)
             setStateTodo();
@@ -106,6 +114,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
         stato = state;
     }
 
+    // Usato dal Mapper
     public void setDuplicated(boolean duplicated) {
         boolean visible = Role.AMMINISTRATORE ==
                 Session.role();
@@ -116,6 +125,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
                 && duplicated);
     }
 
+    // Usato dal Mapper
     public void setAssignee(boolean assigned) {
         boolean visible = Role.AMMINISTRATORE ==
                 Session.role();
@@ -217,7 +227,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
     }
 
     public IssueTypology getTypology() {
-        return tupologia;
+        return tipologia;
     }
 
     public IssueState getState() {
@@ -244,7 +254,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
     @FXML
     public void closed() throws IOException,
             InterruptedException {
-        IssueFeedCard issue = orchestration.issueFeed()
+        orchestration.issueFeed()
                 .close(Integer.parseInt(
                         id.getText()),
                         new IssueFeedCard());
@@ -254,7 +264,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
     @FXML
     public void duplicated() throws IOException,
             InterruptedException {
-        IssueFeedCard issue = orchestration.issueFeed()
+        orchestration.issueFeed()
                 .duplicate(Integer.parseInt(
                         id.getText()),
                         new IssueFeedCard());

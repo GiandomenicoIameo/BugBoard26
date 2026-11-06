@@ -11,7 +11,6 @@ import org.example.demo.view.components.card.issue.IssueFeedCard;
 import org.example.demo.view.components.modal.NewIssueCard;
 import org.example.demo.view.components.modal.Filter;
 import org.example.demo.view.core.Component;
-import org.example.demo.view.core.Sequence;
 import org.example.demo.view.core.Session;
 import org.example.demo.view.shared.Searchbar;
 import java.io.IOException;
@@ -94,8 +93,6 @@ public class Feedbar extends Component {
     @FXML
     public void initialize() throws IOException,
             InterruptedException {
-        configureMaximize(feedbar,
-                Sequence.getCurrStage());
         showCards(orchestration.issueFeed()
                 .getAll(IssueFeedCard::new));
     }
@@ -104,6 +101,17 @@ public class Feedbar extends Component {
     public void viewSearchbar() {
         Searchbar search = new Searchbar(searchbar);
         search.viewBack();
+
+        search.setOnFinished(() -> {
+            this.search.clear();
+            try {
+                showCards(orchestration
+                        .issueFeed()
+                        .getAll(IssueFeedCard::new));
+            } catch (IOException | InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     @FXML

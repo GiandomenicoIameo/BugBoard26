@@ -25,10 +25,6 @@ public class NotificationResponseDTO {
         return id;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public LocalDateTime getDate() {
         return date;
     }

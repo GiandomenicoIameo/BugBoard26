@@ -121,8 +121,6 @@ public class Assignmentbar extends Component {
         // sotto l'AnchorPane quando
         // si vuole cercare una card.
         searchbar.setViewOrder(1.0);
-        configureMaximize(assignmentsbar, Sequence
-                .getCurrStage());
         showItemCards(orchestration.issueItem()
                 .getAllAssigned(IssueItemCard::new,
                         IssueContentCard::new));

@@ -39,7 +39,7 @@ public abstract class Settingsbar extends Component {
         current.setVisible(true);
     }
 
-    public void populate() throws IOException,
+    public void showRole() throws IOException,
             InterruptedException {
         orchestration.user()
                 .getMe(this);
@@ -55,8 +55,6 @@ public abstract class Settingsbar extends Component {
             InterruptedException {
         Circle clip = new Circle(80, 80, 80);
         avatarPane.setClip(clip);
-        configureMaximize(settingsbar, Sequence
-                .getCurrStage());
-        populate();
+        showRole();
     }
 }

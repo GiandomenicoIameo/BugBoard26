@@ -4,7 +4,6 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.example.demo.view.access.Login;
 
 public class Sequence {
     private static Stage current  = null;

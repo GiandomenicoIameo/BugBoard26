@@ -49,10 +49,6 @@ public class IssueCardResponseDTO {
         this.state = state;
     }
 
-    public void setCreator(UserDTO creator) {
-        this.creator = creator;
-    }
-
     public int getId() {
         return id;
     }

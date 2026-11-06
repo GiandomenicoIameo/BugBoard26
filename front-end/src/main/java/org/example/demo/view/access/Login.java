@@ -41,8 +41,7 @@ public class Login extends View implements LoginView {
 
     @FXML
     public void initialize() {
-        configureMaximize(login, Sequence
-                .getCurrStage());
+
     }
 
     @FXML

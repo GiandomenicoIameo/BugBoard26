@@ -70,7 +70,7 @@ public class MapperIssueFeed {
             return null;
     }
 
-    private static void mapperAssegnee(IssueFeedCardView card,
+    private static void mapperAssignee(IssueFeedCardView card,
                                        IssueCardResponseDTO response) {
         card.setAssignee(response.getAssignee() !=  null);
     }
@@ -107,7 +107,7 @@ public class MapperIssueFeed {
                 response);
         mapperPriority(card,
                 response);
-        mapperAssegnee(card,
+        mapperAssignee(card,
                 response);
         mapperDuplicated(card,
                 response);

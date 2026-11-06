@@ -5,7 +5,7 @@ import javafx.util.Duration;
 import javafx.scene.layout.Region;
 
 public class Searchbar {
-    private Region region;
+    private final Region region;
     private double high;
     private Runnable code;
 
@@ -32,6 +32,7 @@ public class Searchbar {
             slide(0, (int) -high, () -> {
                 setVisibile(false);
                 region.setTranslateY(0);
+                code.run();
             });
         }
     }

@@ -21,8 +21,6 @@ public class SidebarRegular extends Sidebar {
 
     @FXML
     public void initialize() {
-        configureMaximize(menubar, Sequence
-                .getCurrStage());
     }
 
     public void setRegularListener(SidebarRegularListener listener) {

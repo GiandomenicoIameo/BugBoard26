@@ -6,16 +6,11 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
 import javafx.scene.transform.Scale;
 import javafx.stage.Screen;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.example.demo.view.core.orchestration.Orchestration;
 import org.example.demo.view.orchestrator.Orchestrator;
-
-import java.awt.*;
-import java.io.IOException;
 
 public abstract class Window {
     protected static Orchestration orchestration =
@@ -30,16 +25,6 @@ public abstract class Window {
     public void minimize() {
         Sequence.getCurrStage()
                 .setIconified(true);
-    }
-
-    @FXML
-    public void configureMaximize(Parent root, Stage stage) {
-        root.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
-                stage.setMaximized(!stage
-                        .isMaximized());
-            }
-        });
     }
 
     public Scene resize(Parent root) {
@@ -58,19 +43,22 @@ public abstract class Window {
                         SCREEN_H_RATIO / high,
                 screen.getWidth()  *
                         SCREEN_W_RATIO / width);
-        scale = Math.min(scale, MAX_SCALE);
+        scale = Math.min(
+                scale, MAX_SCALE);
 
-        root.getTransforms().setAll(new Scale(scale,
+        root.getTransforms()
+                .setAll(new Scale(scale,
                 scale, 0, 0));
 
-        return new Scene(new Group(root),
+        return new Scene(
+                new Group(root),
                 width * scale, high * scale);
     }
 
     public void fade(Parent root) {
-        FadeTransition fade = new
-                FadeTransition(Duration
-                .millis(800), root);
+        FadeTransition fade =
+                new FadeTransition(Duration
+                        .millis(800), root);
         fade.setFromValue(0);
         fade.setToValue(1);
         fade.play();

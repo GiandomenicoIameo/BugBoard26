@@ -42,16 +42,8 @@ public class AddUserRequestDTO {
         return name;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public String getRole() {

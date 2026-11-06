@@ -19,7 +19,7 @@ public class Groupbar extends Component {
     @FXML private Label useraccounts;
     @FXML private ScrollPane scroll;
 
-    private int numIssues = 0;
+    private int issues = 0;
 
     public Groupbar() {
         show("groupbar.fxml");
@@ -28,13 +28,11 @@ public class Groupbar extends Component {
     public void countIssues(int size) {
         useraccounts.setText(Integer
                 .toString(size));
-        numIssues = size;
+        issues = size;
     }
 
     public void importCards() throws IOException,
             InterruptedException {
-        scroll.setSnapToPixel(true);
-        cardContainer.setSnapToPixel(true);
         populateContainer(orchestration.user()
                 .getAll(User::new));
     }
@@ -49,16 +47,14 @@ public class Groupbar extends Component {
 
     private void loadCard(User user) {
         scroll.setVisible(true);
-            cardContainer.getChildren().
-                    add(user.getRoot());
-            countIssues(++numIssues);
+        cardContainer.getChildren().
+                add(user.getRoot());
+        countIssues(++issues);
     }
 
     @FXML
     public void initialize() throws IOException,
             InterruptedException {
-        configureMaximize(groupbar, Sequence
-                .getCurrStage());
         importCards();
     }
 
