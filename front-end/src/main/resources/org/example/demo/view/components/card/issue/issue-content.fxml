@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox fx:id="contentCard" alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="734.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label fx:id="title" text="Validation: ask and see the ones written as a tuple" textFill="#49454f" wrapText="true">
+               <font>
+                  <Font name="Cantarell Regular" size="30.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets left="30.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="51.0" prefWidth="809.0">
+         <children>
+            <Label fx:id="open" alignment="CENTER" graphicTextGap="5.0" managed="false" prefHeight="28.0" prefWidth="81.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px; -fx-background-color: #E6F4EA;" text="Open" textFill="#1a6b44" visible="false">
+               <font>
+                  <Font name="Cantarell Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+               <graphic>
+                  <Region fx:id="iconOpen" minHeight="16.0" minWidth="15.0" prefHeight="16.0" prefWidth="15.0" styleClass="icon-bell-issue-open" />
+               </graphic>
+            </Label>
+            <Label fx:id="closed" alignment="CENTER" graphicTextGap="5.0" managed="false" prefHeight="28.0" prefWidth="81.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px; -fx-background-color: #FCE8E6;" text="Closed" textFill="#8b1a1a" visible="false">
+               <font>
+                  <Font name="Cantarell Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <Region fx:id="iconClosed" minHeight="16.0" minWidth="15.0" prefHeight="16.0" prefWidth="15.0" styleClass="icon-bell-issue-closed" />
+               </graphic>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="duplicate" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="88.0" style="-fx-border-radius: 20px; -fx-background-color: #e8e6e3; -fx-background-radius: 20px;" text="Duplicate" textFill="#3d3846" visible="false">
+               <font>
+                  <Font name="Cantarell Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="name" text="Torvalds" textFill="#5e5c63cc">
+               <font>
+                  <Font name="Cantarell Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label text="·" textFill="#5e5c63cc">
+               <font>
+                  <Font name="Cantarell Regular" size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="date" text="4 days ago" textFill="#5e5c63cc">
+               <font>
+                  <Font name="Cantarell Regular" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="30.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <VBox style="-fx-border-radius: 10px; -fx-background-radius: 10px; -fx-border-color: rgba(0,0,0,0.12); -fx-background-color: white;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="62.0" prefWidth="828.0" style="-fx-border-color: rgba(0,0,0,0.12); -fx-border-radius: 10 10 0 0; -fx-background-color: #f6f5f4; -fx-border-width: 0 0 1 0; -fx-background-radius: 10 10 0 0;">
+                     <children>
+                        <Label fx:id="nameCard" graphicTextGap="10.0" text="Torvalds" textFill="#49454f">
+                           <font>
+                              <Font name="Cantarell Regular" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="username111" text="reported" textFill="#5c5a61cc">
+                           <font>
+                              <Font name="Cantarell Regular" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="dateCard" text="4 days ago" textFill="#5c5a61cc">
+                           <font>
+                              <Font name="Cantarell Regular" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <TextFlow HBox.hgrow="ALWAYS">
+                           <children>
+                              <Text fx:id="description" fill="#241f31" strokeType="OUTSIDE" strokeWidth="0.0" text="ciao" wrappingWidth="28.7294921875">
+                                 <font>
+                                    <Font name="Cantarell Regular" size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </TextFlow>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="boxImage" managed="false" visible="false" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane maxWidth="-Infinity" style="-fx-border-radius: 10px; -fx-background-radius: 10px; -fx-border-color: rgba(0,0,0,0.12); -fx-background-color: white;" stylesheets="@../../../style/style.css">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <ImageView fx:id="image" fitHeight="150.0" fitWidth="306.0" layoutX="7.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="9.0">
+                                 <image>
+                                    <Image url="@../../../icons/identicon-1.jpeg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="username12" text="Image attached" textFill="#5e5c63">
+                           <font>
+                              <Font name="Cantarell Regular" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</VBox>

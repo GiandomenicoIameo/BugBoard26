@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.layout.HBox?>
+
+<StackPane style="-fx-background-radius: 10px; -fx-background-color: transparent;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="921.0" prefWidth="1590.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: white; -fx-border-color: rgba(73, 69, 79, 0.25);">
+         <children>
+            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" fillHeight="true">
+               <children>
+                  <StackPane fx:id="sidebarContainer" />
+                  <StackPane fx:id="dockContainer" HBox.hgrow="ALWAYS" alignment="TOP_CENTER" style="-fx-background-color: transparent;" />
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="50.0" offsetY="4.0" radius="24.5" width="50.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</StackPane>

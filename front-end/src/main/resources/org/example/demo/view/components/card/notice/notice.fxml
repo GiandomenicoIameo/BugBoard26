@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="notice" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="472.0" style="-fx-background-radius: 10px; -fx-border-color: rgba(0,0,0,0.12); -fx-border-width: 0 0 1 0; -fx-background-color: white;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER">
+         <HBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </HBox.margin>
+         <children>
+            <Label fx:id="newNotice" alignment="CENTER" managed="false" graphicTextGap="5.0" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="28.0" prefWidth="156.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px; -fx-background-color: #E6F4EA; -fx-border-color: #1a6b44;" text="New" textFill="#1a6b44">
+               <font>
+                  <Font name="Cantarell Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="79.0" prefWidth="385.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox>
+               <children>
+                  <HBox alignment="CENTER" />
+                  <Label fx:id="assigned" text="Assigned bug" textFill="#49454f">
+                     <font>
+                        <Font name="Cantarell Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label text="Notification" textFill="#5e5c64">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="#" textFill="#5e5c64">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="id" text="23" textFill="#5e5c64">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="·" textFill="#5e5c64cc">
+                     <font>
+                        <Font name="Cantarell Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="date" text="2 weeks ago" textFill="#5e5c64">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox />
+         </children>
+         <HBox.margin>
+            <Insets right="50.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>

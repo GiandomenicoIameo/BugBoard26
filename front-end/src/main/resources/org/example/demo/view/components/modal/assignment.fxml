@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="assignment" prefHeight="502.0" prefWidth="454.0" style="-fx-border-radius: 10px; -fx-background-color: #fafafb; -fx-background-radius: 10px; -fx-border-color: rgba(73, 69, 79, 0.40);" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane fx:id="scroll" fitToHeight="true" layoutX="30.0" layoutY="107.0" style="-fx-border-color: rgba(0,0,0,0.12); -fx-border-radius: 10px;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="110.0">
+         <content>
+            <VBox fx:id="cardContainer" alignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER" layoutX="1.0" prefHeight="47.0" style="-fx-background-color: #EBEBEB; -fx-background-radius: 10px; -fx-border-color: rgba(0,0,0,0.12); -fx-border-width: 0 0 1 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#close" prefHeight="28.0" prefWidth="108.0" style="-fx-background-radius: 10px;" styleClass="btn-cancel" stylesheets="@../../style/style.css" text="Cancel" textFill="#241f31">
+               <font>
+                  <Font name="Cantarell Regular" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="216.0" text="Assignment" textFill="#241f31">
+               <font>
+                  <Font name="Cantarell Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#handleAssign" prefHeight="28.0" prefWidth="108.0" styleClass="btn-signup" stylesheets="@../../style/style.css" text="Assign" textFill="WHITE">
+               <font>
+                  <Font name="Cantarell Regular" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="29.0" layoutY="81.0" text="Users · suggested" textFill="#5e5c63">
+         <font>
+            <Font name="Cantarell Regular" size="20.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <DropShadow height="60.0" radius="29.5" width="60.0" />
+   </effect>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="feedbar" prefHeight="206.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="97.0" stylesheets="@../../style/style.css" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="Feed ·" textFill="#5a5861cc">
+                                 <font>
+                                    <Font name="Cantarell Regular" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="issues" text="4" textFill="#5a5861cc">
+                                 <font>
+                                    <Font name="Cantarell Regular" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label text="issues" textFill="#5a5861cc">
+                                 <font>
+                                    <Font name="Cantarell Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Pane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                        <MenuButton alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" style="-fx-background-radius: 10px;" styleClass="btn-close" stylesheets="@../../style/style.css" text="Sorted" textFill="#49454f">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#handleSceltaMenu" text="Latest" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleSceltaMenu" text="Oldest" />
+                           </items>
+                           <font>
+                              <Font name="Cantarell Regular" size="18.0" />
+                           </font>
+                        </MenuButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox fx:id="cardContainer" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="920.0" style="-fx-background-radius: 10px; -fx-background-color: white; -fx-border-color: rgba(0,0,0,0.12); -fx-border-radius: 10px;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="90.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="47.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: #ebebeb; -fx-border-width: 0 0 1 0px; -fx-background-radius: 0 10 0 0;" stylesheets="@../../style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="15.0" text="Open issues" textFill="#49454f" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Cantarell Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" defaultButton="true" layoutX="771.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleAddIssue" prefHeight="28.0" prefWidth="133.0" style="-fx-border-radius: 10px;" styleClass="btn-signin" text="Add issue..." textFill="WHITE" AnchorPane.rightAnchor="133.0">
+               <font>
+                  <Font name="Cantarell Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnMin" alignment="CENTER" graphicTextGap="10.0" layoutX="964.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minimize" prefHeight="23.0" prefWidth="23.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btn-close" stylesheets="@../../style/style.css" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="12.0">
+               <font>
+                  <Font name="Cantarell Regular" size="18.0" />
+               </font>
+               <graphic>
+                  <Region styleClass="icon-bell-minimize" />
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="10.0" layoutX="910.0" layoutY="6.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewSearchbar" prefHeight="35.0" prefWidth="35.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="btn-labels" stylesheets="@../../style/style.css" textFill="#49454f" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="6.0">
+               <font>
+                  <Font name="Cantarell Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <graphic>
+                  <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-search" />
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="10.0" layoutX="1000.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#close" prefHeight="23.0" prefWidth="23.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btn-close" stylesheets="@../../style/style.css" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
+               <font>
+                  <Font name="Cantarell Regular" size="18.0" />
+               </font>
+               <graphic>
+                  <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-close" />
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="10.0" layoutX="615.0" layoutY="6.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refresh" prefHeight="35.0" prefWidth="35.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="btn-labels" stylesheets="@../../style/style.css" AnchorPane.rightAnchor="272.0">
+               <font>
+                  <Font name="Cantarell Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <graphic>
+                  <Region styleClass="icon-bell-refresh" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <HBox fx:id="searchbar" alignment="CENTER" managed="false" prefHeight="47.0" prefWidth="1037.0" style="-fx-background-color: #f6f5f4; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 0 1 0px;" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
+         <children>
+            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="39.0" prefWidth="337.0" style="-fx-border-color: #386DCC; -fx-border-radius: 10px; -fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 1.5;">
+               <children>
+                  <Pane prefHeight="32.0" prefWidth="0.0" />
+                  <Button fx:id="btnSearch" defaultButton="true" managed="false" mnemonicParsing="false" onAction="#searchByKeyword" text="Button" visible="false" />
+                  <TextField fx:id="search" maxHeight="-Infinity" prefHeight="35.0" prefWidth="288.0" promptText="[keyword]/[typology]/[priority]" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button alignment="CENTER" graphicTextGap="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleShowIssueFiltered" prefHeight="31.0" prefWidth="35.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="btn-labels" stylesheets="@../../style/style.css">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <graphic>
+                        <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-filters" />
+                     </graphic>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

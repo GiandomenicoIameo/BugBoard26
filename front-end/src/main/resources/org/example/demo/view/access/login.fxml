@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="866.0" prefWidth="1298.0" style="-fx-background-color: transparent;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <AnchorPane fx:id="login" prefHeight="560.0" prefWidth="460.0" style="-fx-background-color: #fafafb; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: rgba(73, 69, 79, 0.25);" stylesheets="@../style/style.css" StackPane.alignment="CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER" layoutX="426.0" layoutY="262.0" prefHeight="328.0" prefWidth="425.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 10px;" styleClass="card-login">
+                    <padding>
+                        <Insets bottom="30.0" left="50.0" right="50.0" top="20.0" />
+                    </padding>
+                    <children>
+                  <HBox>
+                     <children>
+                        <Label text="Email address" textFill="#5e5c63">
+                           <font>
+                              <Font name="Cantarell Regular" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="323.0">
+                     <children>
+                              <TextField fx:id="email" prefHeight="63.0" promptText="Username or email address" style="-fx-border-radius: 10px;" styleClass="username-text" HBox.hgrow="ALWAYS">
+                                  <font>
+                              <Font name="Cantarell Regular" size="18.0" />
+                           </font>
+                              </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefWidth="610.0">
+                     <children>
+                        <Label text="Password" textFill="#5e5c63">
+                           <font>
+                              <Font name="Cantarell Regular" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="53.0" prefWidth="323.0">
+                     <children>
+                              <PasswordField fx:id="password" prefHeight="63.0" prefWidth="323.0" promptText="Password" style="-fx-border-radius: 10px;" styleClass="password-text" HBox.hgrow="ALWAYS">
+                                  <font>
+                              <Font name="Cantarell Regular" size="18.0" />
+                           </font>
+                              </PasswordField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="53.0" prefWidth="323.0">
+                     <children>
+                              <Button defaultButton="true" mnemonicParsing="false" onAction="#signIn" prefHeight="63.0" prefWidth="323.0" styleClass="btn-signin" text="Sign in" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                  <font>
+                              <Font name="Cantarell Regular" size="18.0" />
+                           </font>
+                              </Button>
+                     </children>
+                  </HBox>
+                    </children>
+                </VBox>
+
+                <!-- Barra del titolo -->
+                <AnchorPane maxHeight="40.0" minHeight="40.0" prefHeight="40.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: #ebebeb; -fx-border-width: 0 0 1 0; -fx-background-radius: 10 10 0 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="btnMin" mnemonicParsing="false" onAction="#minimize" prefHeight="23.0" prefWidth="23.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btn-close" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="8.0">
+                            <graphic><Region styleClass="icon-bell-minimize" /></graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#close" prefHeight="23.0" prefWidth="23.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btn-close" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0">
+                            <graphic><Region styleClass="icon-bell-close" /></graphic>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            <HBox fx:id="user" alignment="CENTER" fillHeight="false" layoutX="426.0" layoutY="590.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="425.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Accounts are created by an Administrator. If you cannot  sign in, contact your administrator." textAlignment="CENTER" textFill="#5e5c63" wrapText="true" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="user1" alignment="CENTER" fillHeight="false" layoutX="476.0" layoutY="204.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Sign in to see and manage your issues" textAlignment="CENTER" textFill="#5e5c63" wrapText="true" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Cantarell Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="539.0" layoutY="151.0" text="BugBoard26" textAlignment="CENTER" textFill="#5e5c63" wrapText="true">
+               <font>
+                  <Font name="Cantarell Regular" size="36.0" />
+               </font>
+            </Label>
+            <StackPane layoutX="608.0" layoutY="83.0" maxHeight="71.0" maxWidth="66.0" prefHeight="71.0" prefWidth="66.0" styleClass="icon-circle">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-logo" />
+               </children>
+            </StackPane>
+            </children>
+            <effect>
+                <DropShadow blurType="GAUSSIAN" height="50.0" offsetY="4.0" radius="24.5" width="50.0">
+                    <color><Color opacity="0.25" /></color>
+                </DropShadow>
+            </effect>
+        </AnchorPane>
+    </children>
+</StackPane>

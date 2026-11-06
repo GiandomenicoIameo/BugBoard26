@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="prompter" alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../../style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <Label fx:id="nameSurname" text="Admin" textFill="#49454f">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Cantarell Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="id" visible="false" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label fx:id="name" text="Admin" textFill="#5e5c63">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="·" textFill="#5e5c63cc">
+                     <font>
+                        <Font name="Cantarell Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="email" text="admin@bugboard.it" textFill="#5e5c63">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Pane HBox.hgrow="ALWAYS" />
+      <RadioButton fx:id="radio" mnemonicParsing="false" styleClass="gnome-radio">
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin>
+         <toggleGroup>
+            <ToggleGroup fx:id="gruppo" />
+         </toggleGroup>
+      </RadioButton>
+   </children>
+</HBox>

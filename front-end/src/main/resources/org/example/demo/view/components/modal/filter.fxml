@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cardFilter" minWidth="-Infinity" prefHeight="810.0" prefWidth="436.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px; -fx-background-color: #fafafb;" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="51.0" layoutY="89.0" text="Order by" textFill="#241f31">
+         <font>
+            <Font name="Cantarell Regular" size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="51.0" layoutY="121.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-radius: 10px; -fx-background-color: white;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+         <children>
+            <VBox prefHeight="108.0" prefWidth="572.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: white; -fx-border-width: 0 0 0 0;" styleClass="btn-admin" stylesheets="@../../style/style.css">
+               <children>
+                  <HBox fx:id="favourite5" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname5" text="Priority" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id5" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="prompter" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname" text="High" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email" text="Shown first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="ALTA" mnemonicParsing="false" styleClass="gnome-radio" userData="ALTA">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="priorityGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="favourite1" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname1" text="Medium" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id1" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email1" text="Shown first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="MEDIA" mnemonicParsing="false" styleClass="gnome-radio" toggleGroup="$priorityGroup" userData="MEDIA">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="favourite2" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname2" text="Low" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id2" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email2" text="Shown first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="BASSA" mnemonicParsing="false" styleClass="gnome-radio" toggleGroup="$priorityGroup" userData="BASSA">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="108.0" prefWidth="572.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: white; -fx-border-width: 1 0 0 0;" styleClass="btn-admin" stylesheets="@../../style/style.css">
+               <children>
+                  <HBox fx:id="favourite51" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname51" text="State" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id51" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="favourite3" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname3" text="Todo" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id3" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email3" text="Open issue first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="TODO" mnemonicParsing="false" styleClass="gnome-radio" userData="TODO">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="stateGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="favourite4" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname4" text="Closed" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id4" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email4" text="Closed issue first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="CHIUSO" mnemonicParsing="false" styleClass="gnome-radio" toggleGroup="$stateGroup" userData="CHIUSO">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="108.0" prefWidth="572.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: white; -fx-border-width: 1 0 0 0;" styleClass="btn-admin" stylesheets="@../../style/style.css">
+               <children>
+                  <HBox fx:id="favourite52" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname52" text="Type" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id52" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="favourite41" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname41" text="Bug" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id41" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email41" text="Bug first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="BUG" mnemonicParsing="false" styleClass="gnome-radio" userData="BUG">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="typeGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="favourite411" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname411" text="Documentation" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id411" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email411" text="Documentation first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="DOCUMENTATION" mnemonicParsing="false" styleClass="gnome-radio" toggleGroup="$typeGroup" userData="DOCUMENTATION">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="favourite4111" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname4111" text="Feature" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id4111" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email4111" text="Feature first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="FEATURE" mnemonicParsing="false" styleClass="gnome-radio" toggleGroup="$typeGroup" userData="FEATURE">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="favourite4112" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="nameSurname4112" text="Question" textFill="#241f31">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Cantarell Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="id4112" visible="false" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="email4112" text="Question first" textFill="#5e5c63">
+                                       <font>
+                                          <Font name="Cantarell Regular" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <RadioButton fx:id="QUESTION" mnemonicParsing="false" styleClass="gnome-radio" toggleGroup="$typeGroup" userData="QUESTION">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="1.0" prefHeight="47.0" style="-fx-background-color: #EBEBEB; -fx-background-radius: 10 10 0 0; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 0 1 0;" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="108.0" style="-fx-background-radius: 10px;" styleClass="btn-cancel" stylesheets="@../../style/style.css" text="Cancel" textFill="#241f31">
+               <font>
+                  <Font name="Cantarell Regular" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Label alignment="CENTER" prefHeight="67.0" prefWidth="274.0" text="Filter" textFill="#241f31">
+               <font>
+                  <Font name="Cantarell Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#search" prefHeight="30.0" prefWidth="108.0" styleClass="btn-signup" stylesheets="@../../style/style.css" text="Apply" textFill="WHITE">
+               <font>
+                  <Font name="Cantarell Regular" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <effect>
+      <DropShadow height="40.0" radius="19.5" width="40.0" />
+   </effect>
+</AnchorPane>

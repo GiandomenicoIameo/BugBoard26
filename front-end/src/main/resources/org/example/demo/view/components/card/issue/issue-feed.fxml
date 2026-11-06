@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="issueCard" alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="920.0" stylesheets="@../../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="TOP_CENTER" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <AnchorPane id="card-issues" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px; -fx-border-radius: 10px;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="title" layoutX="57.0" layoutY="7.0" prefHeight="39.0" prefWidth="500.0" text="Validation: ask and see the ones written as a tuple" textFill="#49454f" wrapText="true" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="69.0">
+                     <font>
+                        <Font name="Cantarell Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="69.0" layoutY="67.0" AnchorPane.topAnchor="75.0">
+                     <children>
+                        <Label fx:id="question" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="88.0" style="-fx-border-radius: 20px; -fx-background-color: #fce1ee; -fx-background-radius: 20px;" text="Question" textFill="#9b1f5e">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="bug" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="79.0" style="-fx-border-radius: 20px; -fx-background-color: #FCE8E8; -fx-background-radius: 20px;" text="Bug" textFill="#ec1445" visible="false">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="feature" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="88.0" style="-fx-border-radius: 20px; -fx-background-color: #dbe9fb; -fx-background-radius: 20px;" text="Feature" textFill="#1a5fb4" visible="false">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="documentation" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="117.0" style="-fx-border-radius: 20px; -fx-background-color: #d3efe9; -fx-background-radius: 20px;" text="Documentation" textFill="#0c6558">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="low" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="79.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px; -fx-background-color: #E6F4EA;" text="Low" textFill="#40ae40" visible="false">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="medium" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="79.0" style="-fx-border-radius: 20px; -fx-background-color: #fcf0c2; -fx-background-radius: 20px;" text="Medium" textFill="#7a5200" visible="false">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="high" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="79.0" style="-fx-border-radius: 20px; -fx-background-color: #fde6cf; -fx-background-radius: 20px;" text="High" textFill="#8a4208" visible="false">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="duplicate" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="88.0" style="-fx-border-radius: 20px; -fx-background-color: #e8e6e3; -fx-background-radius: 20px;" text="Duplicate" textFill="#3d3846" visible="false">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="assigned" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="88.0" style="-fx-border-radius: 20px; -fx-background-color: #EAE6F5; -fx-background-radius: 20px;" text="Assigned" textFill="#6f42c1" visible="false">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <MenuButton fx:id="options" alignment="CENTER" layoutX="708.0" layoutY="34.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 10px;" styleClass="btn-cancel" stylesheets="@../../../style/style.css" visible="false" AnchorPane.rightAnchor="172.0">
+                     <items>
+                        <MenuItem fx:id="close" mnemonicParsing="false" onAction="#duplicated" text="   Mark as duplicate">
+                           <graphic>
+                              <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-duplicate-issue" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#showAssignment" text="   Assign to...                    ">
+                           <graphic>
+                              <Region fx:id="state112" maxHeight="11.0" maxWidth="19.0" prefHeight="11.0" prefWidth="19.0" styleClass="icon-bell-assign-issue" />
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <graphic>
+                        <Region styleClass="icon-bell-options" />
+                     </graphic>
+                  </MenuButton>
+                  <Region fx:id="state" layoutX="22.0" layoutY="43.0" prefHeight="40.0" prefWidth="50.0" styleClass="icon-bell-card-issue" />
+                  <HBox layoutX="59.0" layoutY="41.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="69.0">
+                     <children>
+                        <Label text="#" textFill="#5e5c64cc">
+                           <font>
+                              <Font name="Cantarell Regular" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="id" text="4" textFill="#5e5c64cc">
+                           <font>
+                              <Font name="Cantarell Regular" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" text="· opened" textFill="#5e5c64cc">
+                           <font>
+                              <Font name="Cantarell Regular" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label contentDisplay="CENTER" graphicTextGap="0.0" text="by " textFill="#5e5c64cc">
+                           <font>
+                              <Font name="Cantarell Regular" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="name" alignment="CENTER" text="Torvalds" textFill="#5e5c64cc">
+                           <font>
+                              <Font name="Cantarell Regular" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <MenuButton fx:id="issueClose" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="767.0" layoutY="34.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="146.0" style="-fx-background-radius: 10px;" styleClass="btn-cancel" stylesheets="@../../../style/style.css" text="Close issue" AnchorPane.rightAnchor="14.0">
+                     <items>
+                        <MenuItem fx:id="close1" mnemonicParsing="false" onAction="#closed" text="   Close                    ">
+                           <graphic>
+                              <Region fx:id="state111" maxHeight="11.0" maxWidth="19.0" prefHeight="11.0" prefWidth="19.0" styleClass="icon-bell-close-issue" />
+                           </graphic></MenuItem>
+                     </items>
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <graphic>
+                        <Region fx:id="state1" maxHeight="11.0" maxWidth="19.0" prefHeight="11.0" prefWidth="19.0" styleClass="icon-bell-close-issue" />
+                     </graphic>
+                  </MenuButton>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>

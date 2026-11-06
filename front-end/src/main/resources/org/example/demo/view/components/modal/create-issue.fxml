@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="653.0" style="-fx-border-color: rgba(73, 69, 79, 0.45); -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-background-color: #fafafb;" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="47.0" prefWidth="651.0" style="-fx-background-color: #EBEBEB; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 0 1 0;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#close" prefHeight="28.0" prefWidth="108.0" style="-fx-background-radius: 10px;" styleClass="btn-cancel" stylesheets="@../../style/style.css" text="Cancel" textFill="#49454f">
+               <font>
+                  <Font name="Cantarell Regular" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="440.0" text="Add issue" textFill="#49454f">
+               <font>
+                  <Font name="Cantarell Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#handleAdd" prefHeight="28.0" prefWidth="108.0" styleClass="btn-signup" stylesheets="@../../style/style.css" text="Submit" textFill="WHITE">
+               <font>
+                  <Font name="Cantarell Regular" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="642.0">
+         <children>
+            <TextField fx:id="title" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="43.0" prefWidth="560.0" promptText="Title" styleClass="input-card-add-issue">
+               <font>
+                  <Font name="Cantarell Regular" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox alignment="CENTER" prefHeight="135.0" prefWidth="692.0">
+               <children>
+                  <TextArea fx:id="description" prefHeight="123.0" prefWidth="560.0" promptText="Ask anything" styleClass="input-card-add-issue" wrapText="true">
+                     <font>
+                        <Font name="Cantarell Regular" size="20.0" />
+                     </font>
+                  </TextArea>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox minWidth="-Infinity" prefHeight="5.0" prefWidth="664.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="100.0" text="Options" textFill="#49454f">
+                     <font>
+                        <Font name="Cantarell Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="80.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="169.0" prefWidth="642.0">
+               <children>
+                  <VBox prefWidth="560.0" style="-fx-border-radius: 10px; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: white;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 0 1 0;" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label prefHeight="23.0" prefWidth="91.0" text="Typology">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="69.0" prefWidth="220.0" />
+                              <TextField fx:id="typology" alignment="CENTER_RIGHT" editable="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: white;" text="Question">
+                                 <font>
+                                    <Font name="Cantarell Regular" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <MenuButton alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px;" styleClass="btn-labels">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#onMenuTypologySelected" text="Question" />
+                                  <MenuItem mnemonicParsing="false" onAction="#onMenuTypologySelected" text="Bug" />
+                                    <MenuItem mnemonicParsing="false" onAction="#onMenuTypologySelected" text="Documentation" />
+                                    <MenuItem mnemonicParsing="false" onAction="#onMenuTypologySelected" text="Feature" />
+                                </items>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-arrow-down" />
+                                 </graphic>
+                              </MenuButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="610.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 0 0 0;" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Priority">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Cantarell Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="70.0" prefWidth="253.0" />
+                              <TextField fx:id="priority" alignment="CENTER_RIGHT" editable="false" prefHeight="35.0" prefWidth="178.0" style="-fx-background-color: white;" text="Alta">
+                                 <font>
+                                    <Font name="Cantarell Regular" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <MenuButton alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px;" styleClass="btn-labels">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#onMenuPrioritySelected" text="Alta" />
+                                    <MenuItem mnemonicParsing="false" onAction="#onMenuPrioritySelected" text="Media" />
+                                    <MenuItem mnemonicParsing="false" onAction="#onMenuPrioritySelected" text="Bassa" />
+                                 </items>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-arrow-down" />
+                                 </graphic>
+                              </MenuButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="5.0" prefWidth="664.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="100.0" text="Image" textFill="#49454f">
+                     <font>
+                        <Font name="Cantarell Regular" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="80.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0" prefWidth="560.0" style="-fx-border-radius: 10px; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: white;">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="115.0" text="Select image">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="55.0" prefWidth="137.0" />
+                  <TextField fx:id="image" alignment="CENTER_RIGHT" editable="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: white;">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button alignment="CENTER" graphicTextGap="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addImage" prefHeight="35.0" prefWidth="35.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="btn-labels" stylesheets="@../../style/style.css">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <graphic>
+                        <Region styleClass="icon-bell-arrow-rigth" />
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <effect>
+      <DropShadow height="30.0" radius="14.5" width="30.0" />
+   </effect>
+</VBox>

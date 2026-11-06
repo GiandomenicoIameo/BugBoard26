@@ -1,0 +1,44 @@
+package org.example.demo.view.assembler.filter;
+
+import org.example.demo.view.components.modal.definitions.FilterView;
+import org.example.demo.view.dto.filter.FilterRequestDTO;
+
+import java.util.function.BiConsumer;
+
+public class AssembleFilter {
+    private static void assembleKeyword(FilterView filter,
+                                        FilterRequestDTO request) {
+        request.setKeyword(filter.getKeyword());
+    }
+
+    private static void assemblePriority(FilterView filter,
+                                         FilterRequestDTO request) {
+        request.setPriority(filter.getPriority());
+    }
+
+    private static void assembleState(FilterView filter,
+                                      FilterRequestDTO request) {
+        request.setState(filter.getState());
+    }
+
+    private static void assembleTypology(FilterView filter,
+                                         FilterRequestDTO request) {
+        request.setTypology(filter.getTypology());
+    }
+
+    public static FilterRequestDTO assemble(FilterView filter) {
+        FilterRequestDTO request =
+                new FilterRequestDTO();
+
+        assembleKeyword(filter,
+                request);
+        assemblePriority(filter,
+                request);
+        assembleState(filter,
+                request);
+        assembleTypology(filter,
+                request);
+
+        return request;
+    }
+}

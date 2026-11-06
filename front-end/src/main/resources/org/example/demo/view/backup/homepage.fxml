@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1500.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.view.session.SidebarHomepage">
+   <children>
+      <VBox layoutX="-2.0" layoutY="163.0" prefHeight="733.0" prefWidth="294.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="163.0">
+         <children>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#viewHome" prefHeight="59.0" prefWidth="319.0" styleClass="btn-home" stylesheets="@../style/style.css" text="Home">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="80.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/home.png" />
+                     </image></ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-dashboard" stylesheets="@../style/style.css" text="Dashboards" textFill="#49454f">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/projects.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#viewAssignments" prefHeight="59.0" prefWidth="319.0" styleClass="btn-assignments" stylesheets="@../style/style.css" text="Assignments">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/assignments.png" />
+                     </image></ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-issues" stylesheets="@../style/style.css" text="Issues">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/issues.png" />
+                     </image></ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-discussions" stylesheets="@../style/style.css" text="Discussions">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/discussions.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-codespace" stylesheets="@../style/style.css" text="Codespace">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/codespace.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Button>
+            <Label prefHeight="0.0" prefWidth="318.0">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Separator prefWidth="200.0">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding></Separator>
+            <Label prefHeight="0.0" prefWidth="318.0">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-settings" stylesheets="@../style/style.css" text="Settings">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="319.0" styleClass="btn-appearance" stylesheets="@../style/style.css" text="Appearance">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/appearance.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font>
+            </Button>
+            <Label prefHeight="0.0" prefWidth="318.0">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Separator prefWidth="200.0">
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding></Separator>
+            <Label prefHeight="0.0" prefWidth="318.0">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#signOut" prefHeight="59.0" prefWidth="319.0" styleClass="btn-logout" stylesheets="@../style/style.css" text="Sign-out">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Inter Regular" size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="0.0" radius="0.75" width="5.0" />
+         </effect>
+      </VBox>
+      <Pane layoutY="-3.0" prefHeight="166.0" prefWidth="1500.0" style="-fx-border-color: rgba(73, 69, 79, 0.12);;" styleClass="head" stylesheets="@../style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="254.0" layoutY="54.0" text="Richard Stallman" textFill="#49454f">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="251.0" layoutY="99.0" prefHeight="21.0" prefWidth="173.0" text="\@stallman" textFill="#757575">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="68.0" layoutY="45.0" prefHeight="165.0" prefWidth="166.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="184.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/account.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow height="44.0" radius="21.5" width="44.0" />
+         </effect>
+      </Pane>
+      <AnchorPane fx:id="homePane" layoutX="300.0" layoutY="163.0" prefHeight="738.0" prefWidth="1200.0" />
+   </children>
+</AnchorPane>

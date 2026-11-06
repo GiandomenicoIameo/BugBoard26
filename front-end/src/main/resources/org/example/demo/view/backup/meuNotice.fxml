@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CustomMenuItem?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<MenuButton alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px;" styleClass="btn-labels" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <CustomMenuItem fx:id="notice" mnemonicParsing="false" text="Unspecified Action">
+         <content>
+            <ScrollPane fx:id="scroll" fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="300.0">
+               <content>
+                  <VBox fx:id="container" />
+               </content>
+            </ScrollPane>
+         </content>
+      </CustomMenuItem>
+   </items>
+   <font>
+      <Font name="Cantarell Regular" size="18.0" />
+   </font>
+   <graphic>
+      <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-assignments" />
+   </graphic>
+</MenuButton>

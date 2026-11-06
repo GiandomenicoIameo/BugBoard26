@@ -1,0 +1,627 @@
+.btn-sidebar, .btn-topbar, .btn-logout, .btn-comment, .btn-send,
+.btn-add, .btn-favourite, .btn-priority, .btn-search,
+.btn-group, .btn-password, .btn-users, .btn-account-box,
+.box-card, .btn-card-issue, .btn-admin, .btn-filter {
+        -fx-text-fill: #49454F;             /* Colore icona e testo: Grigio M3 */
+        -fx-background-color: transparent;  /* Sfondo invisibile a riposo */
+        -fx-background-radius: 10px;        /* Cerchio perfetto (o usa valori minori per rettangoli) */
+        -fx-cursor: hand;
+        -fx-padding: 10px;                  /* Padding per dare spazio all'alone */
+}
+
+.btn-labels {
+    -fx-background-color: transparent;
+}
+
+.btn-labels:hover {
+    -fx-background-color:  rgba(28, 113, 216, 0.12);
+    -fx-cursor: default !important;
+}
+
+.btn-labels:pressed {
+    -fx-background-color: rgba(28, 113, 216, 0.20);
+    -fx-cursor: default !important;
+}
+
+.btn-labels.selected {
+    -fx-background-color: rgba(28, 113, 216, 0.20);
+    -fx-cursor: default !important;
+}
+
+.btn-cancel {
+    -fx-background-color: rgba(0,0,0,0.09);
+}
+
+.btn-cancel:hover {
+    -fx-background-color: rgba(73, 69, 79, 0.18);
+    -fx-cursor: default !important;
+}
+
+.btn-cancel: pressed {
+    -fx-background-color: rgba(73, 69, 79,0.27);
+    -fx-cursor: default !important;
+}
+
+.btn-close {
+     -fx-background-color: rgba(73, 69, 79, 0.1);
+     -fx-background-radius: 20px;
+}
+
+.btn-close:hover {
+     -fx-background-color: rgba(73, 69, 79, 0.16);
+     -fx-cursor: default !important;
+}
+
+.btn-close:pressed {
+    -fx-background-color: rgba(73, 69, 79,0.24);
+    -fx-cursor: default !important;
+}
+
+.btn-priority, .btn-admin {
+     -fx-background-radius: 10px;
+}
+
+.btn-box-card {
+    -fx-text-fill: #49454F;             /* Colore icona e testo: Grigio M3 */
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 10px;                  /* Padding per dare spazio all'alone */
+}
+
+.btn-sidebar:hover, .btn-topbar:hover, .btn-card-issue:hover, .btn-logout:hover,
+.btn-comment:hover, .btn-send:hover, .btn-add:hover,
+.btn-priority:hover, .assign-btn-assignments:hover,
+.btn-search:hover, .btn-group:hover, .btn-password:hover, .btn-users:hover,
+.btn-account-box:hover, .box-card:hover, .btn-box-card:hover, .btn-admin:hover,
+.btn-filter:hover {
+    -fx-background-color: rgba(73, 69, 79, 0.08);
+    -fx-cursor: default !important;
+}
+
+.btn-sidebar:pressed, .btn-topbar:pressed, .btn-logout:pressed, .btn-comment:pressed,
+.btn-send:pressed, .btn-add:pressed, .btn-card-issue:pressed,
+.btn-priority:pressed, .assign-btn-assignments:pressed,
+.btn-search:pressed, .btn-group:pressed,
+.btn-password:pressed, .btn-users:pressed, .btn-account-box:pressed,
+.box-card:pressed, .btn-box-card:pressed {
+    -fx-background-color: rgba(73, 69, 79, 0.12);
+}
+
+.btn-sidebar:selected, .btn-topbar:selected, .btn-search:selected,
+.btn-group:selected, .btn-password:selected,
+.btn-users:selected, .btn-account-box:selected,
+.btn-box-card:selected, .btn-card-issue:selected {
+     -fx-background-color: rgba(73, 69, 79, 0.12);
+}
+
+.sidebar-access {
+    -fx-background-color: #87CEEB;
+}
+
+ .username-text, .password-text, .name-text, .re-enter-password-text {
+    -fx-background-color: transparent;
+    -fx-border-color:  rgba(0,0,0,0.12);
+    -fx-border-width: 1px;
+    -fx-border-radius: 50px;
+}
+
+.btn-signin, .btn-signup {
+    -fx-cursor: hand;
+    -fx-background-color: #1c71d8;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.btn-signin:hover, .btn-signup:hover {
+    -fx-background-color: rgba(53, 132, 228, 0.7);
+    -fx-cursor: default !important;
+}
+
+.btn-signin:pressed, .btn-signup:pressed, .btn-filter:pressed {
+    -fx-background-color: #2C56A3;
+}
+
+.username-text:focused, .password-text:focused,
+.name-text:focused, .re-enter-password-text:focused {
+    -fx-border-color: #386DCC;
+
+    -fx-border-width: 2px;
+    -fx-border-radius: 50px;
+
+    -fx-background-insets: 0;
+    -fx-focused-color: transparent;
+}
+
+.card-login {
+    -fx-border-color: rgba(0,0,0,0.12);
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+}
+
+.input-area {
+       -fx-background-color: #ffffff;
+       -fx-control-inner-background: #ffffff;
+       -fx-background: #ffffff;
+
+       -fx-focus-color: transparent;
+       -fx-faint-focus-color: transparent;
+       -fx-text-box-border: transparent;
+
+       -fx-prompt-text-fill: #A9A9A9;
+       -fx-text-fill: #555555;
+}
+
+.input-card-add-issue {
+    -fx-background-color: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-color:  rgba(73, 69, 79, 0.20);
+}
+
+.input-card-add-issue:focused {
+    -fx-border-color: #386DCC;
+
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+
+    -fx-background-insets: 0;
+    -fx-focused-color: transparent;
+}
+
+.input-area .scroll-pane {
+    -fx-vbar-policy: never;
+    -fx-hbar-policy: never;
+}
+
+.input-area:focused {
+    -fx-prompt-text-fill: transparent;
+}
+
+.issue-text, .scroll-pane {
+    -fx-vbar-policy: never;
+    -fx-hbar-policy: never;
+}
+
+.issue-text {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.issue-text, .content {
+    -fx-background-color: transparent;
+}
+
+.issue-text:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.dash-up {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-color: rgba(73, 69, 79, 0.25);
+}
+
+.notify-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-color: rgba(73, 69, 79, 0.25);
+}
+
+.image-regular {
+    -fx-background-color: #FFFFFF;
+
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-radius: 20px;
+}
+
+.image-admin {
+    -fx-background-color: #FFFFFF;
+
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-radius: 20px;
+}
+
+.context-menu {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px; /* Arrotonda lo sfondo */
+    -fx-border-radius: 10px;     /* Arrotonda il bordo */
+    -fx-border-color: rgba(73, 69, 79, 0.25);
+    -fx-padding: 4px;
+}
+
+/* 2. Stile di base per le singole voci (spaziatura) */
+.menu-item {
+    -fx-padding: 8px 12px;
+    -fx-font-size: 18px;
+
+}
+
+.menu-item:hover, .menu-item:focused {
+    -fx-background-color: rgba(73, 69, 79, 0.08);
+    -fx-background-radius: 6px;
+    -fx-cursor: default !important;
+}
+
+.menu-item:pressed, .menu-item:pressed {
+    -fx-background-color: rgba(73, 69, 79, 0.12);
+    -fx-background-radius: 6px;
+}
+
+.menu-item:hover .label,
+.menu-item:focused .label {
+    -fx-text-fill: #333333;
+    -fx-cursor: default !important;
+}
+.gnome-radio {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-cursor: hand;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-content-display: right; /* Sposta il selettore a destra del testo */
+}
+.gnome-radio {
+    -fx-font-size: 16px;      /* Testo leggermente più grande per bilanciare */
+    -fx-text-fill: #333333;
+    -fx-cursor: hand;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-content-display: right;
+}
+
+/* 1. Cerchio esterno ingrandito (Stato non selezionato) */
+.gnome-radio .radio {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b0b0b0;
+    -fx-border-width: 2px;    /* Bordo leggermente più spesso */
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-padding: 6px;         /* Aumentato: determina lo spazio tra bordo e pallino (ingrandisce tutto il cerchio) */
+}
+
+/* 2. Pallino interno ingrandito (Stato non selezionato: invisibile) */
+.gnome-radio .dot {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50%;
+    -fx-padding: 7px;         /* Aumentato: determina la grandezza del pallino centrale */
+}
+
+/* 3. Cerchio esterno (Stato SELEZIONATO) */
+.gnome-radio:selected .radio {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #1a65d1;
+}
+
+/* 4. Pallino interno (Stato SELEZIONATO) */
+.gnome-radio:selected .dot {
+    -fx-background-color: #1a65d1;
+}
+
+.avatar-container-admin {
+   -fx-pref-width: 160px;
+   -fx-pref-height: 160px;
+   -fx-min-width: 160px;
+   -fx-min-height: 160px;
+   -fx-max-width: 160px;
+   -fx-max-height: 160px;
+
+   -fx-background-radius: 80px;
+   -fx-border-radius: 80px;
+
+    -fx-background-image: url("../icons/identicon-4.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+.avatar-container-regular {
+   -fx-pref-width: 160px;
+   -fx-pref-height: 160px;
+   -fx-min-width: 160px;
+   -fx-min-height: 160px;
+   -fx-max-width: 160px;
+   -fx-max-height: 160px;
+
+   -fx-background-radius: 80px;
+   -fx-border-radius: 80px;
+
+    -fx-background-image: url("../icons/identicon-5.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-border-color: #b0b5bd;
+}
+
+.sidebar-avatar-admin {
+  -fx-pref-width: 60px;
+  -fx-pref-height: 60px;
+
+  -fx-background-image: url("../icons/identicon-4.png");
+  -fx-background-size: cover;
+  -fx-background-position: center center;
+  -fx-border-color: #b0b5bd;
+  -fx-border-width: 1.5px;
+  -fx-border-radius: 30px;
+}
+
+.input-card-add-user {
+    -fx-background-color: #F0F2F5;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-color:  rgba(73, 69, 79, 0.20);
+}
+
+.input-card-add-user:focused {
+    -fx-border-color: #386DCC;
+
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+
+    -fx-background-insets: 0;
+    -fx-focused-color: transparent;
+}
+
+.sidebar-avatar-regular {
+  -fx-pref-width: 60px;
+  -fx-pref-height: 60px;
+
+  -fx-background-image: url("../icons/identicon-4.png");
+  -fx-background-size: cover;
+  -fx-background-position: center center;
+
+  /*-fx-border-color:  rgba(73, 69, 79, 0.45); */
+  -fx-border-width: 1.5px;
+  -fx-border-radius: 30px;
+}
+
+.input-card-add-user:focused {
+    -fx-border-color: #386DCC;
+
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+
+    -fx-background-insets: 0;
+    -fx-focused-color: transparent;
+}
+
+.scroll-pane, .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.icon-bell-search {
+    -fx-shape: "M237.927,0C106.555,0,0.035,106.52,0.035,237.893c0,131.373,106.52,237.893,237.893,237.893c50.518,0,97.368-15.757,135.879-42.597l0.028-0.028l176.432,176.433c3.274,3.274,8.48,3.358,11.839,0l47.551-47.551c3.274-3.274,3.106-8.703-0.028-11.838L433.223,373.8c26.84-38.539,42.597-85.39,42.597-135.907C475.82,106.52,369.3,0,237.927,0zM237.927,419.811c-100.475,0-181.918-81.443-181.918-181.918S137.453,55.975,237.927,55.975s181.918,81.443,181.918,181.918S338.402,419.811,237.927,419.811z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 17;  -fx-pref-width: 17;  -fx-max-width: 17;
+    -fx-min-height: 17; -fx-pref-height: 17; -fx-max-height: 17;
+}
+
+.icon-bell-assignments {
+    -fx-shape: "M228.31-164q-26.62 0-45.47-18.84Q164-201.69 164-228.31v-503.38q0-26.62 18.84-45.47Q201.69-796 228.31-796h181q-1.23-28.31 19.08-50.15Q448.69-868 480-868q31.69 0 52 21.85 20.31 21.84 18.69 50.15h181q26.62 0 45.47 18.84Q796-758.31 796-731.69v503.38q0 26.62-18.84 45.47Q758.31-164 731.69-164H228.31Zm0-52h503.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-503.38q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H228.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v503.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85ZM298-302.62h268v-51.99H298v51.99ZM298-454h364v-52H298v52Zm0-151.39h364v-51.99H298v51.99Zm199-165.76q7-7 7-17t-7-17q-7-7-17-7t-17 7q-7 7-7 17t7 17q7 7 17 7t17-7ZM216-216v-528 528Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
+.icon-bell-filters {
+    -fx-shape: "M455.39-180q-15.08 0-25.23-10.16Q420-200.31 420-215.39v-231.53L196.08-731.38q-11.54-15.39-3.35-32 8.2-16.62 27.66-16.62h519.22q19.46 0 27.66 16.62 8.19 16.61-3.35 32L540-446.92v231.53q0 15.08-10.16 25.23Q519.69-180 504.61-180h-49.22ZM480-468l198-252H282l198 252Zm0 0Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 15;  -fx-pref-width: 15;  -fx-max-width: 15;
+    -fx-min-height: 15; -fx-pref-height: 15; -fx-max-height: 15;
+}
+
+.icon-bell-accounts {
+    -fx-shape: "M343.97-235.72q-11.73-8.73-17.2-22.21L245.39-454H68.77v-52h211.77l89.92 218.92 175.39-416.38q5.45-13.04 17.14-21.48 11.7-8.44 26.51-8.44 14.81 0 26.53 8.72 11.73 8.72 17.2 22.2L715.38-506H892v52H681.23l-91.69-219.31-175.39 416.38q-5.45 13.05-17.14 21.49-11.7 8.44-26.51 8.44-14.81 0-26.53-8.72Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
+.icon-bell-card-issue {
+    -fx-shape: "M578.57-381.37q40.65-40.58 40.65-98.56 0-57.98-40.59-98.64-40.58-40.65-98.56-40.65-57.98 0-98.64 40.59-40.65 40.58-40.65 98.56 0 57.98 40.59 98.64 40.58 40.65 98.56 40.65 57.98 0 98.64-40.59ZM480.28-76.78q-83.8 0-157.19-31.46-73.38-31.46-128.38-86.47-55.01-55-86.47-128.34T76.78-480.46q0-84.06 31.46-156.95 31.46-72.88 86.47-127.88 55-55.01 128.34-86.47t157.41-31.46q84.06 0 156.95 31.46 72.88 31.46 127.88 86.47 55.01 55 86.47 128.11 31.46 73.11 31.46 156.9 0 83.8-31.46 157.19-31.46 73.38-86.47 128.38-55 55.01-128.11 86.47-73.11 31.46-156.9 31.46Zm-.28-98q127.74 0 216.48-88.74T785.22-480q0-127.74-88.74-216.48T480-785.22q-127.74 0-216.48 88.74T174.78-480q0 127.74 88.74 216.48T480-174.78ZM480-480Z";
+    -fx-background-color: #10B981;
+    -fx-min-width: 22;  -fx-pref-width: 22;  -fx-max-width: 22;
+    -fx-min-height: 22; -fx-pref-height: 22; -fx-max-height: 22;
+}
+
+.icon-bell-card-issue-closed {
+    -fx-shape: "M578.57-381.37q40.65-40.58 40.65-98.56 0-57.98-40.59-98.64-40.58-40.65-98.56-40.65-57.98 0-98.64 40.59-40.65 40.58-40.65 98.56 0 57.98 40.59 98.64 40.58 40.65 98.56 40.65 57.98 0 98.64-40.59ZM480.28-76.78q-83.8 0-157.19-31.46-73.38-31.46-128.38-86.47-55.01-55-86.47-128.34T76.78-480.46q0-84.06 31.46-156.95 31.46-72.88 86.47-127.88 55-55.01 128.34-86.47t157.41-31.46q84.06 0 156.95 31.46 72.88 31.46 127.88 86.47 55.01 55 86.47 128.11 31.46 73.11 31.46 156.9 0 83.8-31.46 157.19-31.46 73.38-86.47 128.38-55 55.01-128.11 86.47-73.11 31.46-156.9 31.46Zm-.28-98q127.74 0 216.48-88.74T785.22-480q0-127.74-88.74-216.48T480-785.22q-127.74 0-216.48 88.74T174.78-480q0 127.74 88.74 216.48T480-174.78ZM480-480Z";
+    -fx-background-color: #EF4444;
+    -fx-min-width: 22;  -fx-pref-width: 22;  -fx-max-width: 22;
+    -fx-min-height: 22; -fx-pref-height: 22; -fx-max-height: 22;
+}
+
+.icon-bell-sidebar-issue {
+    -fx-shape: "M550.96-409.04Q580-438.08 580-480q0-41.92-29.04-70.96Q521.92-580 480-580q-41.92 0-70.96 29.04Q380-521.92 380-480q0 41.92 29.04 70.96Q438.08-380 480-380q41.92 0 70.96-29.04ZM480.07-100q-78.84 0-148.21-29.92t-120.68-81.21q-51.31-51.29-81.25-120.63Q100-401.1 100-479.93q0-78.84 29.92-148.21t81.21-120.68q51.29-51.31 120.63-81.25Q401.1-860 479.93-860q78.84 0 148.21 29.92t120.68 81.21q51.31 51.29 81.25 120.63Q860-558.9 860-480.07q0 78.84-29.92 148.21t-81.21 120.68q-51.29 51.31-120.63 81.25Q558.9-100 480.07-100Zm-.07-60q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
+.icon-bell-refresh {
+    -fx-shape: "M481.54-212q-111.63 0-189.81-78.17-78.19-78.17-78.19-189.77 0-111.6 78.19-189.83Q369.91-748 481.54-748q66.15 0 121.27 29.69 55.11 29.7 91.65 78.54V-748h52v204.61H541.85v-51.99h121q-28.62-45.93-76.2-73.27Q539.08-696 481.54-696q-90 0-153 63t-63 153q0 90 63 153t153 63q84 0 144-55.5t69-136.5h53.23q-8.23 103.92-84.27 173.96Q587.46-212 481.54-212Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 17;  -fx-pref-width: 17;  -fx-max-width: 17;
+    -fx-min-height: 17; -fx-pref-height: 17; -fx-max-height: 17;
+}
+
+.icon-bell-sidebar-settings {
+    -fx-shape: "m387.69-100-15.23-121.85q-16.07-5.38-32.96-15.07-16.88-9.7-30.19-20.77L196.46-210l-92.3-160 97.61-73.77q-1.38-8.92-1.96-17.92-.58-9-.58-17.93 0-8.53.58-17.34t1.96-19.27L104.16-590l92.3-159.23 112.46 47.31q14.47-11.46 30.89-20.96t32.27-15.27L387.69-860h184.62l15.23 122.23q18 6.54 32.57 15.27 14.58 8.73 29.43 20.58l114-47.31L855.84-590l-99.15 74.92q2.15 9.69 2.35 18.12.19 8.42.19 16.96 0 8.15-.39 16.58-.38 8.42-2.76 19.27L854.46-370l-92.31 160-112.61-48.08q-14.85 11.85-30.31 20.96-15.46 9.12-31.69 14.89L572.31-100H387.69ZM440-160h78.62L533-267.15q30.62-8 55.96-22.73 25.35-14.74 48.89-37.89L737.23-286l39.39-68-86.77-65.38q5-15.54 6.8-30.47 1.81-14.92 1.81-30.15 0-15.62-1.81-30.15-1.8-14.54-6.8-29.7L777.38-606 738-674l-100.54 42.38q-20.08-21.46-48.11-37.92-28.04-16.46-56.73-23.31L520-800h-79.38l-13.24 106.77q-30.61 7.23-56.53 22.15-25.93 14.93-49.47 38.46L222-674l-39.38 68L269-541.62q-5 14.24-7 29.62t-2 32.38q0 15.62 2 30.62 2 15 6.62 29.62l-86 65.38L222-286l99-42q22.77 23.38 48.69 38.31 25.93 14.92 57.31 22.92L440-160Zm40.46-200q49.92 0 84.96-35.04 35.04-35.04 35.04-84.96 0-49.92-35.04-84.96Q530.38-600 480.46-600q-50.54 0-85.27 35.04T360.46-480q0 49.92 34.73 84.96Q429.92-360 480.46-360ZM480-480Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
+.icon-bell-sidebar-assigned {
+    -fx-shape: "M212.31-527.69q-30.31 0-51.31-21-21-21-21-51.31v-135.38q0-30.31 21-51.31 21-21 51.31-21h535.38q30.31 0 51.31 21 21 21 21 51.31V-600q0 30.31-21 51.31-21 21-51.31 21H212.31Zm0-60h535.38q4.62 0 8.46-3.85Q760-595.38 760-600v-135.38q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H212.31q-4.62 0-8.46 3.85Q200-740 200-735.38V-600q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85Zm0 435.38q-30.31 0-51.31-21-21-21-21-51.31V-360q0-30.31 21-51.31 21-21 51.31-21h535.38q30.31 0 51.31 21 21 21 21 51.31v135.38q0 30.31-21 51.31-21 21-51.31 21H212.31Zm0-60h535.38q4.62 0 8.46-3.85Q760-220 760-224.62V-360q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H212.31q-4.62 0-8.46 3.85Q200-364.62 200-360v135.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85ZM200-747.69v160-160Zm0 375.38v160-160Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
+.icon-bell-sidebar-accounts {
+    -fx-shape: "M301.04-533.35Q260-574.38 260-632.31q0-57.92 41.04-98.96 41.04-41.04 98.96-41.04 57.92 0 98.96 41.04Q540-690.23 540-632.31q0 57.93-41.04 98.96-41.04 41.04-98.96 41.04-57.92 0-98.96-41.04ZM100-187.69v-88.93q0-30.3 15.46-54.88 15.46-24.58 43.16-38.04 49.84-24.84 107.69-41.5 57.84-16.65 133.69-16.65h11.69q4.85 0 10.46 1.23-6.07 14.15-10.03 28.84-3.97 14.7-6.58 29.93H400q-69.08 0-122.31 15.88-53.23 15.89-91.54 35.81-13.61 7.31-19.88 17.08t-6.27 22.3v28.93h252q4.46 15.23 11.58 30.92 7.11 15.69 15.65 29.08H100Zm544.23 29.61-8.92-53.08q-14.31-4.23-26.93-11.07-12.61-6.85-24-17.16l-50.69 17.62-28.46-48.39L546.62-304q-4.31-15.54-4.31-30.62 0-15.07 4.31-30.61l-41-34.62 28.46-48.38 50.3 18q11-10.31 23.81-16.96 12.81-6.66 27.12-10.89l8.92-53.07h56.92l8.54 53.07q14.31 4.23 27.12 11.2 12.8 6.96 23.8 17.88l50.31-19.23 28.46 49.61-41 34.62q4.31 14.31 4.31 30t-4.31 30l41.39 33.84-28.46 48.39-50.7-17.62q-11.38 10.31-24 17.16-12.61 6.84-26.92 11.07l-8.54 53.08h-56.92Zm81.88-122.73q22.35-22.35 22.35-53.81t-22.35-53.8q-22.34-22.35-53.8-22.35-31.46 0-53.81 22.35-22.35 22.34-22.35 53.8 0 31.46 22.35 53.81t53.81 22.35q31.46 0 53.8-22.35Zm-269.61-295q23.5-23.5 23.5-56.5t-23.5-56.5q-23.5-23.5-56.5-23.5t-56.5 23.5q-23.5 23.5-23.5 56.5t23.5 56.5q23.5 23.5 56.5 23.5t56.5-23.5Zm-56.5-56.5Zm12 384.62Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
+.icon-bell-sidebar-logout {
+    -fx-shape: "M228.31-164q-27.01 0-45.66-18.65Q164-201.3 164-228.31v-503.38q0-27.01 18.65-45.66Q201.3-796 228.31-796h252.07v52H228.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v503.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85h252.07v52H228.31Zm428.92-177.23-37.54-36.39L696.08-454H387.85v-52h308.23l-76.39-76.38 37.54-36.39L796-480 657.23-341.23Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
+.icon-bell-arrow-rigth {
+    -fx-shape: "M394-311.85v-336.3L562.15-480 394-311.85Z";
+    -fx-background-color: #241f31;
+    -fx-min-width: 9;  -fx-pref-width: 9;  -fx-max-width: 9;
+    -fx-min-height: 9; -fx-pref-height: 9; -fx-max-height: 9;
+}
+
+.icon-bell-issue-open {
+    -fx-shape: "M578.57-381.37q40.65-40.58 40.65-98.56 0-57.98-40.59-98.64-40.58-40.65-98.56-40.65-57.98 0-98.64 40.59-40.65 40.58-40.65 98.56 0 57.98 40.59 98.64 40.58 40.65 98.56 40.65 57.98 0 98.64-40.59ZM480.28-76.78q-83.8 0-157.19-31.46-73.38-31.46-128.38-86.47-55.01-55-86.47-128.34T76.78-480.46q0-84.06 31.46-156.95 31.46-72.88 86.47-127.88 55-55.01 128.34-86.47t157.41-31.46q84.06 0 156.95 31.46 72.88 31.46 127.88 86.47 55.01 55 86.47 128.11 31.46 73.11 31.46 156.9 0 83.8-31.46 157.19-31.46 73.38-86.47 128.38-55 55.01-128.11 86.47-73.11 31.46-156.9 31.46Zm-.28-98q127.74 0 216.48-88.74T785.22-480q0-127.74-88.74-216.48T480-785.22q-127.74 0-216.48 88.74T174.78-480q0 127.74 88.74 216.48T480-174.78ZM480-480Z";
+    -fx-background-color: #1a6b44;
+    -fx-min-width: 14;  -fx-pref-width: 14;  -fx-max-width: 14;
+    -fx-min-height: 14; -fx-pref-height: 14; -fx-max-height: 14;
+}
+
+.icon-bell-issue-closed {
+    -fx-shape: "M578.57-381.37q40.65-40.58 40.65-98.56 0-57.98-40.59-98.64-40.58-40.65-98.56-40.65-57.98 0-98.64 40.59-40.65 40.58-40.65 98.56 0 57.98 40.59 98.64 40.58 40.65 98.56 40.65 57.98 0 98.64-40.59ZM480.28-76.78q-83.8 0-157.19-31.46-73.38-31.46-128.38-86.47-55.01-55-86.47-128.34T76.78-480.46q0-84.06 31.46-156.95 31.46-72.88 86.47-127.88 55-55.01 128.34-86.47t157.41-31.46q84.06 0 156.95 31.46 72.88 31.46 127.88 86.47 55.01 55 86.47 128.11 31.46 73.11 31.46 156.9 0 83.8-31.46 157.19-31.46 73.38-86.47 128.38-55 55.01-128.11 86.47-73.11 31.46-156.9 31.46Zm-.28-98q127.74 0 216.48-88.74T785.22-480q0-127.74-88.74-216.48T480-785.22q-127.74 0-216.48 88.74T174.78-480q0 127.74 88.74 216.48T480-174.78ZM480-480Z";
+    -fx-background-color: #8b1a1a;
+    -fx-min-width: 14;  -fx-pref-width: 14;  -fx-max-width: 14;
+    -fx-min-height: 14; -fx-pref-height: 14; -fx-max-height: 14;
+}
+
+.icon-bell-close {
+    -fx-shape: "M291-221.91 221.91-291l189-189-189-189L291-738.09l189 189 189-189L738.09-669l-189 189 189 189L669-221.91l-189-189-189 189Z";
+    -fx-background-color: #241f31;
+    -fx-scale-shape: true;
+    -fx-position-shape: true;
+    -fx-min-width: 10;  -fx-pref-width: 10;  -fx-max-width: 10;
+    -fx-min-height: 10; -fx-pref-height: 10; -fx-max-height: 10;
+}
+
+.avatar-circle {
+    -fx-background-color: #613583;
+    -fx-background-radius: 15;
+    -fx-min-width: 30; -fx-pref-width: 30; -fx-max-width: 30;
+    -fx-min-height: 30; -fx-pref-height: 30; -fx-max-height: 30;
+}
+
+.avatar-letter {
+    -fx-shape: "M20.25 19H43.75V23.24H34.31V45H29.69V23.24H20.25Z";
+    -fx-background-color: white;
+    -fx-min-width: 12;  -fx-pref-width: 12;  -fx-max-width: 12;
+    -fx-min-height: 13; -fx-pref-height: 13; -fx-max-height: 13;   /* proporzioni ~ 23.5 : 26 */
+}
+
+.icon-bell-minimize {
+    -fx-shape: "M275-124.78v-98h410v98H275Z";
+    -fx-background-color: #241f31;
+    -fx-scale-shape: true;
+    -fx-position-shape: true;
+    -fx-min-width: 10;  -fx-pref-width: 10;  -fx-max-width: 10;
+    -fx-min-height: 2;  -fx-pref-height: 2;  -fx-max-height: 2;
+    -fx-translate-y: 4;
+}
+
+.icon-bell-arrow-down {
+    -fx-shape: "M480-357.85 253.85-584 296-626.15l184 184 184-184L706.15-584 480-357.85Z";
+    -fx-background-color: #49454f;
+    -fx-min-width: 14;  -fx-pref-width: 14;  -fx-max-width: 14;
+    -fx-min-height: 10; -fx-pref-height: 10; -fx-max-height: 10;
+}
+
+.icon-bell-options {
+    -fx-shape: "M200-200h50.46l409.46-409.46-50.46-50.46L200-250.46V-200Zm-60 60v-135.38l527.62-527.39q9.07-8.24 20.03-12.73 10.97-4.5 23-4.5t23.3 4.27q11.28 4.27 19.97 13.58l48.85 49.46q9.31 8.69 13.27 20 3.96 11.31 3.96 22.62 0 12.07-4.12 23.03-4.12 10.97-13.11 20.04L275.38-140H140Zm620.38-570.15-50.23-50.23 50.23 50.23Zm-126.13 75.9-24.79-25.67 50.46 50.46-25.67-24.79Z";
+    -fx-background-color: #49454f;
+    -fx-min-width: 15;  -fx-pref-width: 15;  -fx-max-width: 15;
+    -fx-min-height: 15; -fx-pref-height: 15; -fx-max-height: 15;
+}
+
+.icon-bell-close-issue {
+    -fx-shape: "m423.23-309.85 268.92-268.92L650-620.92 423.23-394.15l-114-114L267.08-466l156.15 156.15ZM480.07-100q-78.84 0-148.21-29.92t-120.68-81.21q-51.31-51.29-81.25-120.63Q100-401.1 100-479.93q0-78.84 29.92-148.21t81.21-120.68q51.29-51.31 120.63-81.25Q401.1-860 479.93-860q78.84 0 148.21 29.92t120.68 81.21q51.31 51.29 81.25 120.63Q860-558.9 860-480.07q0 78.84-29.92 148.21t-81.21 120.68q-51.29 51.31-120.63 81.25Q558.9-100 480.07-100Zm-.07-60q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z";
+    -fx-background-color: #49454f;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
+.icon-bell-duplicate-issue {
+    -fx-shape: "M360-240q-29.7 0-50.85-21.15Q288-282.3 288-312v-480q0-29.7 21.15-50.85Q330.3-864 360-864h384q29.7 0 50.85 21.15Q816-821.7 816-792v480q0 29.7-21.15 50.85Q773.7-240 744-240H360Zm0-72h384v-480H360v480ZM216-96q-29.7 0-50.85-21.15Q144-138.3 144-168v-552h72v552h456v72H216Zm144-216v-480 480Z";
+    -fx-background-color: #49454f;
+    -fx-min-width: 15;  -fx-pref-width: 15;  -fx-max-width: 15;
+    -fx-min-height: 15; -fx-pref-height: 15; -fx-max-height: 15;
+}
+
+.icon-bell-assign-issue {
+    -fx-shape: "M392.04-528.35Q356-564.38 356-616.31q0-51.92 36.04-87.96 36.04-36.04 87.96-36.04 51.92 0 87.96 36.04Q604-668.23 604-616.31q0 51.93-36.04 87.96-36.04 36.04-87.96 36.04-51.92 0-87.96-36.04ZM212-219.69v-72.93q0-18.38 10.96-35.42 10.96-17.04 30.66-29.5 52.3-30.07 109.94-46.11t116.23-16.04q58.59 0 116.44 16.04 57.85 16.04 110.15 46.11 19.7 11.46 30.66 29T748-292.62v72.93H212Zm52-52h432v-20.93q0-6.33-4.56-11.91-4.57-5.58-12.59-9.47-43.7-26.46-94.42-40.08Q533.7-367.69 480-367.69q-53.7 0-104.43 13.61-50.72 13.62-94.42 40.08-8.07 5.54-12.61 10.61-4.54 5.07-4.54 10.77v20.93Zm267-293.83q21-21.21 21-51t-21.21-50.79q-21.21-21-51-21T429-667.09q-21 21.21-21 51 0 29.78 21.21 50.78t51 21q29.79 0 50.79-21.21Zm-51-50.79Zm0 344.62Z";
+    -fx-background-color: #49454f;
+    -fx-min-width: 18;  -fx-pref-width: 18;  -fx-max-width: 18;
+    -fx-min-height: 18; -fx-pref-height: 18; -fx-max-height: 18;
+}
+
+.icon-bell-logo {
+    -fx-shape: "M550.96-409.04Q580-438.08 580-480q0-41.92-29.04-70.96Q521.92-580 480-580q-41.92 0-70.96 29.04Q380-521.92 380-480q0 41.92 29.04 70.96Q438.08-380 480-380q41.92 0 70.96-29.04ZM480.34-116q-75.11 0-141.48-28.42-66.37-28.42-116.18-78.21-49.81-49.79-78.25-116.09Q116-405.01 116-480.39q0-75.38 28.42-141.25t78.21-115.68q49.79-49.81 116.09-78.25Q405.01-844 480.39-844q75.38 0 141.25 28.42t115.68 78.21q49.81 49.79 78.25 115.85Q844-555.45 844-480.34q0 75.11-28.42 141.48-28.42 66.37-78.21 116.18-49.79 49.81-115.85 78.25Q555.45-116 480.34-116Zm-.34-52q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Z";
+    -fx-scale-shape: true;
+    -fx-position-shape: true;
+    -fx-background-color: #1a5fb4;
+    -fx-min-width: 30;  -fx-pref-width: 30;  -fx-max-width: 30;
+    -fx-min-height: 30; -fx-pref-height: 30; -fx-max-height: 30;
+}
+
+.icon-bell-mark-notice {
+    -fx-shape: "M628.77-94.62 472.62-250.77l42.15-42.15 114 114 226.77-226.77 42.15 42.15L628.77-94.62ZM480-520l313.85-200h-627.7L480-520Zm0 62.31L160-662.31v410q0 5.39 3.46 8.85t8.85 3.46H371l60 60H172.31Q142-180 121-201q-21-21-21-51.31v-455.38Q100-738 121-759q21-21 51.31-21h615.38Q818-780 839-759q21 21 21 51.31v185.54l-60 60v-200.16L480-457.69Zm0 6.54Zm0-68.85Zm0 62.31Z";
+    -fx-background-color: #49454f;
+    -fx-min-width: 18;  -fx-pref-width: 18;  -fx-max-width: 18;
+    -fx-min-height: 18; -fx-pref-height: 18; -fx-max-height: 18;
+}
+
+.icon-bell-arrow-right-notice {
+    -fx-shape: "m517.85-480-184-184L376-706.15 602.15-480 376-253.85 333.85-296l184-184Z";
+    -fx-background-color: #49454f;
+    -fx-min-width: 8;  -fx-pref-width: 8;  -fx-max-width: 8;
+    -fx-min-height: 10; -fx-pref-height: 10; -fx-max-height: 10;
+}
+.icon-circle {
+    -fx-background-color: #dbe9fb;     /* azzurro chiaro */
+    -fx-background-radius: 30;         /* metà della larghezza = cerchio */
+    -fx-min-width: 60;  -fx-pref-width: 60;  -fx-max-width: 60;
+    -fx-min-height: 60; -fx-pref-height: 60; -fx-max-height: 60;
+    -fx-alignment: center;
+}
+
+/* Rimozione della forma geometrica del triangolo del menuButton */
+.menu-button > .arrow-button {
+    -fx-padding: 0;
+}
+
+.menu-button > .arrow-button > .arrow {
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+/* 1. Disattiva completamente l'effetto hover e il cambio colore sull'intero CustomMenuItem */
+.context-menu .menu-item.non-interactive-item:hover {
+    -fx-background-color: transparent; /* O il colore di sfondo originale del menu */
+}
+
+/* 2. Rimuovi lo sfondo anche se il menu è in stato "focused" o "armed" */
+.context-menu .menu-item.non-interactive-item:focused,
+.context-menu .menu-item.non-interactive-item:armed {
+    -fx-background-color: transparent;
+}
+
+/* 3. Attiva l'effetto hover SOLO sulla singola card della notifica al passaggio del mouse */
+.notice-card:hover {
+    -fx-background-color: #f0f0f0; /* Scegli il colore di evidenziazione che preferisci */
+    -fx-cursor: default !important;
+}
+

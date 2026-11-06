@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="groupbar" alignment="TOP_CENTER" prefHeight="685.0" prefWidth="823.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@../../../style/style.css" visible="false" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="823.0">
+         <children>
+            <AnchorPane fx:id="topbar" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="46.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: #ebebeb; -fx-border-width: 0 0 1 0px; -fx-background-radius: 0 10 0 0;" stylesheets="@../../../style/style.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" layoutY="15.0" text="Administration" textFill="#49454f" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="Cantarell Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" graphicTextGap="10.0" layoutX="982.0" layoutY="13.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#close" prefHeight="23.0" prefWidth="23.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btn-close" stylesheets="@../../../style/style.css" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <graphic>
+                        <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-close" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMin" alignment="CENTER" graphicTextGap="10.0" layoutX="603.0" layoutY="13.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minimize" prefHeight="23.0" prefWidth="23.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btn-close" stylesheets="@../../../style/style.css" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="12.0">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <graphic>
+                        <Region styleClass="icon-bell-minimize" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="add" alignment="CENTER" defaultButton="true" layoutX="901.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="28.0" prefWidth="133.0" style="-fx-border-radius: 10px;" styleClass="btn-signin" text="New User" textFill="WHITE" AnchorPane.rightAnchor="86.0">
+                     <font>
+                        <Font name="Cantarell Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER" graphicTextGap="10.0" layoutX="859.0" layoutY="6.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refresh" prefHeight="35.0" prefWidth="35.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="btn-labels" stylesheets="@../../../style/style.css" AnchorPane.rightAnchor="226.0">
+                     <font>
+                        <Font name="Cantarell Regular" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <graphic>
+                        <Region styleClass="icon-bell-refresh" />
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox fx:id="user" alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0" style="-fx-border-radius: 10px; -fx-border-color: rgba(0,0,0,0.12);">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label fx:id="username1" text="Admin (super)" textFill="#49454f">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Cantarell Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label fx:id="username2" text="Admin" textFill="#5e5c63">
+                           <font>
+                              <Font name="Cantarell Regular" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="·" textFill="#5e5c63cc">
+                           <font>
+                              <Font name="Cantarell Regular" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="admin@bugboard.it" textFill="#5e5c63">
+                           <font>
+                              <Font name="Cantarell Regular" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="84.0" prefWidth="120.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <AnchorPane prefHeight="84.0" prefWidth="137.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <Label fx:id="admin" alignment="CENTER" layoutY="27.0" prefHeight="30.0" prefWidth="97.0" style="-fx-border-radius: 20px; -fx-background-color: #dbe9fb; -fx-background-radius: 20px;" text="Administrator" textFill="#1a5fb4" AnchorPane.rightAnchor="23.0">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutY="27.0" prefHeight="30.0" prefWidth="97.0" style="-fx-border-radius: 20px; -fx-background-color: #e8e6e3; -fx-background-radius: 20px;" text="User" textFill="#3d3846" visible="false">
+                           <font>
+                              <Font name="Cantarell Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets left="100.0" right="100.0" top="50.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+         <children>
+            <Label text="Users ·" textFill="#5e5c63">
+               <font>
+                  <Font name="Cantarell Regular" size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="useraccounts" text="4" textFill="#5e5c63">
+               <font>
+                  <Font name="Cantarell Regular" size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label text="accounts" textFill="#5e5c63">
+               <font>
+                  <Font name="Cantarell Regular" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="100.0" right="100.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <ScrollPane fx:id="scroll" fitToHeight="true" fitToWidth="true" style="-fx-border-radius: 10px; -fx-border-color: rgba(0,0,0,0.12);" visible="false">
+               <HBox.margin>
+                  <Insets bottom="30.0" />
+               </HBox.margin>
+               <content>
+                  <VBox fx:id="cardContainer" alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="920.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+         <VBox.margin>
+            <Insets left="100.0" right="100.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
