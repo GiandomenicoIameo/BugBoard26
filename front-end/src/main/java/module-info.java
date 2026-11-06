@@ -8,6 +8,7 @@ module org.example.demo {
     // 1. Apriamo i pacchetti per permettere di leggere i file .fxml e i @FXML
     opens org.example.demo.view.session to javafx.fxml;
     opens org.example.demo.view.components.card to javafx.fxml;
+    exports org.example.demo.view.components.card.issue.definitions.issueItemCard;
 
     // 2. Esportiamo a javafx.graphics tutti i pacchetti in cui hai una classe Main da poter avviare
     exports org.example.demo.view.session to javafx.graphics;

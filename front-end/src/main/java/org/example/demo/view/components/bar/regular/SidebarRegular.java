@@ -20,8 +20,7 @@ public class SidebarRegular extends Sidebar {
     }
 
     @FXML
-    public void initialize() throws IOException,
-            InterruptedException {
+    public void initialize() {
         configureMaximize(menubar, Sequence
                 .getCurrStage());
     }

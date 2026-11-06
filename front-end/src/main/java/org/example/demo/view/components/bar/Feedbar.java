@@ -103,7 +103,7 @@ public class Feedbar extends Component {
     @FXML
     public void viewSearchbar() {
         Searchbar search = new Searchbar(searchbar);
-        search.view();
+        search.viewBack();
     }
 
     @FXML

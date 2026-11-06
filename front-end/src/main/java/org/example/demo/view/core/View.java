@@ -5,8 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.util.Duration;
-import org.example.demo.view.core.orchestration.Orchestration;
-import org.example.demo.view.orchestrator.Orchestrator;
 
 import java.io.IOException;
 import java.util.HashMap;

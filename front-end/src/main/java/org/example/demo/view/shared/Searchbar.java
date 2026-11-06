@@ -1,7 +1,6 @@
 package org.example.demo.view.shared;
 
 import javafx.animation.TranslateTransition;
-import javafx.application.Platform;
 import javafx.util.Duration;
 import javafx.scene.layout.Region;
 
@@ -13,20 +12,45 @@ public class Searchbar {
         this.region = region;
     }
 
-    public void view() {
+    public void viewBack() {
         if(!region.isVisible()) {
-            setVisibile(true); region.toBack();
-            updateHeight();
+            setVisibile(true);
+            region.toBack();
+            setDimension();
+            updateHeight(-1);
             slide((int) -high, 0, () ->
                     region.toFront());
         }
         else {
-            region.toBack(); updateHeight();
+            region.toBack();
+            updateHeight(-1);
             slide(0, (int) -high, () -> {
                 setVisibile(false);
                 region.setTranslateY(0);
             });
         }
+    }
+
+    public void viewFront() {
+        if(!region.isVisible()) {
+            setVisibile(true);
+            updateHeight(60);
+            slide((int) -high, 0,
+                    () -> {});
+        }
+        else {
+            updateHeight(60);
+            slide(0, (int) -high,
+                    () -> {
+                setVisibile(false);
+                region.setTranslateY(0);
+            });
+        }
+    }
+
+    private void setDimension() {
+        region.applyCss();
+        region.layout();
     }
 
     private TranslateTransition translate(int src, int dst) {
@@ -39,13 +63,11 @@ public class Searchbar {
     }
 
     private void slide(int start, int end, Runnable code) {
-        Platform.runLater(() -> {
-            TranslateTransition slide =
-                    translate(start, end);
-            slide.setOnFinished(event ->
-                    code.run());
-            slide.play();
-        });
+        TranslateTransition slide =
+                translate(start, end);
+        slide.setOnFinished(event ->
+                code.run());
+        slide.play();
     }
 
     private void setVisibile(boolean visible) {
@@ -53,13 +75,9 @@ public class Searchbar {
         region.setManaged(visible);
     }
 
-    private void updateHeight() {
-        region.applyCss();
-        region.layout();
-        high = region.getHeight();
-
-        if (high == 0)
-            high = region
-                    .prefHeight(-1);
+    private void updateHeight(int prefer) {
+        high = region.getPrefHeight();
+        if (high <= 0)
+            high = prefer;
     }
 }

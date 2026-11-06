@@ -5,11 +5,11 @@ import javafx.scene.control.Label;
 import org.example.demo.view.components.bar.Settingsbar;
 
 public class SettingsbarAdmin extends Settingsbar {
+    @FXML private Label admin;
+
     public SettingsbarAdmin() {
         show("settingsbar.fxml");
     }
-
-    @FXML private Label admin;;
 
     public void setRole() {
         setAdmin();
