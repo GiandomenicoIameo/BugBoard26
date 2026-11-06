@@ -46,6 +46,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
 
     private Label typology = null;
     private Label priority = null;
+    private Role viewerRole;
 
     public IssueFeedCard() {
         show("issue-feed.fxml");
@@ -202,6 +203,13 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
                 .add("icon-bell-close-issue");
         setVisibleMenu(false);
         setVisibleCloseIssue(false);
+    }
+
+    public void setViewerRole(Role viewerRole) {
+        this.viewerRole = viewerRole;
+
+        if(Role.NORMALE == viewerRole)
+            setCardRegular();
     }
 
     public IssuePriority getPriority() {

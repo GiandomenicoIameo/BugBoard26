@@ -2,12 +2,7 @@ package org.example.demo.view.components.bar;
 
 import javafx.fxml.FXML;
 import org.example.demo.view.core.Component;
-import org.example.demo.view.core.Sequence;
-import org.example.demo.view.core.Session;
-import org.example.demo.view.core.orchestration.login.LoginOrchestration;
 import org.example.demo.view.listeners.SidebarListener;
-import org.example.demo.view.orchestrator.Orchestrator;
-import org.example.demo.view.orchestrator.login.LoginOrchestrator;
 
 public class Sidebar extends Component {
     protected SidebarListener listener;

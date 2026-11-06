@@ -51,8 +51,8 @@
                         <Pane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
                         <MenuButton alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" style="-fx-background-radius: 10px;" styleClass="btn-close" stylesheets="@../../style/style.css" text="Sorted" textFill="#49454f">
                            <items>
-                              <MenuItem mnemonicParsing="false" onAction="#handleSceltaMenu" text="Latest" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleSceltaMenu" text="Oldest" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSortedSelected" text="Latest" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSortedSelected" text="Oldest" />
                            </items>
                            <font>
                               <Font name="Cantarell Regular" size="18.0" />
@@ -135,8 +135,7 @@
             <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="39.0" prefWidth="337.0" style="-fx-border-color: #386DCC; -fx-border-radius: 10px; -fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 1.5;">
                <children>
                   <Pane prefHeight="32.0" prefWidth="0.0" />
-                  <Button fx:id="btnSearch" defaultButton="true" managed="false" mnemonicParsing="false" onAction="#searchByKeyword" text="Button" visible="false" />
-                  <TextField fx:id="search" maxHeight="-Infinity" prefHeight="35.0" prefWidth="288.0" promptText="[keyword]/[typology]/[priority]" style="-fx-background-color: transparent;">
+                  <TextField fx:id="search" maxHeight="-Infinity" prefHeight="35.0" onAction="#searchByKeyword" prefWidth="288.0" promptText="[keyword]/[typology]/[priority]" style="-fx-background-color: transparent;">
                      <font>
                         <Font name="Cantarell Regular" size="18.0" />
                      </font>

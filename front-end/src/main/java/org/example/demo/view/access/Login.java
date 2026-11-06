@@ -10,10 +10,6 @@ import org.example.demo.view.access.factory.DockFactory;
 import org.example.demo.view.core.Sequence;
 import org.example.demo.view.core.View;
 import org.example.demo.view.core.contract.Role;
-import org.example.demo.view.core.orchestration.Orchestration;
-import org.example.demo.view.core.orchestration.login.LoginOrchestration;
-import org.example.demo.view.orchestrator.Orchestrator;
-import org.example.demo.view.orchestrator.login.LoginOrchestrator;
 import java.io.IOException;
 import java.util.Map;
 
@@ -39,9 +35,8 @@ public class Login extends View implements LoginView {
 
     private void setLogin() {
         orchestration.login()
-                .setPageLogin(() -> {
-                    show("login.fxml");
-                });
+                .setPageLogin(() ->
+                        show("login.fxml"));
     }
 
     @FXML

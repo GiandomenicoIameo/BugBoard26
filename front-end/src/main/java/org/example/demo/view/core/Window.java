@@ -6,12 +6,16 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.transform.Scale;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.example.demo.view.core.orchestration.Orchestration;
 import org.example.demo.view.orchestrator.Orchestrator;
+
+import java.awt.*;
+import java.io.IOException;
 
 public abstract class Window {
     protected static Orchestration orchestration =

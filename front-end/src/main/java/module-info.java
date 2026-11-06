@@ -13,6 +13,7 @@ module org.example.demo {
     exports org.example.demo.view.session to javafx.graphics;
     exports org.example.demo.view.components.card to javafx.graphics;
 
+    exports org.example.demo.view.core.contract;
     exports org.example.demo.view.core to javafx.graphics;
     exports org.example.demo.view.components.bar.admin to javafx.graphics;
     opens org.example.demo.view.components.bar.admin to javafx.fxml;

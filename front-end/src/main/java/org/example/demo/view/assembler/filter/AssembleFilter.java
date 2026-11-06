@@ -3,8 +3,6 @@ package org.example.demo.view.assembler.filter;
 import org.example.demo.view.components.modal.definitions.FilterView;
 import org.example.demo.view.dto.filter.FilterRequestDTO;
 
-import java.util.function.BiConsumer;
-
 public class AssembleFilter {
     private static void assembleKeyword(FilterView filter,
                                         FilterRequestDTO request) {

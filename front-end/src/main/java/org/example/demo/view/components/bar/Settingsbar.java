@@ -8,8 +8,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import org.example.demo.view.core.Component;
 import org.example.demo.view.core.Sequence;
-import org.example.demo.view.core.orchestration.user.UserOrchestration;
-import org.example.demo.view.orchestrator.user.UserOrchestrator;
 import java.io.IOException;
 
 public abstract class Settingsbar extends Component {

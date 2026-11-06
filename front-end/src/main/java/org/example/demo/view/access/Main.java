@@ -23,7 +23,7 @@ public class Main extends Application {
                 new RegularFactory());
 
         Sequence.setCurrStage(stage);
-        Login access = new Login(map);
+        new Login(map);
     }
 
     public static void main(String[] args) {
