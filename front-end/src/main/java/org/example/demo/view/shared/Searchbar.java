@@ -7,6 +7,11 @@ import javafx.scene.layout.Region;
 public class Searchbar {
     private Region region;
     private double high;
+    private Runnable code;
+
+    public void setOnFinished(Runnable code) {
+        this.code = code;
+    }
 
     public Searchbar(Region region) {
         this.region = region;
@@ -44,6 +49,7 @@ public class Searchbar {
                     () -> {
                 setVisibile(false);
                 region.setTranslateY(0);
+                code.run();
             });
         }
     }
@@ -55,7 +61,7 @@ public class Searchbar {
 
     private TranslateTransition translate(int src, int dst) {
         TranslateTransition move = new TranslateTransition(
-                Duration.seconds(0.3), region);
+                Duration.seconds(0.2), region);
         move.setFromY(src);
         move.setToY(dst);
 

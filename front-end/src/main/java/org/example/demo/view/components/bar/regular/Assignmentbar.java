@@ -13,7 +13,6 @@ import org.example.demo.view.components.card.issue.definitions.issueItemCard.Iss
 import org.example.demo.view.core.Component;
 import org.example.demo.view.core.Sequence;
 import org.example.demo.view.shared.Searchbar;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -25,10 +24,8 @@ public class Assignmentbar extends Component {
     @FXML private HBox searchbar;
     @FXML private VBox emailBox;
 
-    @FXML private Label numIssue;
+    @FXML private Label issues;
     @FXML private Label id;
-
-    private int issues;
 
     public Assignmentbar() {
         show("assignmentsbar.fxml");
@@ -45,7 +42,7 @@ public class Assignmentbar extends Component {
     }
 
     private void countIssues(Integer size) {
-        numIssue.setText(size
+        issues.setText(size
                 .toString());
     }
 
@@ -57,8 +54,7 @@ public class Assignmentbar extends Component {
     private void renderItemCards(List<IssueItemCardView> cards) {
         clearContainer(cardContainer);
         for (IssueItemCardView card : cards) {
-            onAction(card);
-            addItemCard(card);
+            onAction(card); addItemCard(card);
         } countIssues(cards.size());
     }
 
@@ -71,8 +67,7 @@ public class Assignmentbar extends Component {
     private void onAction(IssueItemCardView card) {
         card.setCallback(box -> {
             showContentCard((IssueContentCard) box);
-            id.setText(card
-                    .getId());
+            id.setText(card.getId());
         });
     }
 
@@ -81,38 +76,42 @@ public class Assignmentbar extends Component {
     }
 
     @FXML
-    public void searchBug() {
-        int count = 0;
+    public void onSearch() {
+        searchBug(search.getText()
+                .toLowerCase());
+    }
 
-        String target = search.getText()
-                .toLowerCase();
-        boolean match = true;
+    public void searchBug(String target) {
+        int visible = 0;
 
-        for (Node nodo : cardContainer.getChildren()) {
-            if (nodo instanceof Button pulsante) {
-                Label username = (Label)
-                        pulsante.lookup("#name");
-
-                if(!target.isEmpty()) {
-                    match = username.getText()
-                            .toLowerCase()
-                            .equals(target);
-                    if(!match)
-                        count++;
-                }
-
-                pulsante.setVisible(match);
-                pulsante.setManaged(match);
+        for (Node node : cardContainer.getChildren()) {
+            if (node instanceof Button card) {
+                boolean match = setVisibleCard(target, (Label)
+                        card.lookup("#name"));
+                setShown(card, match);
+                if (match) visible++;
             }
-        }
-        int res = issues - count;
-        countIssues(res);
+        } countIssues(visible);
+    }
+
+    private void setShown(Node node, boolean shown) {
+        node.setVisible(shown);
+        node.setManaged(shown);
+    }
+
+    private boolean setVisibleCard(String target, Label name) {
+        return target.isEmpty() || name.getText()
+                .toLowerCase().equals(target);
     }
 
     @FXML
     public void viewSearchbar() {
         Searchbar search = new Searchbar(searchbar);
         search.viewFront();
+        search.setOnFinished(() -> {this
+                .search.clear();
+                searchBug("");
+        });
     }
 
     @FXML
@@ -127,8 +126,6 @@ public class Assignmentbar extends Component {
         showItemCards(orchestration.issueItem()
                 .getAllAssigned(IssueItemCard::new,
                         IssueContentCard::new));
-        issues = Integer.parseInt(numIssue
-                .getText());
     }
 
     @FXML
