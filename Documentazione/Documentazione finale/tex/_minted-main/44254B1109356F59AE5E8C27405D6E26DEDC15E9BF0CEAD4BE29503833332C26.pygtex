@@ -1,0 +1,59 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{c+c1}{// CI4 \PYGZhy{} Issue tipo DOCUMENTATION}
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}tipoDocumentation}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Cosa restituisce}
+\PYG{l+s}{                questo endpoint?\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{l+s}{\PYGZdq{}Manca una documentazione adeguata\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{DOCUMENTATION}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{MEDIA}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{).}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}tipo\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{sequalTo}\PYG{p}{(}\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{DOCUMENTATION}\PYG{p}{))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{ }\PYG{c+c1}{// CI5 \PYGZhy{} Issue tipo FEATURE}
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}tipoFeature}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}
+\PYG{+w}{                }\PYG{l+s}{\PYGZdq{}Dimenticato di implementare la crittografia dei dati\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{l+s}{\PYGZdq{}Feature importante richiesta dal cliente\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{FEATURE}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{ALTA}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{).}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}tipo\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{equalTo}\PYG{p}{(}\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{FEATURE}\PYG{p}{))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+c1}{// CI6 \PYGZhy{} Issue con priorità non indicata: vale NONE.}
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}prioritaNull}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}
+\PYG{+w}{        }\PYG{l+s}{\PYGZdq{}Login non funziona\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Errore 500 al login\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{FEATURE}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}priorita\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{equalTo}\PYG{p}{(}\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{NONE}\PYG{p}{))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+c1}{// CI7 \PYGZhy{} Issue con priorità indicata}
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}prioritaIndicata}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}
+\PYG{+w}{        }\PYG{l+s}{\PYGZdq{}Login non funziona\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{l+s}{\PYGZdq{}Errore 500 al login\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{FEATURE}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{MEDIA}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}priorita\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{equalTo}\PYG{p}{(}\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{MEDIA}\PYG{p}{))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\end{Verbatim}
