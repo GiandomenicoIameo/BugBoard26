@@ -1,13 +1,16 @@
-name: Build Linux .deb Package
+name: Build Cross-Platform Packages
 
 on:
   push:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
-run-name: Release v1.0.0 (Linux x64)
+run-name: Release v1.0.0 (Linux x64 & Windows)
 
 jobs:
+  # ==========================================
+  # JOB 1: LINUX (.deb)
+  # ==========================================
   build-linux:
     runs-on: ubuntu-latest
 
@@ -53,8 +56,59 @@ jobs:
             --main-jar demo-1.0-SNAPSHOT.jar \
             --main-class org.example.demo.view.access.Main
 
-      - name: Upload .deb Artifact
+      - name: Upload Linux .deb Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: bugboard-deb
+          name: bugboard-deb-linux
           path: front-end/target/jpackage/*.deb
+
+  # ==========================================
+  # JOB 2: WINDOWS (.exe / App Image)
+  # ==========================================
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Download JavaFX JMods for Windows
+        run: |
+          Invoke-WebRequest -Uri "https://download2.gluonhq.com/openjfx/21.0.2/openjfx-21.0.2_windows-x64_bin-jmods.zip" -OutFile "javafx-jmods.zip"
+          Expand-Archive -Path "javafx-jmods.zip" -DestinationPath "."
+
+      - name: Build Fat JAR with Maven
+        run: ./front-end/mvnw.cmd -f front-end/pom.xml clean package
+
+      - name: Generate Custom Runtime with jlink
+        shell: pwsh
+        run: |
+          jlink `
+            --module-path "$env:JAVA_HOME/jmods;./openjfx-21.0.2_windows-x64_bin-jmods/javafx-jmods-21.0.2" `
+            --add-modules java.base,java.net.http,javafx.controls,javafx.fxml `
+            --output front-end/target/image
+
+      - name: Create Windows Package with jpackage
+        shell: pwsh
+        run: |
+          jpackage `
+            --type app-image `
+            --name bugboard `
+            --app-version 1.0.0 `
+            --dest front-end/target/jpackage `
+            --runtime-image front-end/target/image `
+            --input front-end/target `
+            --main-jar demo-1.0-SNAPSHOT.jar `
+            --main-class org.example.demo.view.access.Main
+
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bugboard-app-windows
+          path: front-end/target/jpackage/bugboard/*
