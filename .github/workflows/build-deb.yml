@@ -5,7 +5,7 @@ on:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
-run-name: 🚀 Build & Release Bugboard (Linux & Windows)
+run-name: Release Bugboard
 
 jobs:
   # ==========================================
