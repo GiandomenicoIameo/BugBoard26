@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class MapperRegular {
+public class MapperPrompterUser {
     private static void mapperId(PrompterView prompter,
                                  RegularDTO response) {
         prompter.setId(response.getId());

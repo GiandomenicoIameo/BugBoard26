@@ -1,4 +1,4 @@
-package org.example.demo.view.core;
+package org.example.demo.view.session;
 
 import org.example.demo.view.core.contract.Role;
 

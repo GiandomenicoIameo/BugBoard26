@@ -9,7 +9,7 @@ import javafx.scene.layout.HBox;
 import org.example.demo.view.components.card.Card;
 import org.example.demo.view.components.card.user.definitions.PrompterView;
 
-public class Prompter extends Card implements PrompterView {
+public class PrompterCard extends Card implements PrompterView {
     @FXML private HBox prompter;
 
     @FXML private Label nameSurname;
@@ -19,7 +19,7 @@ public class Prompter extends Card implements PrompterView {
 
     @FXML private RadioButton radio;
 
-    public Prompter() {
+    public PrompterCard() {
         show("prompter.fxml");
     }
 

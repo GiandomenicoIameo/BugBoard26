@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class Filter extends Component implements FilterView {
+public class FilterModal extends Component implements FilterView {
     @FXML private AnchorPane cardFilter;
 
     private String keyword;
@@ -23,7 +23,7 @@ public class Filter extends Component implements FilterView {
     private Consumer<List<
             IssueFeedCard>> callback;
 
-    public Filter() {
+    public FilterModal() {
         show("filter.fxml");
     }
 
@@ -109,5 +109,9 @@ public class Filter extends Component implements FilterView {
         Stage stage = (Stage) cardFilter
                 .getScene().getWindow();
         stage.close();
+    }
+
+    public void clear() {
+        this.callback = null;
     }
 }

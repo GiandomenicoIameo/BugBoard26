@@ -51,7 +51,7 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox fx:id="prompter" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
+                  <HBox fx:id="prompterCard" alignment="CENTER" fillHeight="false" prefHeight="70.0" prefWidth="369.0" stylesheets="@../../style/style.css">
                      <children>
                         <VBox alignment="CENTER">
                            <children>

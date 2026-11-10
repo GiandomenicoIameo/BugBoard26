@@ -6,10 +6,10 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.example.demo.view.components.card.Card;
-import org.example.demo.view.components.card.user.definitions.UserView;
+import org.example.demo.view.components.card.user.definitions.NewUserCardView;
 import org.example.demo.view.core.contract.Role;
 
-public class User extends Card implements UserView {
+public class NewNewUserCard extends Card implements NewUserCardView {
     @FXML private HBox account;
     @FXML private VBox cardContainer;
 
@@ -21,7 +21,7 @@ public class User extends Card implements UserView {
 
     private Label current = null;
 
-    public User() {
+    public NewNewUserCard() {
         show("user.fxml");
     }
 

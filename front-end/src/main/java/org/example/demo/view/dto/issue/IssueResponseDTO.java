@@ -1,7 +1,7 @@
 package org.example.demo.view.dto.issue;
 
 import com.google.gson.annotations.SerializedName;
-import org.example.demo.view.dto.user.RegularDTO;
+import org.example.demo.view.dto.user.PrompterUserResponseDTO;
 import org.example.demo.view.dto.user.UserDTO;
 
 import java.time.LocalDateTime;
@@ -32,7 +32,7 @@ public class IssueCardResponseDTO {
     private UserDTO creator;
 
     @SerializedName("assegnatario")
-    private RegularDTO assignee;
+    private PrompterUserResponseDTO assignee;
 
     @SerializedName("duplicato")
     private Boolean duplicated;
@@ -81,7 +81,7 @@ public class IssueCardResponseDTO {
         return creator;
     }
 
-    public RegularDTO getAssignee() {
+    public PrompterUserResponseDTO getAssignee() {
         return assignee;
     }
 

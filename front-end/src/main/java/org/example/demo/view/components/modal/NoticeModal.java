@@ -5,7 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.example.demo.view.components.card.notice.Notice;
+import org.example.demo.view.components.card.notice.NoticeCard;
 import org.example.demo.view.core.Component;
 import java.io.IOException;
 import java.util.List;
@@ -26,9 +26,9 @@ public class Notification extends Component {
 
     public void importCard() throws IOException,
             InterruptedException {
-        List<Notice> list = orchestration
+        List<NoticeCard> list = orchestration
                 .notice()
-                .getAll(Notice::new);
+                .getAll(NoticeCard::new);
 
         list.forEach(card ->
             containerNew
