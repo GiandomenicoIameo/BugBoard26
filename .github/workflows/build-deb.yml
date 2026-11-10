@@ -5,6 +5,8 @@ on:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
+run-name: Release v1.0.0 (Linux x64)
+
 jobs:
   build-linux:
     runs-on: ubuntu-latest
