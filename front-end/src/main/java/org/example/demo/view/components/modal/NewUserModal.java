@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 public class NewUserModal extends Component implements NewUserModalView {
     private Consumer<NewUserCard> callback;
 
-    @FXML private VBox newUserCard;
+    @FXML private VBox newUserModal;
 
     @FXML private TextField name;
     @FXML private TextField surname;
@@ -27,7 +27,7 @@ public class NewUserModal extends Component implements NewUserModalView {
     @FXML private TextField password;
 
     public NewUserModal() {
-        show("add-new-user-card.fxml");
+        show("new-user-modal.fxml");
     }
 
     public void setCallback(Consumer<NewUserCard> callback) {
@@ -72,7 +72,7 @@ public class NewUserModal extends Component implements NewUserModalView {
 
     @FXML
     public void close() {
-        Stage stage = (Stage) newUserCard
+        Stage stage = (Stage) newUserModal
                 .getScene().getWindow();
         stage.close();
     }
