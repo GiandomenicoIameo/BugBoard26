@@ -10,13 +10,13 @@ import org.example.demo.view.core.Component;
 import java.io.IOException;
 import java.util.List;
 
-public class Notification extends Component {
-    @FXML private VBox notifybar;
+public class NoticeModal extends Component {
+    @FXML private VBox noticeModal;
     @FXML private VBox containerNew;
     @FXML private Label numNotice;
 
-    public Notification() {
-        show("notifybar.fxml");
+    public NoticeModal() {
+        show("notice-modal.fxml");
     }
 
     private void countNotices(int size) {
@@ -39,7 +39,7 @@ public class Notification extends Component {
     }
 
     public Parent getRoot() {
-        return notifybar;
+        return noticeModal;
     }
 
     @FXML
@@ -50,7 +50,7 @@ public class Notification extends Component {
 
     @FXML
     public void close() {
-        Stage stage = (Stage) notifybar
+        Stage stage = (Stage) noticeModal
                 .getScene()
                 .getWindow();
         stage.close();

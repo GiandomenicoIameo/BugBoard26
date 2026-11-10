@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Component extends Window {
-    protected List<Component> list = new ArrayList<>();
+    protected List<Component> components = new ArrayList<>();
     protected Parent root;
 
     public void addComponent(Component component) {
-        list.add(component);
+        components.add(component);
     }
 
     public void show(String file) {
@@ -24,6 +24,12 @@ public abstract class Component extends Window {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public <T extends Component> T getComponent(Class<T> klass) {
+        for (Component key : components) {
+            if(klass.isInstance(key)) return klass.cast(key);
+        } return null;
     }
 
     public void asModal(Parent parent) {

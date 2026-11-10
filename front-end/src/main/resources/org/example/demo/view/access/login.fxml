@@ -94,7 +94,7 @@
                         </Button>
                     </children>
                 </AnchorPane>
-            <HBox fx:id="user" alignment="CENTER" fillHeight="false" layoutX="426.0" layoutY="590.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="425.0">
+            <HBox fx:id="newUserCard" alignment="CENTER" fillHeight="false" layoutX="426.0" layoutY="590.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="425.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="Accounts are created by an Administrator. If you cannot  sign in, contact your administrator." textAlignment="CENTER" textFill="#5e5c63" wrapText="true" HBox.hgrow="ALWAYS">
                      <font>

@@ -4,15 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import org.example.demo.view.components.bar.Sidebar;
 import org.example.demo.view.components.modal.Modal;
-import org.example.demo.view.components.modal.Notification;
-import org.example.demo.view.core.Sequence;
+import org.example.demo.view.components.modal.NoticeModal;
 import org.example.demo.view.listeners.SidebarRegularListener;
 
 import java.io.IOException;
 
-public class SidebarRegular extends Sidebar {
-    private SidebarRegularListener regularListener;
-
+public class SidebarRegular extends Sidebar<SidebarRegularListener> {
     @FXML private AnchorPane menubar;
 
     public SidebarRegular() {
@@ -20,26 +17,15 @@ public class SidebarRegular extends Sidebar {
     }
 
     @FXML
-    public void initialize() {
-    }
-
-    public void setRegularListener(SidebarRegularListener listener) {
-        super.setListener(listener);
-        this.regularListener = listener;
-    }
-
-    @FXML
     public void viewAssignments() throws IOException,
             InterruptedException {
-        if(regularListener != null)
-            regularListener.viewAssignments();
+        if(listener != null)
+            listener.viewAssignments();
     }
 
     @FXML
     public void viewNotice() {
-        Notification notification = new
-                Notification();
-        Modal.show(notification.getRoot(),
-                menubar);
+        Modal.show(new NoticeModal()
+                .getRoot(), menubar);
     }
 }

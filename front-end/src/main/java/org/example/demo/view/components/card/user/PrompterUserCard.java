@@ -7,10 +7,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import org.example.demo.view.components.card.Card;
-import org.example.demo.view.components.card.user.definitions.PrompterView;
+import org.example.demo.view.components.card.user.definitions.PrompterUserCardView;
 
-public class PrompterCard extends Card implements PrompterView {
-    @FXML private HBox prompter;
+public class PrompterUserCard extends Card implements PrompterUserCardView {
+    @FXML private HBox prompterUserCard;
 
     @FXML private Label nameSurname;
     @FXML private Label name;
@@ -19,8 +19,8 @@ public class PrompterCard extends Card implements PrompterView {
 
     @FXML private RadioButton radio;
 
-    public PrompterCard() {
-        show("prompter.fxml");
+    public PrompterUserCard() {
+        show("prompter-user-card.fxml");
     }
 
     public void setId(Integer id) {
@@ -53,6 +53,6 @@ public class PrompterCard extends Card implements PrompterView {
 
     @Override
     public Parent getRoot() {
-        return prompter;
+        return prompterUserCard;
     }
 }

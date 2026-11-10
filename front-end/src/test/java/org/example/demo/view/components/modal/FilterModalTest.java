@@ -35,7 +35,7 @@ class FilterFake {
     }
 }
 
-class FilterTest {
+class FilterModalTest {
     @BeforeAll
     static void initJavaFX() {
         try {

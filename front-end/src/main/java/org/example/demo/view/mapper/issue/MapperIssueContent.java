@@ -2,33 +2,33 @@ package org.example.demo.view.mapper.issue;
 
 import org.example.demo.view.components.card.issue.definitions.issueContentCard.IssueContentCardView;
 import org.example.demo.view.core.contract.IssueState;
-import org.example.demo.view.dto.issue.IssueCardResponseDTO;
+import org.example.demo.view.dto.issue.IssueResponseDTO;
 
 public class MapperIssueContent {
     private static void mapperTitle(IssueContentCardView issue,
-                                    IssueCardResponseDTO response) {
+                                    IssueResponseDTO response) {
         issue.setTitle(response.getTitle());
     }
 
     private static void mapperName(IssueContentCardView issue,
-                                   IssueCardResponseDTO response) {
+                                   IssueResponseDTO response) {
         issue.setName(response
                 .getCreatorName());
     }
 
     private static void mapperDescription(IssueContentCardView issue,
-                                          IssueCardResponseDTO response) {
+                                          IssueResponseDTO response) {
         issue.setDescpription(response
                 .getDescription());
     }
 
     private static void mapperImage(IssueContentCardView issue,
-                                    IssueCardResponseDTO response) {
+                                    IssueResponseDTO response) {
         issue.setImage(response.getId());
     }
 
     private static void mapperState(IssueContentCardView card,
-                                    IssueCardResponseDTO response) {
+                                    IssueResponseDTO response) {
         card.setState(toState(response
                 .getState()));
     }
@@ -44,19 +44,19 @@ public class MapperIssueContent {
     }
 
     private static void mapperDate(IssueContentCardView issue,
-                                   IssueCardResponseDTO response) {
+                                   IssueResponseDTO response) {
         issue.setDate(response.getDate());
     }
 
     private static void mapperDuplicate(IssueContentCardView issue,
-                                        IssueCardResponseDTO response) {
+                                        IssueResponseDTO response) {
         if(response.getDuplicated() != null)
             issue.setDuplicated(response
                     .getDuplicated());
     }
 
     public static <T extends IssueContentCardView> T mapper(
-            IssueCardResponseDTO response,
+            IssueResponseDTO response,
             T card) {
 
         mapperTitle(card,

@@ -1,6 +1,6 @@
 package org.example.demo.view.components.modal.definitions;
 
-public interface NewUserCardView {
+public interface NewUserModalView {
     String getName();
     String getSurname();
     String getRole();

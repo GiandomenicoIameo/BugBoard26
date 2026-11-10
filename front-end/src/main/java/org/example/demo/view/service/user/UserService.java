@@ -2,12 +2,9 @@ package org.example.demo.view.service.user;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.example.demo.view.dto.user.AddUserRequestDTO;
-import org.example.demo.view.dto.user.AddUserResponseDTO;
-import org.example.demo.view.dto.user.RegularDTO;
-import org.example.demo.view.dto.user.UserDTO;
-import org.example.demo.view.service.login.Authentication;
-
+import org.example.demo.view.dto.user.UserRequestDTO;
+import org.example.demo.view.dto.user.UserResponseDTO;
+import org.example.demo.view.service.login.LoginService;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URI;
@@ -19,7 +16,7 @@ import java.util.List;
 public class UserService {
     private Gson gson = new Gson();
     private static final String path = "http://localhost:8080";
-    private static final HttpClient client = Authentication.getClient();
+    private static final HttpClient client = LoginService.getClient();
 
     private HttpRequest requestPost(String uri, String json) {
         return HttpRequest.newBuilder()
@@ -45,7 +42,7 @@ public class UserService {
                 .BodyHandlers.ofString());
     }
 
-    public AddUserResponseDTO createUser(AddUserRequestDTO userDTO) throws IOException,
+    public UserResponseDTO createUser(UserRequestDTO userDTO) throws IOException,
             InterruptedException {
         String json = gson.toJson(userDTO);
 
@@ -54,18 +51,18 @@ public class UserService {
 
         if (response.statusCode() == 200 || response.statusCode() == 201)
             return gson.fromJson(response.body(),
-                    AddUserResponseDTO.class);
+                    UserResponseDTO.class);
         else
             throw new RuntimeException("Errore. Codice: " +
                     response.statusCode());
     }
 
-    public List<AddUserResponseDTO> listUsers() throws IOException, InterruptedException {
+    public List<UserResponseDTO> listUsers() throws IOException, InterruptedException {
         HttpRequest request = requestGet(path + "/api/utenti");
         HttpResponse<String> response = response(request);
 
         if (response.statusCode() == 200 || response.statusCode() == 201) {
-            Type listType = new TypeToken<List<AddUserResponseDTO>>() {}
+            Type listType = new TypeToken<List<UserResponseDTO>>() {}
             .getType();
             return gson.fromJson(response.body(), listType);
         }
@@ -74,7 +71,7 @@ public class UserService {
                     response.statusCode());
     }
 
-    public List<RegularDTO> suggested() throws IOException,
+    public List<UserResponseDTO> suggested() throws IOException,
             InterruptedException {
         HttpRequest request = requestGet(path + "/api/utenti/suggeriti");
         HttpResponse<String> response = response(request);
@@ -82,7 +79,7 @@ public class UserService {
         System.out.println("Risposta dal server: " + response.body());
 
         if (response.statusCode() == 200 || response.statusCode() == 201) {
-            Type listType = new TypeToken<List<RegularDTO>>() {}
+            Type listType = new TypeToken<List<UserResponseDTO>>() {}
                     .getType();
             return gson.fromJson(response.body(), listType);
         }
@@ -91,7 +88,7 @@ public class UserService {
                     response.statusCode());
     }
 
-    public UserDTO me() throws IOException,
+    public UserResponseDTO me() throws IOException,
             InterruptedException {
         HttpRequest request = requestGet(path + "/api/auth/me");
         HttpResponse<String> response = response(request);
@@ -100,7 +97,7 @@ public class UserService {
 
         if (response.statusCode() == 200 || response.statusCode() == 201)
             return gson.fromJson(response.body(),
-                    UserDTO.class);
+                    UserResponseDTO.class);
         else
             throw new RuntimeException("Errore. Codice: " +
                     response.statusCode());

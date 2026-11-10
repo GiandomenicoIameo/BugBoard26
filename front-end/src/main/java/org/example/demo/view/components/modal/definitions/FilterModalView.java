@@ -1,6 +1,6 @@
 package org.example.demo.view.components.modal.definitions;
 
-public interface FilterView {
+public interface FilterModalView {
     String getKeyword();
     String getPriority();
     String getTypology();

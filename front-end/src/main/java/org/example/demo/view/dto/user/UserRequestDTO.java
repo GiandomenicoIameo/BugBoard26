@@ -2,7 +2,7 @@ package org.example.demo.view.dto.user;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AddUserRequestDTO {
+public class UserRequestDTO {
     @SerializedName("nome")
     public String name;
 
@@ -17,6 +17,7 @@ public class AddUserRequestDTO {
 
     @SerializedName("ruolo")
     public String role;
+
 
     public void setName(String name) {
         this.name = name;

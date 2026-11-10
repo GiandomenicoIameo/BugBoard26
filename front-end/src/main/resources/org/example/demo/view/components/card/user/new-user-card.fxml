@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="account" alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="920.0" style="-fx-background-radius: 10px; -fx-background-color: white;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="newUserCard" alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="920.0" style="-fx-background-radius: 10px; -fx-background-color: white;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="CENTER">
          <children>

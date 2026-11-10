@@ -5,16 +5,16 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.example.demo.view.components.card.user.UserCard;
-import org.example.demo.view.components.modal.definitions.NewUserCardView;
+import org.example.demo.view.components.card.user.NewUserCard;
+import org.example.demo.view.components.modal.definitions.NewUserModalView;
 import org.example.demo.view.core.Component;
 import org.example.demo.view.core.contract.Role;
 
 import java.io.IOException;
 import java.util.function.Consumer;
 
-public class NewUserCard extends Component implements NewUserCardView {
-    private Consumer<UserCard> callback;
+public class NewUserModal extends Component implements NewUserModalView {
+    private Consumer<NewUserCard> callback;
 
     @FXML private VBox newUserCard;
 
@@ -26,11 +26,11 @@ public class NewUserCard extends Component implements NewUserCardView {
     @FXML private TextField email;
     @FXML private TextField password;
 
-    public NewUserCard() {
-        show("add-user.fxml");
+    public NewUserModal() {
+        show("add-new-user-card.fxml");
     }
 
-    public void setCallback(Consumer<UserCard> callback) {
+    public void setCallback(Consumer<NewUserCard> callback) {
         this.callback = callback;
     }
 
@@ -61,12 +61,12 @@ public class NewUserCard extends Component implements NewUserCardView {
     @FXML
     public void handleAdd() throws IOException,
             InterruptedException {
-        UserCard userCard = orchestration
+        NewUserCard newUserCard = orchestration
                 .user()
-                .create(this, UserCard::new);
+                .create(this, NewUserCard::new);
 
         if (callback != null)
-            callback.accept(userCard);
+            callback.accept(newUserCard);
         close();
     }
 

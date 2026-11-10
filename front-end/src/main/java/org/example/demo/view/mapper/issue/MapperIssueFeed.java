@@ -4,31 +4,31 @@ import org.example.demo.view.components.card.issue.definitions.issueFeedCard.Iss
 import org.example.demo.view.core.contract.IssuePriority;
 import org.example.demo.view.core.contract.IssueState;
 import org.example.demo.view.core.contract.IssueTypology;
-import org.example.demo.view.dto.issue.IssueCardResponseDTO;
+import org.example.demo.view.dto.issue.IssueResponseDTO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
 public class MapperIssueFeed {
     private static void mapperTitle(IssueFeedCardView card,
-                                    IssueCardResponseDTO response) {
+                                    IssueResponseDTO response) {
         card.setTitle(response
                 .getTitle());
     }
 
     private static void mapperId(IssueFeedCardView card,
-                                 IssueCardResponseDTO response) {
+                                 IssueResponseDTO response) {
         card.setId(response.getId());
     }
 
     private static void mapperName(IssueFeedCardView card,
-                                   IssueCardResponseDTO response) {
+                                   IssueResponseDTO response) {
         card.setName(response.getCreator()
                 .getName());
     }
 
     private static void mapperTypology(IssueFeedCardView card,
-                                       IssueCardResponseDTO response) {
+                                       IssueResponseDTO response) {
         card.setTypology(toTypology(response
                 .getTypology()));
     }
@@ -51,7 +51,7 @@ public class MapperIssueFeed {
     }
 
     private static void mapperPriority(IssueFeedCardView card,
-                                       IssueCardResponseDTO response) {
+                                       IssueResponseDTO response) {
         card.setPriority(toPriority(response
                 .getPriority()));
     }
@@ -71,12 +71,12 @@ public class MapperIssueFeed {
     }
 
     private static void mapperAssignee(IssueFeedCardView card,
-                                       IssueCardResponseDTO response) {
+                                       IssueResponseDTO response) {
         card.setAssignee(response.getAssignee() !=  null);
     }
 
     private static void mapperState(IssueFeedCardView card,
-                                    IssueCardResponseDTO response) {
+                                    IssueResponseDTO response) {
         card.setState(toState(response
                 .getState()));
     }
@@ -92,14 +92,14 @@ public class MapperIssueFeed {
     }
 
     private static void mapperDuplicated(IssueFeedCardView card,
-                                         IssueCardResponseDTO response) {
+                                         IssueResponseDTO response) {
         if(response.getDuplicated() != null)
             card.setDuplicated(response
                     .getDuplicated());
     }
 
     public static <T extends IssueFeedCardView> T mapper(
-            IssueCardResponseDTO response, T card) {
+            IssueResponseDTO response, T card) {
 
         mapperId(card,
                 response);
@@ -123,10 +123,10 @@ public class MapperIssueFeed {
     }
 
     public static <T extends IssueFeedCardView> List<T> mapper(
-            List<IssueCardResponseDTO> list, Supplier<T> supplier) {
+            List<IssueResponseDTO> list, Supplier<T> supplier) {
         List<T> cards = new ArrayList<>();
 
-        for(IssueCardResponseDTO issue : list)
+        for(IssueResponseDTO issue : list)
             cards.add(mapper(issue,
                     supplier.get()));
         return cards;

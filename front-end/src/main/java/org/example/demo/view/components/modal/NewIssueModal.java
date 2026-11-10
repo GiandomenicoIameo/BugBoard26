@@ -9,18 +9,18 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.example.demo.view.components.card.Card;
 import org.example.demo.view.components.card.issue.IssueFeedCard;
-import org.example.demo.view.components.modal.definitions.NewIssueCardView;
+import org.example.demo.view.components.modal.definitions.NewIssueModalView;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Base64;
 import java.util.function.Consumer;
 
-public class NewIssueCard extends Card implements NewIssueCardView {
+public class NewIssueModal extends Card implements NewIssueModalView {
     private File file;
     private Consumer<IssueFeedCard> callback;
 
-    @FXML private VBox root;
+    @FXML private VBox newIssueModal;
 
     @FXML private TextField title;
     @FXML private TextArea description;
@@ -30,8 +30,8 @@ public class NewIssueCard extends Card implements NewIssueCardView {
     @FXML private TextField priority;
 
 
-    public NewIssueCard() {
-        show("create-issue.fxml");
+    public NewIssueModal() {
+        show("new-issue-modal.fxml");
     }
 
     public void setCallback(Consumer<IssueFeedCard> callback) {
@@ -63,7 +63,7 @@ public class NewIssueCard extends Card implements NewIssueCardView {
 
     @Override
     public Parent getRoot() {
-        return root;
+        return newIssueModal;
     }
 
     @FXML
@@ -94,7 +94,7 @@ public class NewIssueCard extends Card implements NewIssueCardView {
 
     @FXML
     public void close() {
-        Stage stage = (Stage) root
+        Stage stage = (Stage) newIssueModal
                 .getScene().getWindow();
         stage.close();
     }

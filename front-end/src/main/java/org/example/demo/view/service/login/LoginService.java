@@ -12,7 +12,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Authentication {
+public class LoginService {
     private Gson gson = new Gson();
     private static final String path = "http://localhost:8080";
     private static final HttpClient client = HttpClient.newBuilder()

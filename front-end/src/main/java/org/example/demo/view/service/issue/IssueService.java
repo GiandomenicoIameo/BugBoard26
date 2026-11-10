@@ -5,10 +5,10 @@ import com.google.gson.reflect.TypeToken;
 import javafx.scene.image.Image;
 import org.example.demo.view.dto.issue.ImageResponseDTO;
 import org.example.demo.view.dto.issue.ImageRequestDTO;
-import org.example.demo.view.dto.issue.IssueCardResponseDTO;
-import org.example.demo.view.dto.issue.NewIssueCardRequestDTO;
+import org.example.demo.view.dto.issue.IssueResponseDTO;
+import org.example.demo.view.dto.issue.IssueRequestDTO;
 import org.example.demo.view.dto.filter.FilterRequestDTO;
-import org.example.demo.view.service.login.Authentication;
+import org.example.demo.view.service.login.LoginService;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class IssueService {
             .registerTypeAdapter(LocalDateTime.class, new IssueService
                     .LocalDateTimeAdapter())
             .create();
-    private final HttpClient client =  Authentication.getClient();
+    private final HttpClient client =  LoginService.getClient();
 
     private HttpRequest requestPost(String uri, String json) {
         return HttpRequest.newBuilder()
@@ -62,7 +62,7 @@ public class IssueService {
                 .BodyHandlers.ofString());
     }
 
-    public IssueCardResponseDTO createIssue(NewIssueCardRequestDTO issue) throws IOException,
+    public IssueResponseDTO createIssue(IssueRequestDTO issue) throws IOException,
             InterruptedException {
         String json = gson.toJson(issue);
 
@@ -73,13 +73,13 @@ public class IssueService {
 
         if (response.statusCode() == 200 || response.statusCode() == 201)
             return gson.fromJson(response.body(),
-                    IssueCardResponseDTO.class);
+                    IssueResponseDTO.class);
         else
             throw new RuntimeException("Errore. Codice: " +
                     response.statusCode());
     }
 
-    public List<IssueCardResponseDTO> listIssues() throws IOException,
+    public List<IssueResponseDTO> listIssues() throws IOException,
             InterruptedException {
         HttpRequest request = requestGet("http://localhost:8080/api/issues");
         HttpResponse<String> response = response(request);
@@ -87,7 +87,7 @@ public class IssueService {
         System.out.println("Risposta dal server: " + response.body());
 
         if (response.statusCode() == 200 || response.statusCode() == 201) {
-            Type listType = new TypeToken<List<IssueCardResponseDTO>>() {}
+            Type listType = new TypeToken<List<IssueResponseDTO>>() {}
                     .getType();
             return gson.fromJson(response.body(), listType);
         }
@@ -96,7 +96,7 @@ public class IssueService {
                     response.statusCode());
     }
 
-    public IssueCardResponseDTO assign(Integer idBug, Integer idUser) throws IOException,
+    public IssueResponseDTO assign(Integer idBug, Integer idUser) throws IOException,
             InterruptedException {
         String url = "http://localhost:8080/api/bugs/" + idBug +
                 "/assegna?utenteId=" + idUser;
@@ -108,13 +108,13 @@ public class IssueService {
         if (response.statusCode() == 200 ||
                 response.statusCode() == 201)
             return gson.fromJson(response.body(),
-                    IssueCardResponseDTO.class);
+                    IssueResponseDTO.class);
         else
             throw new RuntimeException("Errore. Codice: " +
                     response.statusCode());
     }
 
-    public List<IssueCardResponseDTO> assigned() throws IOException,
+    public List<IssueResponseDTO> assigned() throws IOException,
     InterruptedException {
         HttpRequest request = requestGet("http://localhost:8080/api/bugs/assegnati");
         HttpResponse<String> response = response(request);
@@ -122,7 +122,7 @@ public class IssueService {
         System.out.println("Risposta dal server: " + response.body());
 
         if (response.statusCode() == 200 || response.statusCode() == 201) {
-            Type listType = new TypeToken<List<IssueCardResponseDTO>>() {}
+            Type listType = new TypeToken<List<IssueResponseDTO>>() {}
                     .getType();
             return gson.fromJson(response.body(), listType);
         }
@@ -131,7 +131,7 @@ public class IssueService {
                     response.statusCode());
     }
 
-    public List<IssueCardResponseDTO> searchByKeyword(FilterRequestDTO filter)
+    public List<IssueResponseDTO> searchByKeyword(FilterRequestDTO filter)
             throws IOException, InterruptedException {
         StringBuilder urlBuilder = new StringBuilder("http://localhost:8080/api/issues/ricerca");
         boolean hasParameter = false;
@@ -168,7 +168,7 @@ public class IssueService {
         System.out.println("Risposta dal server: " + response.body());
 
         if (response.statusCode() == 200 || response.statusCode() == 201) {
-            Type listType = new TypeToken<List<IssueCardResponseDTO>>() {}
+            Type listType = new TypeToken<List<IssueResponseDTO>>() {}
                     .getType();
             return gson.fromJson(response.body(), listType);
         }
@@ -177,7 +177,7 @@ public class IssueService {
                     response.statusCode());
     }
 
-    public List<IssueCardResponseDTO> searchByFilter(FilterRequestDTO filter)
+    public List<IssueResponseDTO> searchByFilter(FilterRequestDTO filter)
             throws IOException, InterruptedException {
         StringBuilder urlBuilder = new StringBuilder("http://localhost:8080/api/issues/ricerca");
         boolean hasParameter = false;
@@ -215,7 +215,7 @@ public class IssueService {
         System.out.println("Risposta dal server: " + response.body());
 
         if (response.statusCode() == 200 || response.statusCode() == 201) {
-            Type listType = new TypeToken<List<IssueCardResponseDTO>>() {}
+            Type listType = new TypeToken<List<IssueResponseDTO>>() {}
                     .getType();
             return gson.fromJson(response.body(), listType);
         }
@@ -224,7 +224,7 @@ public class IssueService {
                     response.statusCode());
     }
 
-    public IssueCardResponseDTO close(Integer idIssue) throws IOException,
+    public IssueResponseDTO close(Integer idIssue) throws IOException,
             InterruptedException {
         String url = "http://localhost:8080/api/issues/" + idIssue + "/chiudi";
         HttpRequest request = requestPost(url);
@@ -235,7 +235,7 @@ public class IssueService {
         if (response.statusCode() == 200 ||
                 response.statusCode() == 201)
             return gson.fromJson(response.body(),
-                    IssueCardResponseDTO.class);
+                    IssueResponseDTO.class);
         else
             throw new RuntimeException("Errore. Codice: " +
                     response.statusCode());
@@ -278,7 +278,7 @@ public class IssueService {
         return null; // Ritorna null se c'è un errore o se l'issue non ha un'immagine
     }
 
-    public IssueCardResponseDTO duplicate(Integer idBug) throws IOException,
+    public IssueResponseDTO duplicate(Integer idBug) throws IOException,
             InterruptedException {
         String url = "http://localhost:8080/api/bugs/" + idBug +
                 "/duplicato";
@@ -290,7 +290,7 @@ public class IssueService {
         if (response.statusCode() == 200 ||
                 response.statusCode() == 201)
             return gson.fromJson(response.body(),
-                    IssueCardResponseDTO.class);
+                    IssueResponseDTO.class);
         else
             throw new RuntimeException("Errore. Codice: " +
                     response.statusCode());

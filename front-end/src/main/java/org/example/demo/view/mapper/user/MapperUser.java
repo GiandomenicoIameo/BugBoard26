@@ -1,51 +1,33 @@
 package org.example.demo.view.mapper.user;
 
-import org.example.demo.view.components.card.user.User;
-import org.example.demo.view.components.card.user.definitions.UserView;
-import org.example.demo.view.dto.user.AddUserResponseDTO;
-import org.example.demo.view.service.user.UserService;
-import java.io.IOException;
+import org.example.demo.view.components.card.user.NewUserCard;
+import org.example.demo.view.components.card.user.definitions.NewUserCardView;
+import org.example.demo.view.dto.user.UserResponseDTO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
 public class MapperUser {
-    private static final UserService userService =
-            new UserService();
-
-    public static List<User> convert() throws IOException,
-            InterruptedException {
-        List<User> list = new ArrayList<>();
-
-        for(AddUserResponseDTO response : userService
-                .listUsers()) {
-            User user = new User();
-            mapper(user, response);
-
-            list.add(user);
-        } return list;
-    }
-
-    private static void mapperName(UserView user,
-                                   AddUserResponseDTO response) {
+    private static void mapperName(NewUserCardView user,
+                                   UserResponseDTO response) {
         user.setUsernameBold(response.getName() +
                 " " + response.getSurname());
         user.setUsernameRegular(response.getSurname());
     }
 
-    private static void mapperEmail(UserView user,
-                            AddUserResponseDTO response) {
+    private static void mapperEmail(NewUserCardView user,
+                                    UserResponseDTO response) {
         user.setEmail(response
                 .getEmail());
     }
 
-    private static void mapperRole(UserView user,
-                           AddUserResponseDTO response) {
+    private static void mapperRole(NewUserCardView user,
+                                   UserResponseDTO response) {
         user.setRole(response.getRole());
     }
 
-    public static <T extends UserView> T mapper(
-            AddUserResponseDTO response, Supplier<T> supplier) {
+    public static <T extends NewUserCardView> T mapper(
+            UserResponseDTO response, Supplier<T> supplier) {
         T user = supplier.get();
 
         mapperName(user,
@@ -58,19 +40,19 @@ public class MapperUser {
         return user;
     }
 
-    public static void mapper(User user,
-                              AddUserResponseDTO response) {
-        mapperName(user, response);
-        mapperRole(user, response);
+    public static void mapper(NewUserCard newUserCard,
+                              UserResponseDTO response) {
+        mapperName(newUserCard, response);
+        mapperRole(newUserCard, response);
 
-        mapperEmail(user, response);
+        mapperEmail(newUserCard, response);
     }
 
-    public static <T extends UserView> List<T> mapper(
-            List<AddUserResponseDTO> response, Supplier<T> supplier) {
+    public static <T extends NewUserCardView> List<T> mapper(
+            List<UserResponseDTO> response, Supplier<T> supplier) {
         List<T> list = new ArrayList<>();
 
-        for(AddUserResponseDTO user : response)
+        for(UserResponseDTO user : response)
             list.add(mapper(user, supplier));
         return list;
     }

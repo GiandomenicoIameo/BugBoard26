@@ -13,7 +13,7 @@ import org.example.demo.view.shared.Date;
 import java.time.LocalDateTime;
 
 public class IssueContentCard extends IssueCard implements IssueContentCardView {
-    @FXML private VBox contentCard;
+    @FXML private VBox issueContentCard;
 
     @FXML private Label name;
     @FXML private Label title;
@@ -31,7 +31,7 @@ public class IssueContentCard extends IssueCard implements IssueContentCardView 
     @FXML private VBox boxImage;
 
     public IssueContentCard() {
-        show("issue-content.fxml");
+        show("issue-content-card.fxml");
     }
 
     public void setTitle(String title) {
@@ -97,6 +97,6 @@ public class IssueContentCard extends IssueCard implements IssueContentCardView 
 
     @Override
     public Parent getRoot() {
-        return contentCard;
+        return issueContentCard;
     }
 }

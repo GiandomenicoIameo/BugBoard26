@@ -8,8 +8,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import org.example.demo.view.components.card.issue.definitions.issueFeedCard.IssueFeedCardView;
-import org.example.demo.view.components.modal.Assignment;
-import org.example.demo.view.core.Session;
+import org.example.demo.view.components.modal.AssignIssueModal;
+import org.example.demo.view.shared.Session;
 import org.example.demo.view.core.contract.IssuePriority;
 import org.example.demo.view.core.contract.IssueState;
 import org.example.demo.view.core.contract.IssueTypology;
@@ -17,7 +17,7 @@ import org.example.demo.view.core.contract.Role;
 import java.io.IOException;
 
 public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
-    @FXML private VBox issueCard;
+    @FXML private VBox issueFeedCard;
 
     @FXML private Label id;
     @FXML private Label name;
@@ -52,7 +52,7 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
     private Role viewerRole;
 
     public IssueFeedCard() {
-        show("issue-feed.fxml");
+        show("issue-feed-card.fxml");
     }
 
     public void setId(Integer id) {
@@ -236,19 +236,19 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
 
     @Override
     public Parent getRoot() {
-        return issueCard;
+        return issueFeedCard;
     }
 
     @FXML
     public void showAssignment() {
-        Assignment assignment =
-                new Assignment();
-        addComponent(assignment);
-        assignment.setBugId(Integer.
+        AssignIssueModal assignIssueModal =
+                new AssignIssueModal();
+        addComponent(assignIssueModal);
+        assignIssueModal.setBugId(Integer.
                 parseInt(id.getText()));
-        assignment.setCallback(
+        assignIssueModal.setCallback(
                 this::setAssignee);
-        assignment.asModal(issueCard);
+        assignIssueModal.asModal(issueFeedCard);
     }
 
     @FXML

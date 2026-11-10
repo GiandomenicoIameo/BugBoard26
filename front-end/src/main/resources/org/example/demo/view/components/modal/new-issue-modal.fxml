@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="653.0" style="-fx-border-color: rgba(73, 69, 79, 0.45); -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-background-color: #fafafb;" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="newIssueModal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="653.0" style="-fx-border-color: rgba(73, 69, 79, 0.45); -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-background-color: #fafafb;" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" prefHeight="47.0" prefWidth="651.0" style="-fx-background-color: #EBEBEB; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 0 1 0;">
          <children>

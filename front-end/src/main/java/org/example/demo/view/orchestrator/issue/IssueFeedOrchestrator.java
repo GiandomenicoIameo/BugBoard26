@@ -1,10 +1,10 @@
 package org.example.demo.view.orchestrator.issue;
 
 import org.example.demo.view.assembler.issue.AssembleIssue;
-import org.example.demo.view.components.modal.definitions.NewIssueCardView;
+import org.example.demo.view.components.modal.definitions.NewIssueModalView;
 import org.example.demo.view.core.orchestration.issue.IssueFeedOrchestration;
-import org.example.demo.view.dto.issue.IssueCardResponseDTO;
-import org.example.demo.view.dto.issue.NewIssueCardRequestDTO;
+import org.example.demo.view.dto.issue.IssueResponseDTO;
+import org.example.demo.view.dto.issue.IssueRequestDTO;
 import org.example.demo.view.mapper.issue.MapperIssueFeed;
 import org.example.demo.view.components.card.issue.definitions.issueFeedCard.IssueFeedCardView;
 import org.example.demo.view.service.issue.IssueService;
@@ -17,11 +17,11 @@ public class IssueFeedOrchestrator implements IssueFeedOrchestration {
             = new IssueService();
 
     public <T extends IssueFeedCardView> T create(
-            NewIssueCardView issue, T card)
+            NewIssueModalView issue, T card)
             throws IOException, InterruptedException {
-        NewIssueCardRequestDTO request = AssembleIssue
+        IssueRequestDTO request = AssembleIssue
                 .assemble(issue);
-        IssueCardResponseDTO response = issueService
+        IssueResponseDTO response = issueService
                 .createIssue(request);
         return MapperIssueFeed
                 .mapper(response, card);
@@ -30,7 +30,7 @@ public class IssueFeedOrchestrator implements IssueFeedOrchestration {
     public <T extends IssueFeedCardView> List<T> getAll(
             Supplier<T> supplier)
             throws IOException, InterruptedException {
-        List<IssueCardResponseDTO> list = issueService
+        List<IssueResponseDTO> list = issueService
                 .listIssues();
         return MapperIssueFeed.mapper(list,
                 supplier);
@@ -39,7 +39,7 @@ public class IssueFeedOrchestrator implements IssueFeedOrchestration {
     public <T extends IssueFeedCardView> T close(
             Integer id, T card) throws IOException,
             InterruptedException {
-        IssueCardResponseDTO response = issueService
+        IssueResponseDTO response = issueService
                 .close(id);
         return MapperIssueFeed
                 .mapper(response, card);
@@ -48,7 +48,7 @@ public class IssueFeedOrchestrator implements IssueFeedOrchestration {
     public <T extends IssueFeedCardView> T duplicate(
             Integer id, T card) throws IOException,
             InterruptedException {
-        IssueCardResponseDTO response = issueService
+        IssueResponseDTO response = issueService
                 .duplicate(id);
         return MapperIssueFeed
                 .mapper(response, card);
@@ -56,7 +56,7 @@ public class IssueFeedOrchestrator implements IssueFeedOrchestration {
 
     public boolean assigned(Integer bugId, Integer userId)
             throws IOException, InterruptedException {
-        IssueCardResponseDTO response =
+        IssueResponseDTO response =
                 issueService.assign(bugId, userId);
         return response != null;
     }

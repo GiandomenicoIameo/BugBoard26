@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Button fx:id="box" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleOnClick" prefHeight="85.0" prefWidth="431.0" styleClass="btn-labels" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Button fx:id="issueItemCard" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleOnClick" prefHeight="85.0" prefWidth="431.0" styleClass="btn-labels" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <font>
       <Font name="Cantarell Regular" size="18.0" />
    </font>

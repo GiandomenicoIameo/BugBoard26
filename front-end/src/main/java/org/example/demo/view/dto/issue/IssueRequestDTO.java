@@ -3,7 +3,7 @@ package org.example.demo.view.dto.issue;
 import com.google.gson.annotations.SerializedName;
 
 // Classe DTO in uscita
-public class NewIssueCardRequestDTO {
+public class IssueRequestDTO {
     @SerializedName("titolo")
     private String title;
 

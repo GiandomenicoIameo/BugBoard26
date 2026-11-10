@@ -6,14 +6,14 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.example.demo.view.components.card.issue.IssueFeedCard;
-import org.example.demo.view.components.modal.definitions.FilterView;
+import org.example.demo.view.components.modal.definitions.FilterModalView;
 import org.example.demo.view.core.Component;
 import java.io.IOException;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class FilterModal extends Component implements FilterView {
-    @FXML private AnchorPane cardFilter;
+public class FilterModal extends Component implements FilterModalView {
+    @FXML private AnchorPane filterModal;
 
     private String keyword;
     @FXML private ToggleGroup priorityGroup;
@@ -24,7 +24,7 @@ public class FilterModal extends Component implements FilterView {
             IssueFeedCard>> callback;
 
     public FilterModal() {
-        show("filter.fxml");
+        show("filter-modal.fxml");
     }
 
     public void setCallback(Consumer<
@@ -106,7 +106,7 @@ public class FilterModal extends Component implements FilterView {
 
     @FXML
     public void close() {
-        Stage stage = (Stage) cardFilter
+        Stage stage = (Stage) filterModal
                 .getScene().getWindow();
         stage.close();
     }

@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +19,12 @@ public abstract class View extends Window {
 
     public void addComponent(Component component) {
         components.put(component,component.getRoot());
+    }
+
+    public <T extends Component> T getComponent(Class<T> klass) {
+        for (Component key : components.keySet()) {
+            if(klass.isInstance(key)) return klass.cast(key);
+        } return null;
     }
 
     public Component move(Component next) {

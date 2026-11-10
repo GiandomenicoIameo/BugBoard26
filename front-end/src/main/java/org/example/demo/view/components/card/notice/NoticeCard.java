@@ -9,15 +9,15 @@ import org.example.demo.view.components.card.notice.definitions.NoticeCardView;
 import org.example.demo.view.shared.Date;
 import java.time.LocalDateTime;
 
-public class NoticeCardCard extends Card implements NoticeCardView {
-    @FXML private HBox notice;
+public class NoticeCard extends Card implements NoticeCardView {
+    @FXML private HBox noticeCard;
 
     @FXML private Label id;
     @FXML protected Label date;
     @FXML private Label newNotice;
 
-    public NoticeCardCard() {
-        show("notice.fxml");
+    public NoticeCard() {
+        show("notice-card.fxml");
     }
 
     public void setId(Integer id) {
@@ -37,6 +37,6 @@ public class NoticeCardCard extends Card implements NoticeCardView {
 
     @Override
     public Parent getRoot() {
-        return notice;
+        return noticeCard;
     }
 }

@@ -7,7 +7,7 @@ import org.example.demo.view.components.card.issue.definitions.issueItemCard.Iss
 import org.example.demo.view.core.orchestration.issue.IssueItemOrchestration;
 import org.example.demo.view.dto.issue.ImageResponseDTO;
 import org.example.demo.view.dto.issue.ImageRequestDTO;
-import org.example.demo.view.dto.issue.IssueCardResponseDTO;
+import org.example.demo.view.dto.issue.IssueResponseDTO;
 import org.example.demo.view.mapper.issue.MapperImage;
 import org.example.demo.view.mapper.issue.MapperIssueContent;
 import org.example.demo.view.mapper.issue.MapperIssueItem;
@@ -27,11 +27,11 @@ public class IssueItemOrchestrator implements IssueItemOrchestration {
     getAllAssigned(Supplier<T> itemFactory, Supplier<S> contentFactory)
             throws IOException, InterruptedException {
 
-        List<IssueCardResponseDTO> list =
+        List<IssueResponseDTO> list =
                 issueService.assigned();
         List<T> lista = new ArrayList<>();
 
-        for(IssueCardResponseDTO card: list) {
+        for(IssueResponseDTO card: list) {
             T item = MapperIssueItem
                     .mapper(card, itemFactory.get());
             S content = MapperIssueContent

@@ -2,7 +2,10 @@ package org.example.demo.view.dto.user;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AddUserResponseDTO {
+public class UserResponseDTO {
+    @SerializedName("id")
+    private int id;
+
     @SerializedName("nome")
     public String name;
 
@@ -14,6 +17,10 @@ public class AddUserResponseDTO {
 
     @SerializedName("ruolo")
     public String role;
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;

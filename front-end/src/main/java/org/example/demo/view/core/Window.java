@@ -17,17 +17,17 @@ public abstract class Window {
             new Orchestrator();
 
     @FXML
-    public void close() {
+    protected void close() {
         System.exit(0);
     }
 
     @FXML
-    public void minimize() {
+    protected void minimize() {
         Sequence.getCurrStage()
                 .setIconified(true);
     }
 
-    public Scene resize(Parent root) {
+    protected Scene resize(Parent root) {
         double SCREEN_W_RATIO = 0.90;
         double SCREEN_H_RATIO = 0.85;
         double MAX_SCALE = 1.0;
@@ -55,7 +55,7 @@ public abstract class Window {
                 width * scale, high * scale);
     }
 
-    public void fade(Parent root) {
+    protected void fade(Parent root) {
         FadeTransition fade =
                 new FadeTransition(Duration
                         .millis(800), root);

@@ -1,49 +1,40 @@
 package org.example.demo.view.session;
 
+import org.example.demo.view.components.bar.Feedbar;
 import org.example.demo.view.components.bar.regular.SettingsbarRegular;
 import org.example.demo.view.components.bar.regular.Assignmentbar;
 import org.example.demo.view.components.bar.regular.SidebarRegular;
 import org.example.demo.view.listeners.SidebarRegularListener;
 
-public class Regular extends Dock<SidebarRegular>
+public class Regular extends Dock
         implements SidebarRegularListener {
-    private final Assignmentbar assignmentbar =
-            new Assignmentbar();
 
     public Regular() {
         super();
-        sidebar = new SidebarRegular();
-        settingsbar = new
-                SettingsbarRegular();
+
+        addComponent(new SidebarRegular());
+        addComponent(new SettingsbarRegular());
+        addComponent(new Assignmentbar());
 
         show("regular.fxml");
-    }
 
-    protected void setListeners() {
-        sidebar.setRegularListener(this);
-    }
-
-    protected void config() {
-        super.config();
-        // Le istruzioni addComponent() sono opzionali, in quanto vengono
-        // utilizzate solo per mantenere la relazione di composizione.
-        add(sidebar,
+        toDock(getComponent(
+                SidebarRegular.class),
                 sidebarContainer);
-        add(feedbar,
+        toDock(getComponent(
+                Feedbar.class),
                 dockContainer);
-        add(settingsbar,
+        toDock(getComponent(
+                SettingsbarRegular.class),
                 dockContainer);
-        add(assignmentbar,
+        toDock(getComponent(
+                Assignmentbar.class),
                 dockContainer);
-
-        addComponent(assignmentbar);
-        addComponent(sidebar);
-        addComponent(feedbar);
-        addComponent(settingsbar);
     }
 
     @Override
     public void viewAssignments() {
-        current(assignmentbar);
+        current(getComponent(
+                Assignmentbar.class));
     }
 }

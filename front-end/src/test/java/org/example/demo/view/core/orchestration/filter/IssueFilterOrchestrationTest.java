@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// <T extends IssueFeedCardView> List<T> getAll(FilterView filter, Supplier<T> supplier)
+// <T extends IssueFeedCardView> List<T> getAll(FilterModalView filter, Supplier<T> supplier)
 
 class IssueFilterOrchestrationTest {
     @BeforeAll

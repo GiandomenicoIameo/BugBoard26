@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="issueCard" alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="920.0" stylesheets="@../../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="issueFeedCard" alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="920.0" stylesheets="@../../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="TOP_CENTER" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" VBox.vgrow="ALWAYS">
          <VBox.margin>

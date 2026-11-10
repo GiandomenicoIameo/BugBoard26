@@ -6,25 +6,25 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.example.demo.view.components.card.user.Prompter;
+import org.example.demo.view.components.card.user.PrompterUserCard;
 import org.example.demo.view.core.Component;
 import java.io.IOException;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class Assignment extends Component {
+public class AssignIssueModal extends Component {
     private Integer bugId;
     private Consumer<Boolean> callback;
 
     private ToggleGroup group =
             new ToggleGroup();
 
-    @FXML private AnchorPane assignment;
+    @FXML private AnchorPane assignIssueModal;
     @FXML private VBox cardContainer;
     @FXML private ScrollPane scroll;
 
-    public Assignment() {
-        show("assignment.fxml");
+    public AssignIssueModal() {
+        show("assign-issue-modal.fxml");
     }
 
     @FXML
@@ -43,14 +43,14 @@ public class Assignment extends Component {
 
     public void importCard() throws IOException,
             InterruptedException {
-        List<Prompter> list = orchestration.user()
-                .getAllSuggested(Prompter::new);
+        List<PrompterUserCard> list = orchestration.user()
+                .getAllSuggested(PrompterUserCard::new);
 
         scroll.setVisible(true);
-        list.forEach(prompter -> {
-            prompter.setToggleGroup(group);
+        list.forEach(prompterCard -> {
+            prompterCard.setToggleGroup(group);
             cardContainer.getChildren().
-                    add(prompter.getRoot());
+                    add(prompterCard.getRoot());
         });
     }
 
@@ -71,7 +71,7 @@ public class Assignment extends Component {
 
     @FXML
     public void close() {
-        Stage stage = (Stage) assignment
+        Stage stage = (Stage) assignIssueModal
                 .getScene().getWindow();
         stage.close();
     }

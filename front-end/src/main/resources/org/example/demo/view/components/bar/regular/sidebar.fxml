@@ -20,7 +20,7 @@
                   <Font name="Cantarell Bold" size="16.0" />
                </font>
             </Label>
-            <Button fx:id="assignment" layoutX="262.0" layoutY="6.0" mnemonicParsing="false" onAction="#viewNotice" prefHeight="34.0" prefWidth="38.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="btn-labels">
+            <Button fx:id="assignIssueModal" layoutX="262.0" layoutY="6.0" mnemonicParsing="false" onAction="#viewNotice" prefHeight="34.0" prefWidth="38.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="btn-labels">
                <graphic>
                   <Region prefHeight="200.0" prefWidth="200.0" styleClass="icon-bell-assignments" />
                </graphic></Button>

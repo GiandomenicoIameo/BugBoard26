@@ -9,8 +9,8 @@ import org.example.demo.view.components.card.Card;
 import org.example.demo.view.components.card.user.definitions.NewUserCardView;
 import org.example.demo.view.core.contract.Role;
 
-public class NewNewUserCard extends Card implements NewUserCardView {
-    @FXML private HBox account;
+public class NewUserCard extends Card implements NewUserCardView {
+    @FXML private HBox newUserCard;
     @FXML private VBox cardContainer;
 
     @FXML private Label admin;
@@ -21,8 +21,8 @@ public class NewNewUserCard extends Card implements NewUserCardView {
 
     private Label current = null;
 
-    public NewNewUserCard() {
-        show("user.fxml");
+    public NewUserCard() {
+        show("new-user-card.fxml");
     }
 
     public void setUsernameBold(String username) {
@@ -63,6 +63,6 @@ public class NewNewUserCard extends Card implements NewUserCardView {
 
     @Override
     public Parent getRoot() {
-        return account;
+        return newUserCard;
     }
 }

@@ -2,8 +2,8 @@ package org.example.demo.view.service.notice;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import org.example.demo.view.dto.notice.NotificationResponseDTO;
-import org.example.demo.view.service.login.Authentication;
+import org.example.demo.view.dto.notice.NoticeResponseDTO;
+import org.example.demo.view.service.login.LoginService;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -20,7 +20,7 @@ public class NoticeService {
             .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
             .create();
     private static final String path = "http://localhost:8080";
-    private final HttpClient client =  Authentication.getClient();
+    private final HttpClient client =  LoginService.getClient();
 
     private HttpRequest requestPost(String uri, String json) {
         return HttpRequest.newBuilder()
@@ -54,7 +54,7 @@ public class NoticeService {
                 .BodyHandlers.ofString());
     }
 
-    public List<NotificationResponseDTO> listNotice() throws IOException,
+    public List<NoticeResponseDTO> listNotice() throws IOException,
             InterruptedException {
         HttpRequest request = requestGet(path + "/api/notifiche");
         HttpResponse<String> response = response(request);
@@ -62,7 +62,7 @@ public class NoticeService {
         System.out.println("Risposta dal server: " + response.body());
 
         if (response.statusCode() == 200 || response.statusCode() == 201) {
-            Type listType = new TypeToken<List<NotificationResponseDTO>>() {}
+            Type listType = new TypeToken<List<NoticeResponseDTO>>() {}
                     .getType();
             return gson.fromJson(response.body(), listType);
         }
@@ -71,7 +71,7 @@ public class NoticeService {
                     response.statusCode());
     }
 
-    public List<NotificationResponseDTO> listNoticeRead() throws IOException,
+    public List<NoticeResponseDTO> listNoticeRead() throws IOException,
             InterruptedException {
         HttpRequest request = requestPost(path + "/api/notifiche/leggi-nuove");
         HttpResponse<String> response = response(request);
@@ -79,7 +79,7 @@ public class NoticeService {
         System.out.println("Risposta dal server: " + response.body());
 
         if (response.statusCode() == 200 || response.statusCode() == 201) {
-            Type listType = new TypeToken<List<NotificationResponseDTO>>() {}
+            Type listType = new TypeToken<List<NoticeResponseDTO>>() {}
                     .getType();
             return gson.fromJson(response.body(), listType);
         }

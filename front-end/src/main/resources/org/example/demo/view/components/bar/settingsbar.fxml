@@ -123,7 +123,7 @@
                                         <Insets right="20.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Label fx:id="user" alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="72.0" style="-fx-border-radius: 20px; -fx-background-color: #e8e6e3; -fx-background-radius: 20px;" text="User" textFill="#3d3846" visible="false">
+                                <Label alignment="CENTER" managed="false" prefHeight="30.0" prefWidth="72.0" style="-fx-border-radius: 20px; -fx-background-color: #e8e6e3; -fx-background-radius: 20px;" text="User" textFill="#3d3846" visible="false">
                                     <font>
                                         <Font name="Cantarell Bold" size="13.0" />
                                     </font>

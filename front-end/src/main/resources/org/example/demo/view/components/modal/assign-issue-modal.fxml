@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="assignment" prefHeight="502.0" prefWidth="454.0" style="-fx-border-radius: 10px; -fx-background-color: #fafafb; -fx-background-radius: 10px; -fx-border-color: rgba(73, 69, 79, 0.40);" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="assignIssueModal" prefHeight="502.0" prefWidth="454.0" style="-fx-border-radius: 10px; -fx-background-color: #fafafb; -fx-background-radius: 10px; -fx-border-color: rgba(73, 69, 79, 0.40);" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ScrollPane fx:id="scroll" fitToHeight="true" layoutX="30.0" layoutY="107.0" style="-fx-border-color: rgba(0,0,0,0.12); -fx-border-radius: 10px;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="110.0">
          <content>

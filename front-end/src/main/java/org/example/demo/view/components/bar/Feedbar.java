@@ -8,10 +8,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.example.demo.view.components.card.issue.IssueFeedCard;
-import org.example.demo.view.components.modal.NewIssueCard;
-import org.example.demo.view.components.modal.Filter;
+import org.example.demo.view.components.modal.FilterModal;
+import org.example.demo.view.components.modal.NewIssueModal;
+import org.example.demo.view.components.modal.definitions.FilterModalView;
 import org.example.demo.view.core.Component;
-import org.example.demo.view.core.Session;
+import org.example.demo.view.shared.Session;
 import org.example.demo.view.shared.Searchbar;
 import java.io.IOException;
 import java.util.List;
@@ -77,17 +78,17 @@ public class Feedbar extends Component {
         return part;
     }
 
-    private Filter assembleFilter(
+    private FilterModalView assembleFilter(
             String[] split) {
-        Filter filter = new Filter();
+        FilterModalView filterModal = new FilterModal();
 
-        filter.setKeyword(
+        filterModal.setKeyword(
                 split[0]);
-        filter.setTypology(
+        filterModal.setTypology(
                 split[1]);
-        filter.setPriority(
+        filterModal.setPriority(
                 split[2]);
-        return filter;
+        return filterModal;
     }
 
     @FXML
@@ -105,8 +106,7 @@ public class Feedbar extends Component {
         search.setOnFinished(() -> {
             this.search.clear();
             try {
-                showCards(orchestration
-                        .issueFeed()
+                showCards(orchestration.issueFeed()
                         .getAll(IssueFeedCard::new));
             } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
@@ -144,17 +144,16 @@ public class Feedbar extends Component {
 
     @FXML
     public void handleShowIssueFiltered() {
-        Filter filter = new Filter();
-        addComponent(filter);
-        filter.setCallback(
+        FilterModal filterModal = new FilterModal();
+        filterModal.setCallback(
                 this::showCards);
-        filter.asModal(feedbar);
+        filterModal.asModal(feedbar);
     }
 
     @FXML
     public void handleAddIssue() {
-        NewIssueCard issue =
-                new NewIssueCard();
+        NewIssueModal issue =
+                new NewIssueModal();
         addComponent(issue);
         issue.setCallback(
                 this::loadCard);

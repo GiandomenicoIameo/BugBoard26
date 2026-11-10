@@ -4,23 +4,23 @@ import javafx.fxml.FXML;
 import org.example.demo.view.core.Component;
 import org.example.demo.view.listeners.SidebarListener;
 
-public class Sidebar extends Component {
-    protected SidebarListener listener;
+public abstract class Sidebar<T extends SidebarListener> extends Component {
+    protected T listener;
 
-    public void setListener(SidebarListener listener) {
+    public void setListener(T listener) {
         this.listener = listener;
     }
 
     @FXML
-    protected void viewFeed() {
+    public void viewFeed() {
         if(listener != null)
             listener.viewFeed();
     }
 
     @FXML
     protected void signOut() {
-        orchestration.login()
-                .logout();
+        if(listener != null)
+            listener.signOut();
     }
 
     @FXML

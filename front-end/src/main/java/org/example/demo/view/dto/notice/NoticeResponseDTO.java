@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.time.LocalDateTime;
 
-public class NotificationResponseDTO {
+public class NoticeResponseDTO {
     @SerializedName("id")
     private Integer id;
 

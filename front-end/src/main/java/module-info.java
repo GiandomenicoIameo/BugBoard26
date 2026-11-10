@@ -5,6 +5,7 @@ module org.example.demo {
 
     requires com.google.gson;
     requires java.net.http;
+    requires com.google.common;
     // 1. Apriamo i pacchetti per permettere di leggere i file .fxml e i @FXML
     opens org.example.demo.view.session to javafx.fxml;
     opens org.example.demo.view.components.card to javafx.fxml;
@@ -66,4 +67,6 @@ module org.example.demo {
     opens org.example.demo.view.components.card.notice.definitions to javafx.fxml;
     exports org.example.demo.view.components.modal.definitions to javafx.graphics;
     opens org.example.demo.view.components.modal.definitions to javafx.fxml;
+    exports org.example.demo.view.shared to javafx.graphics;
+    opens org.example.demo.view.shared to javafx.fxml;
 }

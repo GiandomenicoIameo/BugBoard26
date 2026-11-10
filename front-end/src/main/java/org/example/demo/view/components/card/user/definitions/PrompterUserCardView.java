@@ -1,6 +1,6 @@
 package org.example.demo.view.components.card.user.definitions;
 
-public interface PrompterView {
+public interface PrompterUserCardView {
     void setId(Integer id);
     void setNameSurname(String nameSurname);
     void setName(String name);

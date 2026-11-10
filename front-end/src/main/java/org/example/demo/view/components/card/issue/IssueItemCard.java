@@ -20,7 +20,7 @@ public class IssueItemCard extends IssueCard implements IssueItemCardView {
     private Consumer<IssueContentCardView> callback;
     private IssueContentCardView listener;
 
-    @FXML private Button box;
+    @FXML private Button issueItemCard;
 
     @FXML private Label id;
     @FXML private Label name;
@@ -32,7 +32,7 @@ public class IssueItemCard extends IssueCard implements IssueItemCardView {
     @FXML private Label high;
 
     public IssueItemCard() {
-        show("issue-item.fxml");
+        show("issue-item-card.fxml");
     }
 
     public void setCallback(Consumer<IssueContentCardView> callback) {
@@ -100,19 +100,19 @@ public class IssueItemCard extends IssueCard implements IssueItemCardView {
 
     @FXML
     public void handleOnClick(ActionEvent event) {
-        if (currentButton != null && currentButton != box)
+        if (currentButton != null && currentButton != issueItemCard)
             currentButton.getStyleClass()
                     .remove("selected");
 
-        if (box.getStyleClass()
+        if (issueItemCard.getStyleClass()
                 .contains("selected")) {
-            box.getStyleClass()
+            issueItemCard.getStyleClass()
                     .remove("selected");
             currentButton = null;
         } else {
-            box.getStyleClass()
+            issueItemCard.getStyleClass()
                     .add("selected");
-            currentButton = box;
+            currentButton = issueItemCard;
         }
 
         if (callback != null)
@@ -121,6 +121,6 @@ public class IssueItemCard extends IssueCard implements IssueItemCardView {
 
     @Override
     public Parent getRoot() {
-        return box;
+        return issueItemCard;
     }
 }

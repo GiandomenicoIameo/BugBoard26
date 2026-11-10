@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="notifybar" alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="573.0" prefWidth="530.0" style="-fx-border-radius: 10px; -fx-background-color: #fafafb;" styleClass="notify-bar" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="noticeModal" alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="573.0" prefWidth="530.0" style="-fx-border-radius: 10px; -fx-background-color: #fafafb;" styleClass="notify-bar" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" fillHeight="false" maxHeight="47.0" minHeight="47.0" style="-fx-background-color: #EBEBEB; -fx-background-radius: 10 10 0 0; -fx-border-color: rgba(0,0,0,0.12); -fx-border-width: 0 0 1 0;" VBox.vgrow="NEVER">
          <children>

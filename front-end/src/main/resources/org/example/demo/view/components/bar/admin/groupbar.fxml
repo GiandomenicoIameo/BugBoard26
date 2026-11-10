@@ -62,7 +62,7 @@
             </AnchorPane>
          </children>
       </HBox>
-      <HBox fx:id="user" alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0" style="-fx-border-radius: 10px; -fx-border-color: rgba(0,0,0,0.12);">
+      <HBox fx:id="newUserCard" alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0" style="-fx-border-radius: 10px; -fx-border-color: rgba(0,0,0,0.12);">
          <children>
             <VBox alignment="CENTER">
                <children>

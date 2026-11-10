@@ -5,10 +5,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
-import org.example.demo.view.components.card.user.User;
-import org.example.demo.view.components.modal.NewUserCard;
+import org.example.demo.view.components.card.user.NewUserCard;
+import org.example.demo.view.components.modal.NewUserModal;
 import org.example.demo.view.core.Component;
-import org.example.demo.view.core.Sequence;
 
 import java.io.IOException;
 import java.util.List;
@@ -34,10 +33,10 @@ public class Groupbar extends Component {
     public void importCards() throws IOException,
             InterruptedException {
         populateContainer(orchestration.user()
-                .getAll(User::new));
+                .getAll(NewUserCard::new));
     }
 
-    public void populateContainer(List<User> list) {
+    public void populateContainer(List<NewUserCard> list) {
         scroll.setVisible(true);
         list.forEach(card -> cardContainer
                 .getChildren()
@@ -45,10 +44,10 @@ public class Groupbar extends Component {
         countIssues(list.size());
     }
 
-    private void loadCard(User user) {
+    private void loadCard(NewUserCard newUserCard) {
         scroll.setVisible(true);
         cardContainer.getChildren().
-                add(user.getRoot());
+                add(newUserCard.getRoot());
         countIssues(++issues);
     }
 
@@ -70,12 +69,12 @@ public class Groupbar extends Component {
 
     @FXML
     public void handleAdd() {
-        NewUserCard newUserCard = new
-                NewUserCard();
-        addComponent(newUserCard);
-        newUserCard.setCallback(
+        NewUserModal newUserModal = new
+                NewUserModal();
+        addComponent(newUserModal);
+        newUserModal.setCallback(
                 this::loadCard);
-        newUserCard.asModal(groupbar);
+        newUserModal.asModal(groupbar);
     }
 
     @Override
