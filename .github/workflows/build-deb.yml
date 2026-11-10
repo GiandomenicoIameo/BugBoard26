@@ -67,6 +67,7 @@ jobs:
   # ==========================================
   build-windows:
     runs-on: windows-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
@@ -80,20 +81,28 @@ jobs:
 
       - name: Download JavaFX JMods for Windows
         run: |
-          Invoke-WebRequest -Uri "https://download2.gluonhq.com/openjfx/21.0.2/openjfx-21.0.2_windows-x64_bin-jmods.zip" -OutFile "javafx-jmods.zip"
-          Expand-Archive -Path "javafx-jmods.zip" -DestinationPath "."
+          curl.exe -sL "https://download2.gluonhq.com/openjfx/21.0.2/openjfx-21.0.2_windows-x64_bin-jmods.zip" -o javafx-jmods.zip
+          Expand-Archive -Path javafx-jmods.zip -DestinationPath .
 
       - name: Build Fat JAR with Maven
-        run: ./front-end/mvnw.cmd -f front-end/pom.xml clean package
+        run: ./front-end/mvnw.cmd -f front-end/pom.xml clean package -DskipTests
 
       - name: Generate Custom Runtime with jlink
         run: jlink --module-path "$env:JAVA_HOME/jmods;./javafx-jmods-21.0.2" --add-modules java.base,java.net.http,javafx.controls,javafx.fxml --output front-end/target/image
 
-      - name: Create Windows Package with jpackage
-        run: cmd /c "jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/jpackage --runtime-image front-end/target/image --input front-end/target --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main"
+      - name: Prepare jpackage input
+        run: |
+          New-Item -ItemType Directory -Force front-end/target/input | Out-Null
+          Copy-Item front-end/target/demo-1.0-SNAPSHOT.jar front-end/target/input/
 
-      - name: Upload Windows Artifact
+      - name: Create Windows package with jpackage
+        run: jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --verbose
+
+      - name: Zip the app image
+        run: Compress-Archive -Path front-end/target/dist/bugboard -DestinationPath front-end/target/dist/bugboard-windows.zip
+
+      - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
         with:
           name: bugboard-app-windows
-          path: front-end/target/jpackage/bugboard/*
+          path: front-end/target/dist/bugboard-windows.zip
