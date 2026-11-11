@@ -30,8 +30,9 @@ jobs:
 
       - name: Install packaging tools (dpkg, fakeroot)
         run: |
-          echo "Configurazione DNS di fallback e tentativi di retry..."
-          echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
+          echo "Sostituzione dei mirror e configurazione retry..."
+          sudo sed -i 's|http://.*\.ubuntu\.com/ubuntu|http://it.archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list
+          sudo sed -i 's|security.ubuntu.com|it.archive.ubuntu.com|g' /etc/apt/sources.list
           sudo apt-get -o Acquire::Retries=5 update
           sudo apt-get install -y --no-install-recommends fakeroot dpkg
 
