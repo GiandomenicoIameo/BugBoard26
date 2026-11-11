@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
-      contents: write # Necessario per creare la Release
+      contents: write # Necessario per creare la Release e gestire gli asset
 
     steps:
       - name: Checkout repository
@@ -64,6 +64,7 @@ jobs:
           jpackage \
             --type deb \
             --name bugboard \
+            --linux-app-name "BugBoard" \
             --app-version 1.0.0 \
             --dest front-end/target/dist \
             --runtime-image front-end/target/image \
@@ -72,6 +73,13 @@ jobs:
             --main-class org.example.demo.view.access.Main \
             --linux-shortcut \
             --linux-menu-group "Utility"
+
+      - name: Delete old Linux release asset if exists
+        continue-on-error: true
+        run: |
+          gh release delete-asset v1.0.0 bugboard_1.0.0-1_amd64.deb --yes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload .deb to GitHub Releases
         uses: softprops/action-gh-release@v2
@@ -82,7 +90,6 @@ jobs:
           body: "Rilascio automatico per Linux (.deb) e Windows (ZIP)."
           draft: false
           prerelease: false
-          overwrite_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -132,6 +139,13 @@ jobs:
         run: |
           Compress-Archive -Path front-end/target/dist/BugBoard-windows-1.0.0-amd64 -DestinationPath front-end/target/dist/BugBoard-windows-1.0.0-amd64.zip
 
+      - name: Delete old Windows release asset if exists
+        continue-on-error: true
+        run: |
+          gh release delete-asset v1.0.0 BugBoard-windows-1.0.0-amd64.zip --yes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload Windows Zip to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
@@ -140,7 +154,5 @@ jobs:
           append_body: true
           draft: false
           prerelease: false
-          overwrite_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
