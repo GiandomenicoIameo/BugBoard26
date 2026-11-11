@@ -4,7 +4,7 @@ L'applicazione si compone di due parti: la parte front-end, il cui codice sorgen
 
 Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository, a seconda del sistema in uso sul proprio computer.
 
-## Installazione su Debian-based (`.deb`)
+## Installazione su Ubuntu-based (`.deb`)
 
 Una volta scaricato, è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
