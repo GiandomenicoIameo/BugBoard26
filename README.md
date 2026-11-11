@@ -10,7 +10,7 @@ Per l'installazione del front-end è sufficiente scaricare il file presente nell
 
 ## Front-end
 
-### Esecuzione su Linux (Debian-based)
+* Esecuzione su Linux (Debian-based)
 
 Una volta scaricato, è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
