@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main", "master" ]
     tags:
-      - 'v*' # Attiva la release automatica quando pubblichi un tag (es. v1.0.0)
+      - 'v*' # La release viene pubblicata solo quando invii un tag (es. v1.0.0)
   workflow_dispatch:
 
 run-name: Release Bugboard
@@ -16,8 +16,6 @@ jobs:
   build-linux:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
-    permissions:
-      contents: write # Necessario per creare la Release e gestire gli asset
 
     steps:
       - name: Checkout repository
@@ -73,33 +71,19 @@ jobs:
             --linux-shortcut \
             --linux-menu-group "Utility"
 
-      - name: Delete old Linux release asset if exists
-        continue-on-error: true
-        run: |
-          gh release delete-asset v1.0.0 bugboard_1.0.0-1_amd64.deb --yes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload .deb to GitHub Releases
-        uses: softprops/action-gh-release@v2
+      - name: Upload .deb artifact
+        uses: actions/upload-artifact@v4
         with:
-          files: front-end/target/dist/*.deb
-          tag_name: v1.0.0
-          name: "Bugboard v1.0.0"
-          body: "Rilascio automatico per Linux (.deb) e Windows (ZIP)."
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: bugboard-deb-linux
+          path: front-end/target/dist/*.deb
+          compression-level: 0
 
   # ==========================================
-  # JOB 2: WINDOWS (.exe / App Image)
+  # JOB 2: WINDOWS (App Image in ZIP)
   # ==========================================
   build-windows:
     runs-on: windows-latest
     timeout-minutes: 20
-    permissions:
-      contents: write # Necessario per aggiungere il file alla stessa Release
 
     steps:
       - name: Checkout repository
@@ -138,20 +122,40 @@ jobs:
         run: |
           Compress-Archive -Path front-end/target/dist/bugboard-windows-1.0.0-amd64 -DestinationPath front-end/target/dist/bugboard-windows-1.0.0-amd64.zip
 
-      - name: Delete old Windows release asset if exists
-        continue-on-error: true
-        run: |
-          gh release delete-asset v1.0.0 bugboard-windows-1.0.0-amd64.zip --yes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Windows zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bugboard-windows-zip
+          path: front-end/target/dist/*.zip
+          compression-level: 0
 
-      - name: Upload Windows Zip to GitHub Releases
+  # ==========================================
+  # JOB 3: RELEASE (solo quando pubblichi un tag)
+  # ==========================================
+  release:
+    needs: [build-linux, build-windows]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write # Necessario per creare la Release
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: List files to publish
+        run: ls -l dist
+
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: front-end/target/dist/*.zip
-          tag_name: v1.0.0
-          append_body: true
+          files: dist/*
+          name: "Bugboard ${{ github.ref_name }}"
+          body: "Rilascio automatico per Linux (.deb) e Windows (ZIP)."
+          fail_on_unmatched_files: true
           draft: false
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
