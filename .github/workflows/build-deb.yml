@@ -103,12 +103,8 @@ jobs:
       - name: Create Windows package with jpackage
         run: jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --verbose
 
-      - name: Zip the app image cleanly
-        run: |
-          Compress-Archive -Path front-end/target/dist/bugboard -DestinationPath front-end/target/dist/bugboard-windows.zip
-
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
         with:
           name: bugboard-windows-1.0.0-amd64
-          path: front-end/target/dist/bugboard-windows.zip
+          path: front-end/target/dist
