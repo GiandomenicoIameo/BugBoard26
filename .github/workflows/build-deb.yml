@@ -3,16 +3,20 @@ name: Build Cross-Package Packages
 on:
   push:
     branches: [ "main", "master" ]
+    tags:
+      - 'v*' # Attiva la release automatica quando pubblichi un tag (es. v1.0.0)
   workflow_dispatch:
 
 run-name: Release Bugboard
 
 jobs:
   # ==========================================
-  # JOB 1: LINUX (.deb)
+  # JOB 1: LINUX (.deb rilasciato direttamente)
   # ==========================================
   build-linux:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Necessario per permettere alla GitHub Action di creare la Release
 
     steps:
       - name: Checkout repository
@@ -61,14 +65,20 @@ jobs:
             --main-jar demo-1.0-SNAPSHOT.jar \
             --main-class org.example.demo.view.access.Main
 
-      - name: Upload Linux .deb Artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload .deb to GitHub Releases
+        uses: softprops/action-gh-release@v2
         with:
-          name: bugboard-linux-1.0.0-amd64
-          path: front-end/target/dist/*.deb
+          files: front-end/target/dist/*.deb
+          tag_name: v1.0.0
+          name: "Bugboard v1.0.0"
+          body: "Rilascio automatico per Linux (.deb non compresso) e Windows."
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # ==========================================
-  # JOB 2: WINDOWS (.exe / App Image)
+  # JOB 2: WINDOWS (.exe / App Image zippata)
   # ==========================================
   build-windows:
     runs-on: windows-latest
