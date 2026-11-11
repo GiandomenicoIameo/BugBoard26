@@ -7,9 +7,9 @@ L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene 
 Per una maggiore comprensione del processo di installazione, il documento è stato diviso in due parti: nella prima verranno illustrati i passi necessari per l'installazione del  front-end, mentre nella seconda quelli per il back-end.  
 
 ## Front-end
-Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository. 
+Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository, a seconda del sistema in uso sul proprio computer.
 
-### Esecuzione su Linux (Debian-based)
+### Download del file `.deb` e installazione (Debian-based)
 
 Una volta scaricato, è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
