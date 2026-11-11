@@ -3,9 +3,10 @@ L'applicazione si compone di due parti: la parte front-end, il cui codice sorgen
 visionabile nella directory `front-end/`, e la parte back-end, scaricabile dal seguente link.
 
 L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato  
-esclusivamente per avviare la parte back-end. Per una maggiore comprensione del processo di   
-installazione, il documento è stato diviso in due parti: nella prima verranno illustrati i  
-passi necessari per l'installazione del front-end, mentre nella seconda quelli per il back-end.  
+esclusivamente per avviare la parte back-end.  
+  Per una maggiore comprensione del processo di installazione, il documento è stato diviso  
+in due parti: nella prima verranno illustrati i passi necessari per l'installazione del  
+front-end, mentre nella seconda quelli per il back-end.  
 
 Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository. 
 
