@@ -1,6 +1,6 @@
 # Passi per l'installazione
 
-L'applicazione si compone di due parti: la parte front-end, il cui
+L'applicazione si compone di due parti: la parte front-end, il cui  
 codice sorgente è visionabile nella directory `front-end/`, e la parte back-end, scaricabile dal seguente link.
 
 L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato esclusivamente per avviare la parte back-end. 
