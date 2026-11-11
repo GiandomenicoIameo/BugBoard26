@@ -64,7 +64,6 @@ jobs:
           jpackage \
             --type deb \
             --name bugboard \
-            --linux-app-title "BugBoard" \
             --app-version 1.0.0 \
             --dest front-end/target/dist \
             --runtime-image front-end/target/image \
@@ -83,7 +82,7 @@ jobs:
           body: "Rilascio automatico per Linux (.deb) e Windows (ZIP)."
           draft: false
           prerelease: false
-          overwrite: true
+          overwrite_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -141,6 +140,7 @@ jobs:
           append_body: true
           draft: false
           prerelease: false
-          overwrite: true
+          overwrite_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
