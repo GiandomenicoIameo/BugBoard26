@@ -10,22 +10,23 @@ Per l'installazione del front-end è sufficiente scaricare il file presente nell
 
 ## Esecuzione su Linux (Debian-based)
 
-Una volta scaricato il programma è sufficiente  posizionarsi nella stessa directory  
-del file `.deb` e digitare il seguente comando:
+Una volta scaricato il programma è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
 ```bash
 sudo dpkg --force-depends -i bugboard_1.0.0_amd64.deb
 ```
 
-Una volta installato, per poterlo avviare basterà individuare l'eseguibile  
-`bugboard` e avviarlo:
+Una volta installato, per poterlo avviare basterà individuare l'eseguibile `bugboard` e avviarlo:
 
 ```bash
 whereis bugboard
 ./bugboard
 ```
 
-Potrebbe accadere che l'applicazione non venga installata a causa della mancanza di dipendenze. Lo strumento di GitHub Actions che crea il pacchetto, compila prendendo come riferimento le dipendenze dell'ultima versione di Ubuntu in uso sui server di GitHub (Ubuntu 24.04 o successivi). Se il sistema su cui l'applicazione viene installata usa una versione precedente di Ubuntu (come la 22.04), i nomi di alcuni pacchetti di sistema differiscono leggermente, generando il blocco in fase di installazione.   
+Potrebbe accadere che l'applicazione non venga installata a causa della mancanza di dipendenze. Lo strumento di GitHub Actions che crea il pacchetto, compila prendendo come riferimento le dipendenze dell'ultima versione di Ubuntu in uso sui server di GitHub (Ubuntu 24.04 o successivi). 
+
+Se il sistema su cui l'applicazione viene installata usa una versione precedente di Ubuntu (come la 22.04), i nomi di alcuni pacchetti di sistema differiscono leggermente, generando il blocco in fase di
+installazione.   
 
 Il seguente comando serve a dire al gestore pacchetti del sistema di scaricare le versioni corrispondenti delle librerie non soddisfate:
 
