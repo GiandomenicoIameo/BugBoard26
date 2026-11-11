@@ -59,7 +59,7 @@ jobs:
       - name: Upload Linux .deb Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: bugboard-deb-linux
+          name: bugboard-linux-1.0.0-amd64
           path: front-end/target/jpackage/*.deb
 
   # ==========================================
@@ -104,5 +104,5 @@ jobs:
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
         with:
-          name: bugboard-app-windows
-          path: front-end/target/dist/bugboard-windows.zip
+          name: bugboard-windows-1.0.0-amd64
+          path: front-end/target/dist
