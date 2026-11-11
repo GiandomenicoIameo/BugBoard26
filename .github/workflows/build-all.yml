@@ -30,8 +30,10 @@ jobs:
 
       - name: Install packaging tools (dpkg, fakeroot)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y fakeroot dpkg
+          echo "Configurazione DNS di fallback e tentativi di retry..."
+          echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
+          sudo apt-get -o Acquire::Retries=5 update
+          sudo apt-get install -y --no-install-recommends fakeroot dpkg
 
       - name: Download JavaFX JMods
         run: |
@@ -64,6 +66,7 @@ jobs:
             --input front-end/target/input \
             --main-jar demo-1.0-SNAPSHOT.jar \
             --main-class org.example.demo.view.access.Main \
+            --icon front-end/src/main/resources/assets/icon.png \
             --linux-shortcut \
             --linux-menu-group "Utility"
 
@@ -115,7 +118,7 @@ jobs:
           Copy-Item front-end/target/demo-1.0-SNAPSHOT.jar front-end/target/input/
 
       - name: Create Windows package with jpackage
-        run: jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --verbose
+        run: jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --icon front-end/src/main/resources/assets/icon.ico --verbose
 
       - name: Rename app directory for clean extraction
         run: |
