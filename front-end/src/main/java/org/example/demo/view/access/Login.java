@@ -1,16 +1,17 @@
 package org.example.demo.view.access;
 
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import org.example.demo.view.access.definitions.LoginView;
 import org.example.demo.view.access.factory.DockFactory;
-import org.example.demo.view.core.Sequence;
 import org.example.demo.view.core.View;
 import org.example.demo.view.core.contract.Role;
-import java.io.IOException;
 import java.util.Map;
 
 public class Login extends View implements LoginView {
@@ -19,6 +20,8 @@ public class Login extends View implements LoginView {
     @FXML private AnchorPane    login;
     @FXML private TextField     email;
     @FXML private PasswordField password;
+    @FXML private ProgressIndicator progress;
+    @FXML private Button signIn;
 
     public Login(Map<Role, DockFactory> map) {
         show("login.fxml");
@@ -39,26 +42,63 @@ public class Login extends View implements LoginView {
                         show("login.fxml"));
     }
 
-    @FXML
-    public void initialize() {
+    private void setLoadingState(boolean state) {
+        signIn.setMouseTransparent(state);
+        progress.setVisible(state);
 
+        if(state)
+            signIn.setText("");
+        else
+            signIn.setText("Sign in");
     }
 
     @FXML
-    public void signIn() throws IOException,
-            InterruptedException {
+    public void initialize() {
+        setLoadingState(false);
+    }
 
-        DockFactory dockFactory = map
-                .get(orchestration.login()
-                        .login(this));
+    @FXML
+    public void signIn() {
+        setLoadingState(true);
 
-        if (dockFactory != null) {
-            setLogin();
-            Platform.runLater(dockFactory::
-                    createDock);
-       }
-        // else {
-        // non esiste quel ruolo!
-        // }
+        Task<DockFactory> task = new Task<>() {
+            @Override
+            protected DockFactory call()
+                    throws Exception {
+                return map.get(
+                        orchestration.login()
+                                .login(Login.this));
+            }
+        };
+
+        task.setOnSucceeded(e -> {
+            DockFactory dockFactory = task
+                    .getValue();
+            setLoadingState(false);
+
+            if (dockFactory != null) {
+                setLogin();
+                Platform.runLater(dockFactory::
+                        createDock);
+            } // else {
+            // non esiste quel ruolo o le credenziali sono errate!
+            // }
+        });
+
+        // Il fallimento (setOnFailed) in un Task di JavaFX
+        // si verifica quando all'interno del metodo call()
+        // viene lanciata un'eccezione non gestita (cioè un errore
+        // che blocca l'esecuzione).
+        // In questo caso, il fallimento si verifica quando accade
+        // uno dei seguenti eventi: problemi di connessione,
+        // server Docker spento, interruzioni forzate del thread.
+        task.setOnFailed(e -> {
+            setLoadingState(false);
+            Throwable ex = task.getException();
+            if (ex != null)
+                ex.printStackTrace();
+        });
+
+        new Thread(task).start();
     }
 }

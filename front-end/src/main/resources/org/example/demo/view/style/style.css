@@ -625,3 +625,28 @@
     -fx-cursor: default !important;
 }
 
+progress-indicator {
+    -fx-background-color: transparent;
+}
+
+/* Colora l'anello che gira in BIANCO per farlo risaltare sul bottone azzurro */
+.progress-indicator .spinner {
+    -fx-progress-color: #ffffff;
+}
+
+/* Uniforma i segmenti in bianco */
+.progress-indicator .segment {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 50%;
+}
+
+/* Nasconde la percentuale al centro */
+.progress-indicator .text {
+    -fx-visibility: hidden;
+    -fx-opacity: 0;
+}
+
+.progress-indicator .indeterminate-segment {
+    -fx-background-color: #ffffff;
+}
+
