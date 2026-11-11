@@ -11,12 +11,12 @@ run-name: Release Bugboard
 
 jobs:
   # ==========================================
-  # JOB 1: LINUX (.deb rilasciato direttamente)
+  # JOB 1: LINUX (.deb)
   # ==========================================
   build-linux:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Necessario per permettere alla GitHub Action di creare la Release
+      contents: write # Necessario per creare la Release
 
     steps:
       - name: Checkout repository
@@ -71,18 +71,20 @@ jobs:
           files: front-end/target/dist/*.deb
           tag_name: v1.0.0
           name: "Bugboard v1.0.0"
-          body: "Rilascio automatico per Linux (.deb non compresso) e Windows."
+          body: "Rilascio automatico per Linux (.deb) e Windows (ZIP)."
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # ==========================================
-  # JOB 2: WINDOWS (.exe / App Image zippata)
+  # JOB 2: WINDOWS (.exe / App Image)
   # ==========================================
   build-windows:
     runs-on: windows-latest
     timeout-minutes: 20
+    permissions:
+      contents: write # Necessario per aggiungere il file alla stessa Release
 
     steps:
       - name: Checkout repository
@@ -117,8 +119,17 @@ jobs:
         run: |
           Move-Item front-end/target/dist/bugboard front-end/target/dist/bugboard-windows-1.0.0-amd64
 
-      - name: Upload Windows artifact
-        uses: actions/upload-artifact@v4
+      - name: Compress Windows directory to Zip
+        run: |
+          Compress-Archive -Path front-end/target/dist/bugboard-windows-1.0.0-amd64 -DestinationPath front-end/target/dist/bugboard-windows-1.0.0-amd64.zip
+
+      - name: Upload Windows Zip to GitHub Releases
+        uses: softprops/action-gh-release@v2
         with:
-          name: bugboard-windows-1.0.0-amd64
-          path: front-end/target/dist/bugboard-windows-1.0.0-amd64
+          files: front-end/target/dist/*.zip
+          tag_name: v1.0.0
+          append_body: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
