@@ -30,15 +30,17 @@ whereis bugboard
 ./bugboard
 ```
 
-Potrebbe accadere che l'applicazione non venga installata a causa della mancanza di dipendenze.   
-Lo strumento di GitHub Actions che crea il pacchetto, compila prendendo come riferimento le  
-dipendenze dell'ultima versione di Ubuntu in uso sui server di GitHub (Ubuntu 24.04 o successivi).
+Potrebbe accadere che l'applicazione non venga installata a causa della  
+mancanza di dipendenze. Lo strumento di GitHub Actions che crea il  
+pacchetto, compila prendendo come riferimento le dipendenze dell'ultima   
+versione di Ubuntu in uso sui server di GitHub (Ubuntu 24.04 o successivi).
 
-Se il sistema su cui l'applicazione viene installata usa una versione precedente di Ubuntu (come la 22.04),   
-i nomi di alcuni pacchetti di sistema differiscono leggermente, generando il blocco in fase di installazione.  
+Se il sistema su cui l'applicazione viene installata usa una versione  
+precedente di Ubuntu (come la 22.04), i nomi di alcuni pacchetti di sistema  
+differiscono leggermente, generando il blocco in fase di installazione.   
 
-Il seguente comando serve a dire al gestore pacchetti del sistema di scaricare le versioni  
-corrispondenti delle librerie non soddisfate:
+Il seguente comando serve a dire al gestore pacchetti del sistema di  
+scaricare le versioni corrispondenti delle librerie non soddisfate:
 
 ```bash
 sudo apt --fix-broken install
