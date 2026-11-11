@@ -36,3 +36,7 @@ sudo apt --fix-broken install
 ```
 ### Installazione su Windows (`.zip`)
 Su Windows la procedura è molto più semplice: basta scaricare il file `.zip` dalla sezione Releases, decomprimerlo e avviare l'eseguibile dell'applicazione.
+
+## Back-end
+Per l'installazione del back-end è sufficiente scaricare il programma dal seguente link.
+
