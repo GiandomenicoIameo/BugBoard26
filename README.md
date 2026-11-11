@@ -1,15 +1,10 @@
 # Passi per l'installazione
 
-L'applicazione si compone di due parti: la parte front-end, il cui codice sorgente è visionabile nella directory `front-end/`, e la parte back-end, scaricabile dal seguente link.
+L'applicazione si compone di due parti: la parte front-end, il cui codice sorgente è visionabile nella directory `front-end/`, e la parte back-end, scaricabile dal seguente link. L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato esclusivamente per avviare la parte back-end.  
 
-L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato esclusivamente per avviare la parte back-end.  
-
-Per una maggiore comprensione del processo di installazione, il documento è stato diviso in due parti: nella prima verranno illustrati i passi necessari per l'installazione del  front-end, mentre nella seconda quelli per il back-end.  
-
-## Front-end
 Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository, a seconda del sistema in uso sul proprio computer.
 
-### Installazione su Debian-based (`.deb`)
+## Installazione su Debian-based (`.deb`)
 
 Una volta scaricato, è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
@@ -34,9 +29,5 @@ Il seguente comando serve a dire al gestore pacchetti del sistema di scaricare l
 ```bash
 sudo apt --fix-broken install
 ```
-### Installazione su Windows (`.zip`)
+## Installazione su Windows (`.zip`)
 Su Windows la procedura è molto più semplice: basta scaricare il file `.zip` dalla sezione Releases, decomprimerlo e avviare l'eseguibile dell'applicazione.
-
-## Back-end
-Per l'installazione del back-end è sufficiente scaricare il programma dal seguente link.
-
