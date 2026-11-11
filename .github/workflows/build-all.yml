@@ -64,7 +64,6 @@ jobs:
           jpackage \
             --type deb \
             --name bugboard \
-            --linux-app-name "BugBoard" \
             --app-version 1.0.0 \
             --dest front-end/target/dist \
             --runtime-image front-end/target/image \
@@ -86,7 +85,7 @@ jobs:
         with:
           files: front-end/target/dist/*.deb
           tag_name: v1.0.0
-          name: "BugBoard v1.0.0"
+          name: "Bugboard v1.0.0"
           body: "Rilascio automatico per Linux (.deb) e Windows (ZIP)."
           draft: false
           prerelease: false
@@ -129,20 +128,20 @@ jobs:
           Copy-Item front-end/target/demo-1.0-SNAPSHOT.jar front-end/target/input/
 
       - name: Create Windows package with jpackage
-        run: jpackage --type app-image --name BugBoard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --verbose
+        run: jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --verbose
 
       - name: Rename app directory for clean extraction
         run: |
-          Move-Item front-end/target/dist/BugBoard front-end/target/dist/BugBoard-windows-1.0.0-amd64
+          Move-Item front-end/target/dist/bugboard front-end/target/dist/bugboard-windows-1.0.0-amd64
 
       - name: Compress Windows directory to Zip
         run: |
-          Compress-Archive -Path front-end/target/dist/BugBoard-windows-1.0.0-amd64 -DestinationPath front-end/target/dist/BugBoard-windows-1.0.0-amd64.zip
+          Compress-Archive -Path front-end/target/dist/bugboard-windows-1.0.0-amd64 -DestinationPath front-end/target/dist/bugboard-windows-1.0.0-amd64.zip
 
       - name: Delete old Windows release asset if exists
         continue-on-error: true
         run: |
-          gh release delete-asset v1.0.0 BugBoard-windows-1.0.0-amd64.zip --yes
+          gh release delete-asset v1.0.0 bugboard-windows-1.0.0-amd64.zip --yes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
