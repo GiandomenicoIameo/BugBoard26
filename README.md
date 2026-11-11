@@ -1,4 +1,7 @@
-# Passi per l'installazione
+<p style="font-family: 'Garamond', 'eb garamond', serif; font-weight: normal;">
+  # Passi per l'installazione
+</p>
+
 L'applicazione si compone di due parti: la parte front-end, il cui codice sorgente è  
 visionabile nella directory `front-end/`, e la parte back-end, scaricabile dal seguente link.
 
