@@ -115,7 +115,7 @@ jobs:
           Copy-Item front-end/target/demo-1.0-SNAPSHOT.jar front-end/target/input/
 
       - name: Create Windows package with jpackage
-        run: jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --icon front-end/src/main/resources/assets/icon.ico --verbose
+        run: jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --verbose
 
       - name: Rename app directory for clean extraction
         run: |
