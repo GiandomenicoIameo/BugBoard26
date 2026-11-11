@@ -1,186 +1,31 @@
+# Passi per l'installazione
 
-# Installazione di *SWI-Prolog*
+L'applicazione si compone di due parti: la parte front-end, il cui
+codice sorgente è visionabile nella directory front-end/, e la parte back-end, scaricabile dal seguente link.
 
-```bash
-Linux ( Debian )
-Installazione tramite Snapd
+L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato esclusivamente per avviare la parte back-end. Per una maggiore comprensione del processo di installazione, il documento è stato diviso in due parti: nella prima verranno illustrati i passi necessari per l'installazione del front-end, mentre nella seconda quelli per il back-end.
 
-# Snapd è la tecnologia che permette ai pacchetti 
-# Snap di essere eseguiti su Linux. Questi ultimi 
-# possono essere installati dallo snap store e contengono 
-# al loro interno tutto ciò che il programma ha bisogno per 
-# essere avviato correttamente come ad esempio file audio, 
-# librerie, file binari e così via. 
-#
-# A partire da Debian 9 ( Stretch ), 
-# e in ogni versione successiva, sarà possibile installare
-# snap direttamente dalla linea di comando :
-```
+Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository. 
+
+## Esecuzione su Linux (Debian-based)
+Una volta scaricato il programma è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
 ```bash
-sudo apt update
-sudo apt install snapd
-sudo snap install core
-
-# installa swi-prolog
-
-sudo snap install swi-prolog
+$ sudo dpkg --force-depends -i bugboard_1.0.0_amd64.deb
 ```
+
+Una volta installato, per poterlo avviare basterà individuare l'eseguibile `bugboard` e avviarlo:
 
 ```bash
-Linux ( Ubuntu )
-Installazione tramite PPA ( Ubuntu Personal Package Archive )
-
-# Esistono PPA per lo sviluppo e alcuni basati sulla struttura
-# di pacchettizzazione Debian. Indipendentemente dalla scelta,
-# questi vengono aggiornati ogni volta che si presenta una nuova
-# versione.
+$ whereis bugboard
+$ ./bugboard
 ```
+
+Potrebbe accadere che l'applicazione non venga installata a causa della mancanza di dipendenze. Lo strumento di GitHub Actions che crea il pacchetto, compila prendendo come riferimento le dipendenze dell'ultima versione di Ubuntu in uso sui server di GitHub (Ubuntu 24.04 o successivi). 
+Se il sistema su cui l'applicazione viene installata usa una versione precedente di Ubuntu (come la 22.04), i nomi di alcuni pacchetti di sistema differiscono leggermente, generando il blocco in fase di installazione.
+
+Il seguente comando serve a dire al gestore pacchetti del sistema di scaricare le versioni corrispondenti delle librerie non soddisfate:
 
 ```bash
-# Versioni stabili
-
-sudo apt-add-repository ppa:swi-prolog/stable
-sudo apt update
-sudo apt install swi-prolog
-
-# Versioni di sviluppo
-
-sudo apt-add-repository ppa:swi-prolog/devel
-sudo apt update
-sudo apt install swi-prolog
+$ sudo apt --fix-broken install
 ```
-
-# Clonare la libreria
-
-```bash
-# Una volta installato il pacchetto swi-prolog non ci resta 
-# che clona
-# Installazione di *SWI-Prolog*
-
-```bash
-Linux ( Debian )
-Installazione tramite Snapd
-
-# Snapd è la tecnologia che permette ai pacchetti 
-# Snap di essere eseguiti su Linux. Questi ultimi 
-# possono essere installati dallo snap store e contengono 
-# al loro interno tutto ciò che il programma ha bisogno per 
-# essere avviato correttamente come ad esempio file audio, 
-# librerie, file binari e così via. 
-#
-# A partire da Debian 9 ( Stretch ), 
-# e in ogni versione successiva, sarà possibile installare
-# snap direttamente dalla linea di comando :
-```
-
-```bash
-sudo apt update
-sudo apt install snapd
-sudo snap install core
-
-# installa swi-prolog
-
-sudo snap install swi-prolog
-```
-
-```bash
-Linux ( Ubuntu )
-Installazione tramite PPA ( Ubuntu Personal Package Archive )
-
-# Esistono PPA per lo sviluppo e alcuni basati sulla struttura
-# di pacchettizzazione Debian. Indipendentemente dalla scelta,
-# questi vengono aggiornati ogni volta che si presenta una nuova
-# versione.
-```
-
-```bash
-# Versioni stabili
-
-sudo apt-add-repository ppa:swi-prolog/stable
-sudo apt update
-sudo apt install swi-prolog
-
-# Versioni di sviluppo
-
-sudo apt-add-repository ppa:swi-prolog/devel
-sudo apt update
-sudo apt install swi-prolog
-```
-
-# Clonare la libreria
-
-```bash
-# Una volta installato il pacchetto swi-prolog non ci resta 
-# che clonare la repository sul nostro computer locale. Per 
-# farlo sarà sufficiente il seguente comando :
-
-git clone https://github.com/GiandomenicoIameo/library.git
-
-# In modo alternativo, è possibile clonare solo i file strettamente 
-# necessari, evitando così di clonare l'intera repository :
-
-mkdir combinatory_logic
-cd combinatory_logic/
-
-wget https://raw.githubusercontent.com/GiandomenicoIameo/library/main/swi-prolog/combinatory_logic/combinatorics.pro
-wget https://raw.githubusercontent.com/GiandomenicoIameo/library/main/swi-prolog/combinatory_logic/dictionary.pro
-
-```
-
-# Esecuzione di programmi 
-
-```bash
-# Arrivati a questo punto non ci resta 
-# che avviare l'interprete prolog da riga di comando :
-
-swipl 
-Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.2)
-
-?- 
-```
-
-```bash
-# Per caricare un programma sono disponibili 3 diversi comandi:
-
-?- [ 'dictionary.pro' ].                # oppure
-?- consult( 'dictionary.pro' ).         # viene utilizzato quando si carica un programma per la prima volta
-?- reconsult( 'dictionary.pro' ).       # viene utilizzato quando si carica un programma dopo una correzione
-```
-
-re la repository sul nostro computer locale. Per 
-# farlo sarà sufficiente il seguente comando :
-
-git clone https://github.com/GiandomenicoIameo/library.git
-
-# In modo alternativo, è possibile clonare solo i file strettamente 
-# necessari, evitando così di clonare l'intera repository :
-
-mkdir combinatory_logic
-cd combinatory_logic/
-
-wget https://raw.githubusercontent.com/GiandomenicoIameo/library/main/swi-prolog/combinatory_logic/combinatorics.pro
-wget https://raw.githubusercontent.com/GiandomenicoIameo/library/main/swi-prolog/combinatory_logic/dictionary.pro
-
-```
-
-# Esecuzione di programmi 
-
-```bash
-# Arrivati a questo punto non ci resta 
-# che avviare l'interprete prolog da riga di comando :
-
-swipl 
-Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.2)
-
-?- 
-```
-
-```bash
-# Per caricare un programma sono disponibili 3 diversi comandi:
-
-?- [ 'dictionary.pro' ].                # oppure
-?- consult( 'dictionary.pro' ).         # viene utilizzato quando si carica un programma per la prima volta
-?- reconsult( 'dictionary.pro' ).       # viene utilizzato quando si carica un programma dopo una correzione
-```
-
