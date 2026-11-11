@@ -8,7 +8,9 @@ Per una maggiore comprensione del processo di installazione, il documento è sta
 
 Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository. 
 
-## Esecuzione su Linux (Debian-based)
+## Front-end
+
+### Esecuzione su Linux (Debian-based)
 
 Una volta scaricato, è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
@@ -33,3 +35,4 @@ Il seguente comando serve a dire al gestore pacchetti del sistema di scaricare l
 ```bash
 sudo apt --fix-broken install
 ```
+### Esecuzione su Windows
