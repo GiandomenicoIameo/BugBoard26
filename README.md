@@ -1,6 +1,3 @@
-<p style="font-family: 'Garamond', 'eb garamond', serif; font-weight: normal;">
-  Questo testo verrà mostrato con il font Garamond normale.
-</p>
 # Passi per l'installazione
 
 L'applicazione si compone di due parti: la parte front-end, il cui codice sorgente è  
@@ -8,13 +5,15 @@ visionabile nella directory `front-end/`, e la parte back-end, scaricabile dal s
 
 L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato  
 esclusivamente per avviare la parte back-end.  
-&nbsp;&nbsp;&nbsp;&nbsp;Per una maggiore comprensione del processo di installazione, il documento è stato diviso  
-in due parti: nella prima verranno illustrati i passi necessari per l'installazione del  
-front-end, mentre nella seconda quelli per il back-end.  
+&nbsp;&nbsp;&nbsp;&nbsp;Per una maggiore comprensione del processo di installazione, il  
+documento è stato diviso in due parti: nella prima verranno illustrati i passi necessari  
+per l'installazione del  front-end, mentre nella seconda quelli per il back-end.  
 
-Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository. 
+Per l'installazione del front-end è sufficiente scaricare il file presente nella  
+sezione Releases del repository. 
 
 ## Esecuzione su Linux (Debian-based)
+
 Una volta scaricato il programma è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
 ```bash
