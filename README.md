@@ -35,4 +35,4 @@ Il seguente comando serve a dire al gestore pacchetti del sistema di scaricare l
 sudo apt --fix-broken install
 ```
 ### Installazione su Windows (`.zip`)
-Su Windows la procedura è molto più semplice. In questo caso basterà decomprimere il file `.zip` e avviare l'eseguibile `.exe`.
+Su Windows la procedura è molto più semplice: basta scaricare il file `.zip` dalla sezione Releases, decomprimerlo e avviare l'eseguibile dell'applicazione.
