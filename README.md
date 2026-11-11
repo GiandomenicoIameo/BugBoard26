@@ -10,7 +10,7 @@ Per l'installazione del front-end è sufficiente scaricare il file presente nell
 
 ## Esecuzione su Linux (Debian-based)
 
-Una volta scaricato il programma è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
+Una volta scaricato, è sufficiente  posizionarsi nella stessa directory del file `.deb` e digitare il seguente comando:
 
 ```bash
 sudo dpkg --force-depends -i bugboard_1.0.0_amd64.deb
