@@ -114,13 +114,10 @@ jobs:
       - name: Create Windows package with jpackage
         run: jpackage --type app-image --name bugboard --app-version 1.0.0 --dest front-end/target/dist --runtime-image front-end/target/image --input front-end/target/input --main-jar demo-1.0-SNAPSHOT.jar --main-class org.example.demo.view.access.Main --verbose
 
-      - name: Rename app directory for clean extraction
+      - name: Compress Windows directory to Zip cleanly
         run: |
-          Move-Item front-end/target/dist/bugboard front-end/target/dist/bugboard-windows-1.0.0-amd64
-
-      - name: Compress Windows directory to Zip
-        run: |
-          Compress-Archive -Path front-end/target/dist/bugboard-windows-1.0.0-amd64 -DestinationPath front-end/target/dist/bugboard-windows-1.0.0-amd64.zip
+          # Comprimiamo direttamente il contenuto della cartella dell'applicazione in un unico file zip con la cartella radice desiderata
+          Compress-Archive -Path front-end/target/dist/bugboard\* -DestinationPath front-end/target/dist/bugboard-windows-1.0.0-amd64.zip
 
       - name: Upload Windows zip artifact
         uses: actions/upload-artifact@v4
@@ -138,7 +135,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
-      contents: write # Necessario per permettere ad GitHub Actions di creare la Release
+      contents: write
 
     steps:
       - name: Download artifacts
