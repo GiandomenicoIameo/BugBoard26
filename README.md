@@ -4,7 +4,7 @@ visionabile nella directory `front-end/`, e la parte back-end, scaricabile dal s
 
 L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato  
 esclusivamente per avviare la parte back-end.  
-  Per una maggiore comprensione del processo di installazione, il documento è stato diviso  
+&nbsp;&nbsp;&nbsp;&nbsp;Per una maggiore comprensione del processo di installazione, il documento è stato diviso  
 in due parti: nella prima verranno illustrati i passi necessari per l'installazione del  
 front-end, mentre nella seconda quelli per il back-end.  
 
