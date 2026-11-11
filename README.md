@@ -19,15 +19,15 @@ Una volta scaricato il programma è sufficiente  posizionarsi nella stessa direc
 del file `.deb` e digitare il seguente comando:
 
 ```bash
-$ sudo dpkg --force-depends -i bugboard_1.0.0_amd64.deb
+sudo dpkg --force-depends -i bugboard_1.0.0_amd64.deb
 ```
 
 Una volta installato, per poterlo avviare basterà individuare l'eseguibile  
 `bugboard` e avviarlo:
 
 ```bash
-$ whereis bugboard
-$ ./bugboard
+whereis bugboard
+./bugboard
 ```
 
 Potrebbe accadere che l'applicazione non venga installata a causa della mancanza di dipendenze.   
@@ -37,9 +37,9 @@ dipendenze dell'ultima versione di Ubuntu in uso sui server di GitHub (Ubuntu 24
 Se il sistema su cui l'applicazione viene installata usa una versione precedente di Ubuntu (come la 22.04),   
 i nomi di alcuni pacchetti di sistema differiscono leggermente, generando il blocco in fase di installazione.  
 
-Il seguente comando serve a dire al gestore pacchetti del sistema di scaricare le versioni 
+Il seguente comando serve a dire al gestore pacchetti del sistema di scaricare le versioni  
 corrispondenti delle librerie non soddisfate:
 
 ```bash
-$ sudo apt --fix-broken install
+sudo apt --fix-broken install
 ```
