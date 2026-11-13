@@ -70,7 +70,7 @@ jobs:
             --main-class org.example.demo.view.access.Main \
             --linux-shortcut \
             --linux-menu-group "Utility" \
-            --icon front-end/src/main/resources/icons/logo.png
+            --icon front-end/src/main/resources/org/example/demo/view/icons/logo.png
 
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
@@ -124,7 +124,7 @@ jobs:
             --main-jar demo-1.0-SNAPSHOT.jar `
             --main-class org.example.demo.view.access.Main `
             --verbose `
-            --icon front-end/src/main/resources/icons/logo.ico
+            --icon front-end/src/main/resources/org/example/demo/view/icons/logo.ico
 
       - name: Compress Windows directory to Zip cleanly
         run: |
