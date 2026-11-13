@@ -1,6 +1,6 @@
 # Passi per l'installazione
 
-L'applicazione si compone di due parti: la parte front-end, il cui codice sorgente è visionabile nella directory `front-end/`, e la parte back-end, scaricabile da scaricabile da [GitHub Pages]([https://giandomenicoiameo.github.io/BugBoard26/](https://github.com/ubiestubi/ProgettoIngSoft)). L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato esclusivamente per avviare la parte back-end.  
+L'applicazione si compone di due parti: la parte front-end, il cui codice sorgente è visionabile nella directory `front-end/`, e la parte back-end, scaricabile da scaricabile da [GitHub Pages](https://github.com/ubiestubi/ProgettoIngSoft). L'unico requisito di cui necessita l'applicazione è Docker. Quest'ultimo viene impiegato esclusivamente per avviare la parte back-end.  
 
 Per l'installazione del front-end è sufficiente scaricare il file presente nella sezione Releases del repository, a seconda del sistema in uso sul proprio computer.
 
