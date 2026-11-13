@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Rilevamento automatico della versione di compose
+if command -v docker &> /dev/null && docker compose version &> /dev/null; then
+    COMPOSE_CMD="docker compose -f ../compose.yml"
+elif command -v docker-compose &> /dev/null; then
+    COMPOSE_CMD="docker-compose -f ../compose.yml"
+else
+    echo "Errore: Docker Compose non è installato sul sistema."
+    exit 1
+fi
+
+# Intercetta CTRL + C per fermare e rimuovere i container prima di uscire
+trap '$COMPOSE_CMD down > /dev/null 2>&1; echo -e "\nBack-end arrestato e ripulito con successo."; exit 0' SIGINT
+
+echo "Avvio dell'ambiente in corso, attendere..."
+
+# Avvia i container catturando i log in tempo reale
+$COMPOSE_CMD up 2>&1 | while read -r line; do
+    # Cerca la riga esatta che indica che l'applicazione è partita
+    if echo "$line" | grep -q "Started ProgettoIngSoftApplication"; then
+        echo "Operazione completata! Il server è in ascolto sulla porta 8080..."
+        # Una volta stampato il messaggio, interrompe il ciclo e sblocca il mantenimento
+        break
+    fi
+done
+
+# Mantiene lo script in esecuzione (bloccato) finché non premi CTRL + C
+while true; do
+    sleep 1
+done
