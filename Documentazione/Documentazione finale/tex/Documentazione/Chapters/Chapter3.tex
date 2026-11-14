@@ -1,0 +1,234 @@
+\chapter{Requisiti specifici} % Main chapter title
+
+\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+% \newcommand{\keyword}[1]{\textbf{#1}}
+
+%----------------------------------------------------------------------------------------
+Il presente capitolo fornisce una descrizione più dettagliata dei requisiti funzionali 
+utente presentati nel capitolo 2, nonché dei requisiti non funzionali imposti. \\
+\indent In teoria i requisiti dovrebbero descrivere cosa il sistema deve fare e non come deve essere progettato. Il livello di dettaglio adottato, in particolare nei mock-up, ha però reso inevitabile includere alcune informazioni sull'interfaccia e sulla progettazione.
+
+\section{Requisiti funzionali}
+
+Il presente paragrafo descrive in maniera più dettagliata i casi d’uso presentati nel precedente capitolo. Per la descrizione testuale di tali casi d’uso si è deciso di adottare un formato proposto da Alistair Cockburn e chiamato \textit{template di Cockburn}. Il motivo di tale scelta è legato alla sua struttura tabellare, che facilita la comprensione
+delle interazioni tra attori e sistema, offrendo una rappresentazione esaustiva di tutti
+gli eventi. \\
+\indent Si fa presente al lettore che le tabelle seguenti contengono riferimenti a \textit{mock-up}. Per una maggiore comprensione si raccomanda di consultare questi artefatti quando vengono citati. Questo paragrafo è suddiviso nei seguenti sottoparagrafi: \\
+
+\begin{enumerate}
+    \item \textit{Template di Cockburn}: Presentazione del \textit{template di Cockburn} applicato a un \textit{caso d'uso} significativo: \textit{Filtra issues}.
+    \item \textit{Prototipazione visuale via Mock-up}: Le schermate dell'interfaccia coinvolte in ciascun caso d'uso, nell'ordine in cui compaiono nello scenario principale.
+\end{enumerate}
+
+\newpage
+\subsection{Template di Cockburn}
+
+\begin{center}
+    \vspace*{-1em}
+    \renewcommand{\arraystretch}{2.0}
+    \begin{tabular}{|p{0.25\linewidth}|p{0.10\linewidth}|p{0.43\linewidth}|p{0.22\linewidth}|}
+        \hline
+        \textbf{Use case \#1} & \multicolumn{3}{l|}{\emph{Filtra/Ordina issues}} \\
+        \hline
+        \textbf{Goal in Context} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{Consente all'utente di ordinare e filtrare le issue in base a diversi criteri}} \\
+        \hline
+        \textbf{Preconditions} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{L'utente deve possedere un proprio account}} \\
+        \hline
+        \textbf{Success End Condition} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{Il sistema restituisce i risultati della ricerca avanzata}} \\
+        \hline
+        \textbf{Failed End Condition} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{Il sistema non produce nessun risultato di ricerca}} \\
+        \hline
+        \textbf{Primary Actor} & \multicolumn{3}{l|}{Utente} \\
+        \hline
+        \textbf{Trigger} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{L'utente clicca sul pulsante \fbox{{Filtra}}}} \\
+        \hline
+        \textbf{Main Scenario} & \textbf{Step n.} & \textbf{Utente} & \textbf{Sistema} \\
+        \cline{2-4}
+        & 1 & & \emph{Mostra M1} \\
+        \cline{2-4}
+        & 2 & \emph{Clicca sul pulsante \fbox{{Cerca}}} & \\
+        \cline{2-4}
+        & 3 & & \emph{Mostra M2} \\
+        \cline{2-4}
+        & 4 & \emph{Clicca sul pulsante \fbox{{Filtra}}} & \\
+        \cline{2-4}
+        & 5 & & \emph{Mostra M3} \\
+        \cline{2-4}
+        & 6 & \emph{Seleziona il tipo di filtro} & \\
+        \cline{2-4}
+        & 7 & & \emph{Mostra M4} \\
+        \cline{2-4}
+        & 8 & \emph{Clicca sul pulsante \fbox{{Apply}}} & \\
+        \cline{2-4}
+        & 9 & & \emph{Mostra M5} \\
+        \hline
+    \end{tabular}
+\end{center}
+
+% \begin{center}
+% 	\vspace*{-1em}
+% \def\arraystretch{2.0}
+
+% \begin{tabular}{|p{0.3\linewidth}|p{0.7\linewidth}|}
+% \hline 
+% \textbf{Primary Actor} & Utente  \\
+% \hline
+% \textbf{Trigger} & \emph{L'utente clicca sul pulsante "Filtra/Ordina"} \\
+% \hline
+% \textbf{Main Scenario} &  \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
+%                     \textbf{Step n.} &
+%                     \textbf{Utente} &
+%                     \textbf{Sistema} \\
+%                     \hline
+%                     \end{tabular} \\
+% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
+%                     1 &
+%                      &
+%                     \emph{Mostra M1} \\
+%                     \hline
+%                     \end{tabular} \\
+% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
+%                     2 &
+%                      \emph{Clicca sul pulsante "Filtra/Ordina"} &
+%                      \\
+%                     \hline
+%                     \end{tabular} \\
+% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
+%                     3 &
+%                       &
+%                      \emph{Mostra M2} \\
+%                     \hline
+%                     \end{tabular} \\
+% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
+%                     4 &
+%                      \emph{Seleziona il tipo di filtro} &
+%                      \\
+%                     \hline
+%                     \end{tabular} \\
+% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
+%                     5 &
+%                      &
+%                      \emph{Mostra M3} \\
+%                     \hline
+%                     \end{tabular} \\
+% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
+%                     6 &
+%                     \emph{Clicca sul pulsante "Cerca"}  &
+%                     \\
+%                     \hline
+%                     \end{tabular} \\
+% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
+%                     7 &
+%                       &
+%                     \emph{Mostra M4} \\
+%                     \hline
+%                     \end{tabular} \\
+% \hline
+% \end{tabular} 
+% \end{center}
+
+\clearpage
+
+\subsection{Prototipazione visuale via Mock-up}
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/Mockup-1.png}
+\end{center}
+\caption{Mock-up \textit{M1}}
+\label{fig:f1} 
+\end{figure}
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/Mockup-2.png}
+\end{center}
+\caption{Mock-up \textit{M2}}
+\label{fig:f1} 
+\end{figure}
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/Mockup-3.png}
+\end{center}
+\caption{Mock-up \textit{M3}}
+\label{fig:f1} 
+\end{figure}
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/Mockup-4.png}
+\end{center}
+\caption{Mock-up \textit{M4}}
+\label{fig:f1} 
+\end{figure}
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/Mockup-5.png}
+\end{center}
+\caption{Mock-up \textit{M5}}
+\label{fig:f1} 
+\end{figure}
+
+\section{Requisiti non funzionali}
+
+\subsection{Requisiti del prodotto}
+
+\begin{quote}
+\begin{enumerate}[label=\textit{RP\arabic*}]
+  \item (\textit{Requisito di affidabilità}): In caso di richiesta non valida (dati mancanti o errati, risorsa inesistente, permessi insufficienti), il sistema deve rispondere con un messaggio di errore esplicito, senza alterare i dati memorizzati.
+  
+  \item (\textit{Requisito di apprendimento}): Un utente con conoscenza del dominio deve essere in grado, al primo utilizzo e senza manuale, di segnalare una issue e di filtrare l'elenco delle issue.
+  \item (\textit{Requisito di prestazioni}): Il sistema deve restituire l'elenco delle issue, filtrato o ricercato, entro 2 secondi in condizioni normali di rete.
+
+   \item (\textit{Requisito di portabilità}): Il back-end, distribuito come container Docker, deve poter essere eseguito su qualsiasi macchina che supporti Docker, senza modifiche al codice.
+
+  \item (\textit{Requisito di confidenzialità}): Solo gli utenti autenticati possono accedere ai dati del sistema, e ciascuno solo alle operazioni consentite dal proprio ruolo. Le password devono essere memorizzate esclusivamente in forma cifrata (tramite hash). 
+  
+     \item (\textit{Requisito di integrità.}):  Il sistema deve rifiutare i dati non validi: campi obbligatori mancanti, lunghezze massime superate ed email già in uso.
+     
+\end{enumerate} 
+\end{quote}
+
+\subsection{Requisiti organizzativi}
+
+\begin{quote}
+\begin{enumerate}[label=\textit{RO\arabic*}]
+  \item (\textit{Requisito sull'architettura}): Il sistema deve basarsi su una architettura distribuita. \\
+    \textbf{\textit{Requisiti di sistema:}} 
+    \begin{itemize}
+        \item Il sistema deve prevedere due macro-componenti indipendenti: \textit{back-end} e \textit{front-end}.
+        \item Il \textit{back-end} deve essere composto da almeno una componente che gestisce la logica di business e i dati.
+        \item Il \textit{back-end} deve offrire una interfaccia di programmazione, con cui comunicare, mediante \textit{API REST}.
+        \item Il \textit{front-end} deve comunicare con il \textit{back-end} solo tramite le \textit{API} esposte.
+        \item Il \textit{front-end} deve essere realizzato come applicazione desktop.
+        \item \textit{Back-end} e \textit{front-end} devono poter essere eseguiti separatamente ed il front-end deve poter essere sostituito o modificato senza modifiche al back-end.
+    \end{itemize} 
+    
+  \item (\textit{Requisito di implementazione}): Per la fase di implementazione devono essere utilizzati linguaggi di programmazione Object-Oriented. \\
+  \textbf{\textit{Requisiti di sistema:}} 
+    \begin{itemize}
+        \item Sia il \textit{back-end} che il \textit{front-end} devono essere realizzati utilizzando linguaggi del paradigma ad oggetti.
+        \item Entrambe le componenti sono realizzate in Java: \textit{back-end} con Spring Boot, il \textit{front-end} con JavaFX.
+    \end{itemize} 
+  
+  \item (\textit{Requisito sugli strumenti}): Per le attività di progettazione è obbligatorio l'utilizzo di strumenti CASE. \\
+  \textbf{\textit{Requisiti di sistema:}} 
+    \begin{itemize}
+        \item I diagrammi UML del back-end e i diagrammi dei casi d'uso sono realizzati con Visual Paradigm.
+  \item I diagrammi UML del front-end sono realizzati con Modelio.
+  \item Lo schema della base di dati è progettato con MySQL Workbench, che genera automaticamente lo script SQL di creazione delle tabelle.
+    \end{itemize}
+  
+  \item (\textit{Requisito di unicità}): Il sistema deve essere progettato rispettando i requisiti antiplagio, in grado di soddisfare e superare gli standard richiesti in materia di originalità dei contenuti. \\
+  \textbf{\textit{Requisiti di progettazione:}} 
+    \begin{itemize}
+        \item Il design deve essere astratto, per favorire il riutilizzo del codice e l'aggiunta futura di nuove funzionalità. Le scelte adottate a tale scopo sono descritte nel capitolo 4.
+    \end{itemize}
+\end{enumerate} 
+\end{quote}

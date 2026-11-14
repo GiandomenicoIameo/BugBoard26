@@ -1,0 +1,697 @@
+\chapter{Verifica e convalida} % Main chapter title
+
+\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+\section{Progettazione dei casi di test}
+
+Questa sezione descrive nel dettaglio la progettazione dei casi di test e le motivazioni 
+delle strategie adottate. L’obiettivo è definire un insieme di casi di test 
+efficace, in grado di verificare che il sistema soddisfi i requisiti.
+
+Tra i diversi approcci alla progettazione dei test, la strategia adottata 
+si basa sul partizionamento in classi di equivalenza. Il dominio dei dati in 
+ingresso viene suddiviso in classi, ciascuna composta da valori per cui il 
+sistema dovrebbe comportarsi in modo equivalente, e per ogni classe si sceglie 
+almeno un caso di test rappresentativo. Questa scelta riduce il numero di test 
+necessari senza rinunciare alla copertura dei comportamenti distinti del sistema.
+
+Il \text{test plan} completa i test di unità: verifica la funzionalità nel 
+suo insieme, con il back-
+end avviato e collegato al database, e controlla anche gli aspetti che i 
+test di unità non
+vedono, cioè i permessi, la validazione delle richieste e i codici di risposta.
+
+\section{Descrizione dei casi di testi in JUnit}
+La presente sezione si occuperà di rappresentare i casi di test definiti per esaminare il comportamento delle funzionalità più complesse e per accertarne il corretto funzionamento. A questo scopo, è stato utilizzato il framework JUnit 5. \\
+\indent Per facilitare la leggibilità, i casi di test sono stati suddivisi in base al sottosistema di appartenenza. I primi casi di test che verranno illustrati sono quelli definiti nella parte front-end; successivamente verranno descritti quelli della parte back-end.
+
+I metodi selezionati (lato front-end) per gli Unit Test sono i seguenti:
+
+\begin{quote}
+\begin{enumerate}[label=\textit{\arabic*}]
+   \item \texttt{selectToggleFilter()}: imposta un filtro di ricerca a partire 
+   dai campi impostati nell’interfaccia grafica. Lo scopo è verificare che ogni combinazione di scelte, compresa l’assenza di selezione, produca un filtro valido.
+  
+  \item \texttt{setDate()}: traduce una data in formato UTC in una data leggibile dall'utente. 
+  Lo scopo è verificare che le date significative (passaggio di mezzanotte o di fine anno, valore mancante o malformato) 
+  siano convertite correttamente.
+\end{enumerate} 
+\end{quote}
+
+\noindent Per la definizione delle classi di equivalenza è stato adottato l'\textit{approccio basato sulla funzionalità}, 
+in cui il processo di partizionamento si basa rigorosamente sui requisiti
+e non sull'implementazione del codice. \\
+\indent Le classi di equivalenza sono pensate in relazione al
+comportamento del metodo. Quindi i parametri non sono stati valutati in modo isolato, ma si
+è tenuto conto del contesto e delle relazioni logiche esistenti tra di essi.
+
+\subsection{Metodo \texttt{selectToggleFilter()}}
+
+\noindent La firma del metodo è la seguente:
+
+\begin{minipage}{\linewidth}
+\centering\begin{minted}{java}
+void selectToggleFilter(ToggleGroup group, String filterValue)
+\end{minted}
+\end{minipage}
+
+\noindent\texttt{filterValue} rappresenta la tipologia di filtro selezionata appartenente ad uno specifico
+gruppo, il quale è stato indicato nel primo parametro, \texttt{group}.
+
+Per il parametro \texttt{group} il dominio è 
+$G = \left\{ \text{typologyGroup}, \text{stateGroup},\text{priorityGroup}\right\}$ 
+I gruppi vengono creati nativamente dall'interfaccia tramite FXML, venendo 
+già popolati con i rispettivi \texttt{RadioButton}. Inoltre, il riferimento
+non è mai nullo e si ottiene la seguente partizione
+
+\noindent$$C_{1} =\left\{\text{typologyGroup}\right\},
+C_{2} =\left\{\text{stateGroup}\right\},
+C_{3} =\left\{\text{priorityGroup}\right\}$$
+
+\noindent Per il parametro \texttt{filterValue}, sia $S = \left\{ w|w \text{ rappresenta una stringa} \right\}\cup \left\{ \textit{NIL} \right\}$  
+l'insieme di tutte le stringhe incluso il valore nullo, sono state identificate
+le seguenti classi di equivalenza
+
+\noindent$$C_{4} =\left\{\text{BUG},\text{FEATURE},\text{DOCUMENTATION},\text{QUESTION}\right\}$$
+$$C_{5} =\left\{\text{TODO},\text{CHIUSO}\right\},C_{6} =\left\{\text{ALTA},\text{MEDIA},\text{BASSA}\right\}$$
+$$C_{7} = S\smallsetminus \bigcup_{i=4}^{6}C_{i}$$
+
+\noindent Secondo l'implementazione del metodo \texttt{selectToggleFilter}, ogni classe è costituita da valori validi.
+Per quanto riguarda la classe $C_7$, se la stringa non corrisponde a nessun \texttt{UserData} dei 
+\texttt{RadioButton} definiti, il metodo lascia il gruppo senza selezione.
+
+\noindent Il criterio di copertura adottato è \textit{Each Choice Coverage}, che ha permesso
+di generare la seguente batteria di test
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+@Test
+    void testFilterTypologyValid()  {
+        FilterFake view = new FilterFake();
+        ToggleGroup typologyGroup = new ToggleGroup();
+
+        view.toggle("BUG",
+                typologyGroup);
+        view.toggle("FEATURE",
+                typologyGroup);
+        view.toggle("DOCUMENTATION",
+                typologyGroup);
+        view.toggle("QUESTION",
+                typologyGroup);
+
+        view.selectToggleGroup(typologyGroup,
+                "BUG");
+
+        assertNotNull(typologyGroup
+                .getSelectedToggle());
+        assertEquals("BUG", typologyGroup
+                .getSelectedToggle()
+                .getUserData());
+    }
+
+    @Test
+    void testFilterPriorityValid()  {
+        FilterFake view = new FilterFake();
+        ToggleGroup priorityGroup = new ToggleGroup();
+
+        view.toggle("ALTA",
+                priorityGroup);
+        view.toggle("MEDIA",
+                priorityGroup);
+        view.toggle("BASSA",
+                priorityGroup);
+
+        view.selectToggleGroup(priorityGroup,
+                "ALTA");
+
+        assertNotNull(priorityGroup
+                .getSelectedToggle());
+        assertEquals("ALTA", priorityGroup
+                .getSelectedToggle()
+                .getUserData());
+    }
+\end{minted}
+\end{listing}
+
+\clearpage
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+    @Test
+    void testFilterStateValid()  {
+        FilterFake view = new FilterFake();
+        ToggleGroup stateGroup = new ToggleGroup();
+
+        view.toggle("TODO",
+                stateGroup);
+        view.toggle("CHIUSO",
+                stateGroup);
+
+        view.selectToggleGroup(stateGroup,
+                "TODO");
+
+        assertNotNull(stateGroup
+                .getSelectedToggle());
+        assertEquals("TODO", stateGroup
+                .getSelectedToggle()
+                .getUserData());
+    }
+
+    @Test
+    void testFilterBadValid()  {
+        FilterFake view = new FilterFake();
+        ToggleGroup stateGroup = new ToggleGroup();
+
+        view.toggle("TODO",
+                stateGroup);
+        view.toggle("CHIUSO",
+                stateGroup);
+
+        view.selectToggleGroup(stateGroup,
+                "APERTO");
+        assertNull(stateGroup
+                .getSelectedToggle());
+    }
+\end{minted}
+\end{listing}
+
+\begin{table}[ht]
+  \centering
+  \small
+  \caption{Casi di test}
+  \label{tab:test-selecttogglefilter}
+  \begin{tabular}{@{}llllp{4cm}@{}}
+    \toprule
+    Caso & \texttt{group} & \texttt{filterValue} & Classi & Esito atteso \\
+    \midrule
+    TC1 & \texttt{typologyGroup} & \texttt{BUG}  & $C_1, C_4$ & pulsante BUG selezionato  \\
+    TC2 & \texttt{priorityGroup} & \texttt{ALTA} & $C_3, C_6$ & pulsante ALTA selezionato \\
+    TC3 & \texttt{stateGroup}    & \texttt{TODO} & $C_2, C_5$ & pulsante TODO selezionato \\
+    TC4 & \texttt{stateGroup} & \texttt{BLOCCATO}  & $C_2, C_7$ & nessuna selezione         \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\newpage
+
+\subsection{Metodo \texttt{setDate()}}
+In assenza di metodi pubblici non banali con almeno due 
+parametri indipendenti dal back-end, la scelta è ricaduta su \texttt{setDate()}: 
+pur accettando un solo parametro, è uno dei metodi più complessi ed 
+è condiviso da più componenti, anziché appartenere a una specifica funzionalità.
+
+\noindent La firma del metodo è la seguente:
+
+\begin{minipage}{\linewidth}
+\centering\begin{minted}{java}
+void setDate(LocalDateTime date)
+\end{minted}
+\end{minipage}
+
+\noindent Il metodo presenta un dominio di input molto ampio. In base al 
+comportamento atteso, in cui ad esempio intervalli inferiori a un minuto 
+vengono tutti indicati come “\textit{Just now}”, è stata ricavata la seguente partizione:
+
+\noindent$$C_{1} =\left\{NIL\right\},
+C_2 = \left\{ w \mid w \text{ rappresenta una data del futuro}\right\},$$
+$$C_3 = \left\{ \Delta \mid 0 \le \Delta < 60\text{s} \right\}$$
+dove $\Delta$ rappresenta il tempo trascorso tra la data fornita e il tempo attuale.
+$$C_4 = \left\{ \Delta \mid 0 < \Delta < 59\text{min} \right\},
+C_5 = \left\{ \Delta \mid 0 <  \Delta < 24\text{h} \right\},
+C_6 = \left\{ \Delta \mid 0 <  \Delta < 7\text{d} \right\}$$
+$$C_7 = \left\{ \Delta \mid 7d \le \Delta < 1\text{m} \right\},
+C_8 = \left\{ \Delta \mid 0 < \Delta < 12\text{m} \right\},$$
+$$C_9 = \left\{ \Delta \mid \Delta > 0 \right\}$$
+
+dove 1\text{m} rappresenta 1 mese, 7d rappresenta 7 giorni e l'ultima classe di equivalenza
+esprime l'intervallo in anni. \\
+\indent Il criterio di copertura adottato è \textit{Each Choice Coverage}, che ha permesso di generare la
+seguente batteria di test.
+
+\newpage
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+    @Test
+    void testDateNull()  {
+        assertThrows(NullPointerException.class,
+                () -> {
+            NoticeDate notice =
+                    new NoticeDate();
+            notice.setDate(null);
+        });
+    }
+
+    @Test
+    void testPastDateYear()  {
+        NoticeDate view = new NoticeDate();
+        view.setDate(LocalDateTime
+                .now(ZoneOffset.UTC)
+                .minusYears(3));
+
+        assertNotNull(view);
+        assertEquals("3 years ago", view
+                .getDate());
+    }
+
+    @Test
+    void testPastDateMonth()  {
+        NoticeDate view = new NoticeDate();
+        view.setDate(LocalDateTime
+                .now(ZoneOffset.UTC)
+                .minusMonths(11));
+
+        assertNotNull(view);
+        assertEquals("11 months ago", view
+                .getDate());
+    }
+
+    @Test
+    void testPastDateWeek()  {
+        NoticeDate view = new NoticeDate();
+        view.setDate(LocalDateTime
+                .now(ZoneOffset.UTC)
+                .minusDays(14));
+
+        assertNotNull(view);
+        assertEquals("2 weeks ago", view
+                .getDate());
+    }
+
+\end{minted}
+\end{listing}
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+    @Test
+    void testPastDateDay()  {
+        NoticeDate view = new NoticeDate();
+        view.setDate(LocalDateTime
+                .now(ZoneOffset.UTC)
+                .minusDays(6));
+
+        assertNotNull(view);
+        assertEquals("6 days ago", view
+                .getDate());
+    }
+
+    @Test
+    void testPastDateHour()  {
+        NoticeDate view = new NoticeDate();
+        view.setDate(LocalDateTime
+                .now(ZoneOffset.UTC)
+                .minusHours(23));
+
+        assertNotNull(view);
+        assertEquals("23 hours ago", view
+                .getDate());
+    }
+
+    @Test
+    void testPastDateMinute()  {
+        NoticeDate view = new NoticeDate();
+        view.setDate(LocalDateTime
+                .now(ZoneOffset.UTC)
+                .minusMinutes(59));
+
+        assertNotNull(view);
+        assertEquals("59 minutes ago", view
+                .getDate());
+    }
+
+    @Test
+    void testPastDateSecond()  {
+        NoticeDate view = new NoticeDate();
+        view.setDate(LocalDateTime
+                .now(ZoneOffset.UTC)
+                .minusSeconds(5));
+
+        assertNotNull(view);
+        assertEquals("Just now", view
+                .getDate());
+    }
+
+\end{minted}
+\end{listing}
+
+\clearpage
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+    @Test
+    void testFutureDate()  {
+        NoticeDate view = new NoticeDate();
+        view.setDate(LocalDateTime
+                .now(ZoneOffset.UTC)
+                .plusMonths(5));
+
+        assertNotNull(view);
+        assertEquals("Just now", view
+                .getDate());
+    }
+\end{minted}
+\end{listing}
+
+\begin{table}[ht]
+  \centering
+  \small
+  \caption{Casi di test}
+  \label{tab:test-selecttogglefilter}
+  \begin{tabular}{@{}llllp{4cm}@{}}
+    \toprule
+    Caso & \texttt{date} & Classi & Esito atteso \\
+    \midrule
+    TC1 & \texttt{null} & $C_1$ & \texttt{NullPointerException}  \\
+    TC2 & \texttt{now() - 3 anni} & $C_9$ & "3 years ago" \\
+    TC3 & \texttt{now() - 11 mesi}    & $C_8$ & "11 months ago" \\
+    TC4 & \texttt{now() - 2 settimane}    & $C_7$ & "2 weeks ago"       \\
+    TC5 & \texttt{now() - 6 giorni} & $C_6$ & "6 days ago"  \\
+    TC6 & \texttt{now() - 23 ore} & $C_5$ & "23 hours ago" \\
+    TC7 & \texttt{now() - 59 minuti}    & $C_4$ & "59 minutes ago" \\
+    TC8 & \texttt{now() - 5 secondi}    & $C_3$ & "Just now"       \\
+    TC9 & \texttt{now() + 5 secondi}    & $C_2$ & "Just now"       \\
+
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Testing lato back-end}
+\subsection{Test plan: creazione di una issue}
+
+\subsection{Metodo \texttt{creaIssue()} }
+La firma del metodo è la seguente: 
+
+\begin{minipage}{\linewidth}
+\centering\begin{minted}{java}
+creaIssue(idCreatore, titolo, descrizione, tipo, priorita, immagine) 
+\end{minted}
+\end{minipage}
+
+\noindent Da questo metodo abbiamo identificato le seguenti classi di equivalenza: 
+
+\noindent idCreatore: CE1 = $\left\{ x \text{ è l'id di un utente interno esistente} \right\}$ (Valida) \\
+idCreatore: CE2 = $\left\{ x \text{ non corrisponde a nessun utente} \right\}$  (Non valida) \\
+tipo: CE3 = $\left\{ x = \text{ BUG} \right\}$ (Valida) \\
+tipo: CE4 = $\left\{ x \in \left\{ QUESTION, DOCUMENTATION, FEATURE \right\} \right\}$ (Valida) \\
+priorita: CE5 =  $\left\{ x \in \left\{ BASSA, MEDIA, ALTA \right\} \right\}$ (Valida) \\
+priorita: CE6 = $\left\{ x \text{ è NULL} \right\}$ (Valida, la priorità diventa NONE) \\
+immagine: CE7 =  $\left\{ x \text{ è un array di byte} \right\}$ (Valida) \\
+immagine: CE8 = $\left\{ x \text{ è NULL} \right\}$ (Valida, issue senza immagine) \\
+titolo: CE9 = $\left\{ x \text{ è una stringa non vuota di al massimo 100 caratteri} \right\}$ (Valida) \\
+descrizione: CE10 = $\left\{ x \text{ è una stringa non vuota di al massimo 500 caratteri} \right\}$ (Valida) \\
+
+\noindent Le classi non valide di titolo e descrizione ($\left\{ x \text{ è NULL oppure ""} \right\}$ e \\
+$\left\{ x \text{ supera la lunghezza massima} \right\}$) non 
+sono state considerate: la validazione della richiesta le rifiuta con errore 400 prima che creaIssue venga chiamato.  
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+
+class UtenteInternoServiceTest {
+
+    private final Integer idUtenteCreatore = 7;
+
+    private IssueRepository issueRepository;
+    private UtenteInternoRepository utenteInternoRepository;
+    private UtenteInternoService utenteInternoService;
+    private UtenteNormale utenteCreatore;
+
+    // Setup: crea i mock per le repository e la classe contenente 
+    // creaIssue, infine crea un utente con id=7
+    @BeforeEach
+    void setUp() {
+        issueRepository = mock(IssueRepository.class);
+        utenteInternoRepository = mock(UtenteInternoRepository.class);
+        utenteInternoService = new UtenteInternoService(issueRepository, 
+        utenteInternoRepository);
+
+        utenteCreatore = new UtenteNormale();
+        utenteCreatore.setId(idUtenteCreatore);
+        when(utenteInternoRepository.findById(idUtenteCreatore))
+        .thenReturn(Optional.of(utenteCreatore));
+    }
+
+    // CI1 - Utente creatore inesistente: la repository non 
+    // lo trova e lancia l'eccezione
+    @Test
+    void creaIssue_creatoreNonTrovato_lanciaEccezione() {
+        // precondizione: l'id 99 non corrisponde a nessun utente
+        when(utenteInternoRepository.findById(99))
+        .thenReturn(Optional.empty());
+
+        // si lancia l'eccezione con questo id
+        assertThrows(EntityNotFoundException.class, () ->
+                        utenteInternoService
+                        .creaIssue(99, "Titolo", "Descrizione",
+                                TipoIssue.BUG, Priorita.ALTA, null));
+
+        // controlla che nessuna issue è stata salvata
+        verify(issueRepository, times(0)).save(any());
+    }
+
+     // CI2 - Issue tipo BUG: viene creato un Bug, non 
+     // assegnato e non duplicato.
+
+\end{minted}
+\end{listing}
+
+\clearpage
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+    @Test
+    void creaIssue_tipoBug_creaBug() {
+
+        utenteInternoService.creaIssue(idUtenteCreatore, "Login non funziona", 
+        "Errore 500 al login",
+                TipoIssue.BUG, Priorita.ALTA, null);
+
+        // assert
+        verify(issueRepository).save(any(Bug.class));
+        verify(issueRepository).save(argThat(allOf(
+                hasProperty("tipo", equalTo(TipoIssue.BUG)),
+                hasProperty("assegnatario", is(nullValue())),
+                hasProperty("duplicato", is(false)))));
+    }
+
+     // CI3 — Issue tipo QUESTION
+    @Test
+    void creaIssue_tipoQuestion() {
+
+        utenteInternoService.creaIssue(idUtenteCreatore, "Avete provato 
+        la nuova funzione dell'IDE?",
+                "Vorrei qualche delucidazione in merito",
+                TipoIssue.QUESTION, Priorita.BASSA, null);
+
+        // assert: salvata un'issue di tipo QUESTION
+        verify(issueRepository).save(argThat(hasProperty("tipo", 
+        equalTo(TipoIssue.QUESTION))));
+    }
+
+    // CI4 - Issue tipo DOCUMENTATION
+    @Test
+    void creaIssue_tipoDocumentation() {
+
+        utenteInternoService.creaIssue(idUtenteCreatore, "Cosa restituisce 
+                questo endpoint?",
+                "Manca una documentazione adeguata",
+                TipoIssue.DOCUMENTATION, Priorita.MEDIA, null);
+
+        // assert
+        verify(issueRepository).save(argThat(hasProperty("tipo", 
+        sequalTo(TipoIssue.DOCUMENTATION))));
+    }
+
+
+\end{minted}
+\end{listing}
+
+\clearpage
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+
+ // CI5 - Issue tipo FEATURE
+    @Test
+    void creaIssue_tipoFeature() {
+
+        utenteInternoService.creaIssue(idUtenteCreatore, 
+                "Dimenticato di implementare la crittografia dei dati",
+                "Feature importante richiesta dal cliente",
+                TipoIssue.FEATURE, Priorita.ALTA, null);
+
+        // assert
+        verify(issueRepository).save(argThat(hasProperty("tipo", 
+        equalTo(TipoIssue.FEATURE))));
+    }
+
+    // CI6 - Issue con priorità non indicata: vale NONE.
+    @Test
+    void creaIssue_prioritaNull() {
+
+        utenteInternoService.creaIssue(idUtenteCreatore, 
+        "Login non funziona", "Errore 500 al login",
+                TipoIssue.FEATURE, null, null);
+
+        // assert
+        verify(issueRepository)
+        .save(argThat(hasProperty("priorita", 
+        equalTo(Priorita.NONE))));
+    }
+
+    // CI7 - Issue con priorità indicata
+    @Test
+    void creaIssue_prioritaIndicata() {
+        utenteInternoService.creaIssue(idUtenteCreatore, 
+        "Login non funziona", 
+        "Errore 500 al login",
+                TipoIssue.FEATURE, Priorita.MEDIA, null);
+
+        // assert
+        verify(issueRepository)
+        .save(argThat(hasProperty("priorita", 
+        equalTo(Priorita.MEDIA))));
+    }
+   
+\end{minted}
+\end{listing}
+
+\clearpage
+
+\begin{listing}[!ht]
+\begin{minted}{java}
+    // CI8 - Regole di servizio valide per ogni issue: imposta data 
+    // di creazione e stato=TODO
+    @Test
+    void creaIssue_impostaStatoTodoEData() {
+
+        utenteInternoService.creaIssue(idUtenteCreatore, 
+        "Login non funziona", "Errore 500 al login",
+                TipoIssue.QUESTION, Priorita.ALTA, null);
+
+        // assert
+        verify(issueRepository).save(argThat(allOf(
+                hasProperty("stato", equalTo(StatoIssue.TODO)),
+                hasProperty("data", is(not(nullValue()))),
+                hasProperty("utenteCreatore", equalTo(utenteCreatore)),
+                hasProperty("titolo", equalTo("Login non funziona")),
+                hasProperty("descrizione", equalTo("Errore 500 al login")),
+                hasProperty("immagine", is(nullValue())))));
+    }
+
+  // CI9 - Issue con immagine presente
+    @Test
+    void creaIssue_conImmagine() {
+        byte[] immagine = {1, 2, 3, 4};
+
+        utenteInternoService.creaIssue(idUtenteCreatore, 
+        "Login non funziona", "Errore 500 al login",
+                TipoIssue.BUG, Priorita.ALTA, immagine);
+
+        // assert
+        verify(issueRepository).save(argThat(hasProperty("immagine",
+         equalTo(immagine))));
+    }
+}
+\end{minted}
+\end{listing}
+
+\noindent CI1 (riga 57): creaIssue(99, "Titolo", "Descrizione", BUG, ALTA, NIL), copre CE2, CE3, CE5, CE8, CE9, CE10 \\
+CI2 (riga 72): creaIssue(7, "Login non funziona", "Errore 500 al login", BUG, ALTA, NIL), copre CE1, CE3, CE5, CE8, CE9, CE10 \\
+CI3 (riga 87): creaIssue(7, "Avete provato la nuova funzione dell'IDE?", "Vorrei qualche delucidazione in merito", QUESTION, BASSA, NIL), copre CE1, CE4, CE5, CE8, CE9, CE10 \\
+CI4 (riga 99): creaIssue(7, "Cosa restituisce questo endpoint?", "Manca una documentazione adeguata", DOCUMENTATION, MEDIA, NIL), copre CE1, CE4, CE5, CE8, CE9, CE10 \\
+CI5 (riga 111): creaIssue(7, "Dimenticato di implementare la crittografia dei dati", "Feature importante richiesta dal cliente", FEATURE, ALTA, NIL), copre CE1, CE4, CE5, CE8, CE9, CE10 \\
+CI6 (riga 123): creaIssue(7, "Login non funziona", "Errore 500 al login", FEATURE, NIL, NIL), copre CE1, CE4, CE6, CE8, CE9, CE10 \\
+CI7 (riga 134): creaIssue(7, "Login non funziona", "Errore 500 al login", FEATURE, MEDIA, NIL), copre CE1, CE4, CE5, CE8, CE9, CE10 \\
+CI8 (riga 144): creaIssue(7, "Login non funziona", "Errore 500 al login", QUESTION, ALTA, NIL), copre CE1, CE4, CE5, CE8, CE9, CE10 \\
+CI9 (riga 161): creaIssue(7, "Login non funziona", "Errore 500 al login", BUG, ALTA, {1, 2, 3, 4}), copre CE1, CE3, CE5, CE7, CE9, CE10 \\
+
+\subsubsection{Criterio di copertura delle classi di equivalenza}
+Come criterio di copertura si è adottato l'Each Choice Coverage (ECC): ogni 
+classe di equivalenza di ogni parametro è rappresentata da almeno un caso di 
+test. I test da CI1 a CI9 coprono così tutte le classi individuate.
+
+\section{Test plan: creazione di una issue}
+
+\subsection{Obiettivo} 
+
+Verificare che un utente interno (amministratore o utente normale) possa 
+segnalare un’issue e che il sistema applichi le seguenti regole di servizio: 
+titolo e descrizione obbligatori, stato iniziale TODO, priorità NONE se non 
+indicata e creazione di un oggetto bug solo per le issue di tipo BUG.  
+Verificare inoltre che gli utenti non autorizzati vengano respinti. 
+
+\subsection{Oggetti del test} 
+\begin{itemize}
+  \item L'endpoint POST /api/issues (che corrisponde a IssueController.creaIssue), 
+che controlla il ruolo dell'utente e la validità dei dati ricevuti. 
+\item La classe CreaIssueRequest, che contiene i vincoli sui dati in ingresso 
+(campi obbligatori e lunghezze). 
+  \item Il metodo UtenteInternoService.creaIssue, che applica le regole di creazione.
+  \end{itemize}
+
+\subsection{Ambiente di testing} 
+
+Back-end e database MySQL avviati ed operativi; nel database sono 
+presenti l'amministratore di default, un utente normale e uno stakeholder. Prima di ogni caso di test l'utente indicato ha effettuato il login
+ e la richiesta contiene il suo cookie di sessione.  
+
+\noindent Tranne dove indicato, il corpo della richiesta è sempre: 
+
+\begin{minipage}{\linewidth}
+\begin{minted}{java}
+{ "titolo": "Login non funziona", "descrizione": "Errore 500 al login", "tipo": "BUG", 
+"priorita": "ALTA", "immagine": null } 
+\end{minted}
+\end{minipage}
+
+\subsection{Criteri di superamento}
+Il test plan è superato se tutti i casi di test producono l'output e 
+le postcondizioni attese.
+
+\clearpage
+
+\begin{table}[htbp]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|>{\raggedright\arraybackslash}p{0.6cm}|>{\raggedright\arraybackslash}p{3.6cm}|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{2.6cm}|}
+    \hline
+    \textit{Id} & \textit{Precondizioni} & \textit{Input} & \textit{Output effettivo} & \textit{Postcondizioni} \\
+    \hline
+    TP1 & Nessun login & Corpo di riferimento & 401 Unauthorized, ``Utente non autenticato'' & Nessuna issue creata \\
+    \hline
+    TP2 & Login come stakeholder & Corpo di riferimento & 403 Forbidden, ruolo non ammesso, ``Operazione non permessa'' & Nessuna issue creata \\
+    \hline
+    TP3 & Login come utente normale & Corpo di riferimento & 201 Created & Bug creato (nel db righe in Issues e in Bugs). UtenteCreatore = l'utente loggato\\
+    \hline
+    TP4 & Login come amministratore & Corpo di riferimento & 201& Bug creato (nel db righe in Issues e in Bugs). UtenteCreatore = l'utente loggato \\
+    \hline
+    TP5 & Login come utente normale & tipo = FEATURE & 201& Riga creata solo in Issues \\
+    \hline
+    TP6 & Login come utente normale & priorità assente & 201, priorità NONE& Issue creata \\
+    \hline
+    TP7 & Login come utente normale & titolo assente & 400 Bad request, richiesta non valida, “Il titolo è obbligatorio”
+& Nessuna issue creata\\
+    \hline
+    TP8 & Login come utente normale & titolo di 1 carattere & 201 & Issue creata \\
+    \hline
+    TP9 & Login come utente normale & titolo di 100 caratteri & 201 & Issue creata\\
+    \hline
+    TP10 & Login come utente normale & titolo di 101 caratteri & 400 , “Il titolo può avere al massimo 100 caratteri” & Nessuna issue creata \\
+    \hline
+    TP11 & Login come utente normale& descrizione di 500 caratteri & 201 & Issue creata \\
+    \hline
+    TP12 & Login come utente normale & descrizione di 501 caratteri & 400, “La descrizione può avere al massimo 500 caratteri” & Nessuna issue creata \\
+    \hline
+    TP13 & Login come utente normale& tipo assente & 400, “Il tipo è obbligatorio” & Nessuna issue creata \\
+    \hline
+    TP14 & Login come utente normale& tipo = "PIPPO" oppure priorità = "URGENTE"& 400 & Nessuna issue creata\\
+    \hline
+    TP15 & Login come utente normale& immagine di 2 MB& 201, con immagine & Issue creata\\
+    \hline
+    TP16 & Login come utente normale& JSON non valido& 400, “Richiesta non valida” & Nessuna issue creata\\
+    \hline
+  \end{tabular}
+\end{table}
+
+

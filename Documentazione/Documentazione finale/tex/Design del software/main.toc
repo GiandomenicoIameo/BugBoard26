@@ -1,0 +1,26 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Design del software}{2}{chapter.2}%
+\contentsline {section}{\numberline {1.1}Front-end}{2}{section.3}%
+\contentsline {subsection}{\numberline {1.1.1}Strato \textit {View}}{3}{subsection.4}%
+\contentsline {subsection}{\numberline {1.1.2}Strato \textit {Presenter} (Orchestratori)}{5}{subsection.7}%
+\contentsline {subsubsection}{\numberline {1.1.2.1}Dalla \textit {View} al \textit {Presenter}: l’interfaccia \textit {IPresenter}}{5}{subsubsection.9}%
+\contentsline {subsubsection}{\numberline {1.1.2.2}Dal \textit {Presenter} alla \textit {View}: l’interfaccia \textit {IView}}{6}{subsubsection.11}%
+\contentsline {subsubsection}{\numberline {1.1.2.3}Dal \textit {Presenter} al \textit {Service}}{6}{subsubsection.13}%
+\contentsline {subsubsection}{\numberline {1.1.2.4}Trasformazione dei dati: \textit {Assembler} e \textit {Mapper}}{7}{subsubsection.15}%
+\contentsline {subsection}{\numberline {1.1.3}Strato \textit {Service}}{8}{subsection.17}%
+\contentsline {section}{\numberline {1.2}Back-end}{9}{section.19}%
+\contentsline {subsection}{\numberline {1.2.1}I ruoli come sottoclassi}{9}{subsection.21}%
+\contentsline {subsection}{\numberline {1.2.2}Bug come sottoclasse di Issue }{9}{subsection.22}%
+\contentsline {subsection}{\numberline {1.2.3}Stato, priorità e duplicati }{9}{subsection.23}%
+\contentsline {subsection}{\numberline {1.2.4}Organizzazione dei service}{10}{subsection.24}%
+\contentsline {subsection}{\numberline {1.2.5}DTO e validazione}{10}{subsection.25}%
+\contentsline {subsection}{\numberline {1.2.6}Sicurezza}{10}{subsection.26}%
+\contentsline {subsection}{\numberline {1.2.7}Gestione degli errori}{11}{subsection.27}%
+\contentsline {subsection}{\numberline {1.2.8}Regole di business}{11}{subsection.28}%
+\contentsline {subsection}{\numberline {1.2.9}Filtri e ordinamenti nel database}{11}{subsection.29}%
+\contentsline {section}{\numberline {1.3}Schema di persistenza dei dati}{12}{section.30}%
+\contentsline {subsection}{\numberline {1.3.1}Database e gestione dello schema}{12}{subsection.31}%
+\contentsline {subsection}{\numberline {1.3.2}Schema ER}{12}{subsection.32}%
+\contentsline {section}{\numberline {1.4} Report di qualità del codice}{13}{section.34}%
+\contentsline {subsection}{\numberline {1.4.1}Protezione CSRF}{14}{subsection.36}%

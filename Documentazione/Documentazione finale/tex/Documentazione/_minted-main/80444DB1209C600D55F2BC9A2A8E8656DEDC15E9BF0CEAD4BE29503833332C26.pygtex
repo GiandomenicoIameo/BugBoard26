@@ -1,0 +1,46 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}tipoBug\PYGZus{}creaBug}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Login non funziona\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{l+s}{\PYGZdq{}Errore 500 al login\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{BUG}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{ALTA}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{).}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{any}\PYG{p}{(}\PYG{n}{Bug}\PYG{p}{.}\PYG{n+na}{class}\PYG{p}{));}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{).}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{allOf}\PYG{p}{(}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}tipo\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{equalTo}\PYG{p}{(}\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{BUG}\PYG{p}{)),}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}assegnatario\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{is}\PYG{p}{(}\PYG{n}{nullValue}\PYG{p}{())),}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}duplicato\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{is}\PYG{p}{(}\PYG{k+kc}{false}\PYG{p}{)))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{     }\PYG{c+c1}{// CI3 — Issue tipo QUESTION}
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}tipoQuestion}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Avete provato}
+\PYG{l+s}{        la nuova funzione dell\PYGZsq{}IDE?\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{l+s}{\PYGZdq{}Vorrei qualche delucidazione in merito\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{QUESTION}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{BASSA}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert: salvata un\PYGZsq{}issue di tipo QUESTION}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{).}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}tipo\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{equalTo}\PYG{p}{(}\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{QUESTION}\PYG{p}{))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+c1}{// CI4 \PYGZhy{} Issue tipo DOCUMENTATION}
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}tipoDocumentation}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Cosa restituisce}
+\PYG{l+s}{                questo endpoint?\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{l+s}{\PYGZdq{}Manca una documentazione adeguata\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{DOCUMENTATION}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{MEDIA}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{).}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}tipo\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{sequalTo}\PYG{p}{(}\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{DOCUMENTATION}\PYG{p}{))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+
+\end{Verbatim}

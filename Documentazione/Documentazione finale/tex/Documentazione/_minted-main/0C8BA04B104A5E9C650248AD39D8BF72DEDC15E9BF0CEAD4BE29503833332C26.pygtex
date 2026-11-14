@@ -1,0 +1,37 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{testFilterStateValid}\PYG{p}{()}\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{FilterFake}\PYG{+w}{ }\PYG{n}{view}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{FilterFake}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{ToggleGroup}\PYG{+w}{ }\PYG{n}{stateGroup}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{ToggleGroup}\PYG{p}{();}
+
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{toggle}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}TODO\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{stateGroup}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{toggle}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}CHIUSO\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{stateGroup}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{selectToggleGroup}\PYG{p}{(}\PYG{n}{stateGroup}\PYG{p}{,}
+\PYG{+w}{                }\PYG{l+s}{\PYGZdq{}TODO\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{n}{assertNotNull}\PYG{p}{(}\PYG{n}{stateGroup}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{getSelectedToggle}\PYG{p}{());}
+\PYG{+w}{        }\PYG{n}{assertEquals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}TODO\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{stateGroup}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{getSelectedToggle}\PYG{p}{()}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{getUserData}\PYG{p}{());}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{testFilterBadValid}\PYG{p}{()}\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{FilterFake}\PYG{+w}{ }\PYG{n}{view}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{FilterFake}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{ToggleGroup}\PYG{+w}{ }\PYG{n}{stateGroup}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{ToggleGroup}\PYG{p}{();}
+
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{toggle}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}TODO\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{stateGroup}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{toggle}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}CHIUSO\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{stateGroup}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{selectToggleGroup}\PYG{p}{(}\PYG{n}{stateGroup}\PYG{p}{,}
+\PYG{+w}{                }\PYG{l+s}{\PYGZdq{}APERTO\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{assertNull}\PYG{p}{(}\PYG{n}{stateGroup}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{getSelectedToggle}\PYG{p}{());}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

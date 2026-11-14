@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{// CI8 \PYGZhy{} Regole di servizio valide per ogni issue: imposta data}
+\PYG{+w}{    }\PYG{c+c1}{// di creazione e stato=TODO}
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}impostaStatoTodoEData}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}
+\PYG{+w}{        }\PYG{l+s}{\PYGZdq{}Login non funziona\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Errore 500 al login\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{QUESTION}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{ALTA}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{).}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{allOf}\PYG{p}{(}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}stato\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{equalTo}\PYG{p}{(}\PYG{n}{StatoIssue}\PYG{p}{.}\PYG{n+na}{TODO}\PYG{p}{)),}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}data\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{is}\PYG{p}{(}\PYG{n}{not}\PYG{p}{(}\PYG{n}{nullValue}\PYG{p}{()))),}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}utenteCreatore\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{equalTo}\PYG{p}{(}\PYG{n}{utenteCreatore}\PYG{p}{)),}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}titolo\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{equalTo}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Login non funziona\PYGZdq{}}\PYG{p}{)),}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}descrizione\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{equalTo}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Errore 500 al login\PYGZdq{}}\PYG{p}{)),}
+\PYG{+w}{                }\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}immagine\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{is}\PYG{p}{(}\PYG{n}{nullValue}\PYG{p}{())))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{c+c1}{// CI9 \PYGZhy{} Issue con immagine presente}
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{creaIssue\PYGZus{}conImmagine}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{byte}\PYG{o}{[]}\PYG{+w}{ }\PYG{n}{immagine}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{        }\PYG{n}{utenteInternoService}\PYG{p}{.}\PYG{n+na}{creaIssue}\PYG{p}{(}\PYG{n}{idUtenteCreatore}\PYG{p}{,}
+\PYG{+w}{        }\PYG{l+s}{\PYGZdq{}Login non funziona\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Errore 500 al login\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{TipoIssue}\PYG{p}{.}\PYG{n+na}{BUG}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Priorita}\PYG{p}{.}\PYG{n+na}{ALTA}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{immagine}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// assert}
+\PYG{+w}{        }\PYG{n}{verify}\PYG{p}{(}\PYG{n}{issueRepository}\PYG{p}{).}\PYG{n+na}{save}\PYG{p}{(}\PYG{n}{argThat}\PYG{p}{(}\PYG{n}{hasProperty}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}immagine\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{         }\PYG{n}{equalTo}\PYG{p}{(}\PYG{n}{immagine}\PYG{p}{))));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

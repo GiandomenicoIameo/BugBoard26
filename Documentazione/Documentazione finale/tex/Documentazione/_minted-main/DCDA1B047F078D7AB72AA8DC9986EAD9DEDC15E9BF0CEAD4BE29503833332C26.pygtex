@@ -1,0 +1,48 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{testDateNull}\PYG{p}{()}\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{assertThrows}\PYG{p}{(}\PYG{n}{NullPointerException}\PYG{p}{.}\PYG{n+na}{class}\PYG{p}{,}
+\PYG{+w}{                }\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{NoticeDate}\PYG{+w}{ }\PYG{n}{notice}\PYG{+w}{ }\PYG{o}{=}
+\PYG{+w}{                    }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{NoticeDate}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{notice}\PYG{p}{.}\PYG{n+na}{setDate}\PYG{p}{(}\PYG{k+kc}{null}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{});}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{testPastDateYear}\PYG{p}{()}\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{NoticeDate}\PYG{+w}{ }\PYG{n}{view}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{NoticeDate}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{setDate}\PYG{p}{(}\PYG{n}{LocalDateTime}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{now}\PYG{p}{(}\PYG{n}{ZoneOffset}\PYG{p}{.}\PYG{n+na}{UTC}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{minusYears}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{));}
+
+\PYG{+w}{        }\PYG{n}{assertNotNull}\PYG{p}{(}\PYG{n}{view}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{assertEquals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}3 years ago\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{view}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{getDate}\PYG{p}{());}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{testPastDateMonth}\PYG{p}{()}\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{NoticeDate}\PYG{+w}{ }\PYG{n}{view}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{NoticeDate}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{setDate}\PYG{p}{(}\PYG{n}{LocalDateTime}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{now}\PYG{p}{(}\PYG{n}{ZoneOffset}\PYG{p}{.}\PYG{n+na}{UTC}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{minusMonths}\PYG{p}{(}\PYG{l+m+mi}{11}\PYG{p}{));}
+
+\PYG{+w}{        }\PYG{n}{assertNotNull}\PYG{p}{(}\PYG{n}{view}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{assertEquals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}11 months ago\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{view}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{getDate}\PYG{p}{());}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{n+nd}{@Test}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{testPastDateWeek}\PYG{p}{()}\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{NoticeDate}\PYG{+w}{ }\PYG{n}{view}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{NoticeDate}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{view}\PYG{p}{.}\PYG{n+na}{setDate}\PYG{p}{(}\PYG{n}{LocalDateTime}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{now}\PYG{p}{(}\PYG{n}{ZoneOffset}\PYG{p}{.}\PYG{n+na}{UTC}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{minusDays}\PYG{p}{(}\PYG{l+m+mi}{14}\PYG{p}{));}
+
+\PYG{+w}{        }\PYG{n}{assertNotNull}\PYG{p}{(}\PYG{n}{view}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{assertEquals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}2 weeks ago\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{view}
+\PYG{+w}{                }\PYG{p}{.}\PYG{n+na}{getDate}\PYG{p}{());}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\end{Verbatim}
