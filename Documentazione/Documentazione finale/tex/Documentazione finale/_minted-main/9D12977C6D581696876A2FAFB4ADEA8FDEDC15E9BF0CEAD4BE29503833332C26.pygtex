@@ -1,4 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}titolo\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Login non funziona\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}descrizione\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Errore 500 al login\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}tipo\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}BUG\PYGZdq{}}\PYG{p}{,}
-\PYG{l+s}{\PYGZdq{}priorita\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}ALTA\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}immagine\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
-\end{Verbatim}
