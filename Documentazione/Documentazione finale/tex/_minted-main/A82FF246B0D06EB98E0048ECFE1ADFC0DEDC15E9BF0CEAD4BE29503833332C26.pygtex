@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{setDate}\PYG{p}{(}\PYG{n}{LocalDateTime}\PYG{+w}{ }\PYG{n}{date}\PYG{p}{)}
-\end{Verbatim}
