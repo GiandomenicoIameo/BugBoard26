@@ -1,0 +1,60 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Specifica dei requisiti}{1}{chapter.2}%
+\contentsline {section}{\numberline {1.1}Scopo del documento dei requisiti}{1}{section.3}%
+\contentsline {section}{\numberline {1.2}Scopo del prodotto}{1}{section.4}%
+\contentsline {section}{\numberline {1.3}Riferimenti}{2}{section.11}%
+\contentsline {section}{\numberline {1.4}Descrizione del resto del documento}{2}{section.12}%
+\contentsline {chapter}{\numberline {2}Descrizione generale}{4}{chapter.19}%
+\contentsline {section}{\numberline {2.1}Prospettiva del prodotto}{4}{section.20}%
+\contentsline {section}{\numberline {2.2}Funzioni del prodotto}{4}{section.21}%
+\contentsline {subsection}{\numberline {2.2.1}Requisiti funzionali utente}{4}{subsection.22}%
+\contentsline {subsection}{\numberline {2.2.2}Diagrammi di caso d'uso}{5}{subsection.32}%
+\contentsline {section}{\numberline {2.3}Caratteristiche utente}{9}{section.39}%
+\contentsline {section}{\numberline {2.4}Presupposti e dipendenze}{9}{section.42}%
+\contentsline {subsection}{\numberline {2.4.1}Dipendenze tecnologiche}{9}{subsection.43}%
+\contentsline {subsection}{\numberline {2.4.2}Dipendenze sull'ambiente dell'utente}{10}{subsection.44}%
+\contentsline {chapter}{\numberline {3}Requisiti specifici}{11}{chapter.45}%
+\contentsline {section}{\numberline {3.1}Requisiti funzionali}{11}{section.46}%
+\contentsline {subsection}{\numberline {3.1.1}Template di Cockburn}{12}{subsection.49}%
+\contentsline {subsection}{\numberline {3.1.2}Prototipazione visuale via Mock-up}{13}{subsection.50}%
+\contentsline {section}{\numberline {3.2}Requisiti non funzionali}{14}{section.56}%
+\contentsline {subsection}{\numberline {3.2.1}Requisiti del prodotto}{14}{subsection.57}%
+\contentsline {subsection}{\numberline {3.2.2}Requisiti organizzativi}{15}{subsection.63}%
+\contentsline {chapter}{\numberline {4}Design del sistema}{16}{chapter.68}%
+\contentsline {section}{\numberline {4.1}Modello architetturale client-server}{16}{section.69}%
+\contentsline {subsection}{\numberline {4.1.1}Livello di presentazione (\textit {client-tier})}{16}{subsection.70}%
+\contentsline {subsection}{\numberline {4.1.2}Livello della logica business (\textit {application-tier})}{17}{subsection.73}%
+\contentsline {subsection}{\numberline {4.1.3}Livello di gestione dei dati (\textit {database-tier})}{17}{subsection.74}%
+\contentsline {subsection}{\numberline {4.1.4}Perché conviene separare i livelli}{17}{subsection.75}%
+\contentsline {section}{\numberline {4.2}Decomposizione del sistema}{18}{section.80}%
+\contentsline {subsection}{\numberline {4.2.1}Front-end}{18}{subsection.81}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}Pattern MVP-\textit {Passive}}{19}{subsubsection.83}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}Stratificazione del sottosistema}{21}{subsubsection.88}%
+\contentsline {subsection}{\numberline {4.2.2}Back-end: pattern Controller-Service-Repository}{21}{subsection.90}%
+\contentsline {subsection}{\numberline {4.2.3}Back-end: Repository pattern}{22}{subsection.92}%
+\contentsline {section}{\numberline {4.3}Comunicazione tra front-end e back-end}{22}{section.94}%
+\contentsline {subsection}{\numberline {4.3.1}Autenticazione}{23}{subsection.95}%
+\contentsline {subsection}{\numberline {4.3.2}Interfaccia delle API}{23}{subsection.96}%
+\contentsline {section}{\numberline {4.4}Deployment}{24}{section.97}%
+\contentsline {section}{\numberline {4.5}Criteri di design}{25}{section.99}%
+\contentsline {section}{\numberline {4.6}Scelte tecnologiche}{26}{section.100}%
+\contentsline {subsection}{\numberline {4.6.1}Spring Boot}{26}{subsection.101}%
+\contentsline {subsection}{\numberline {4.6.2}MySQL e Flyway}{26}{subsection.102}%
+\contentsline {subsection}{\numberline {4.6.3}Docker}{27}{subsection.103}%
+\contentsline {subsection}{\numberline {4.6.4}JavaFX}{27}{subsection.104}%
+\contentsline {subsection}{\numberline {4.6.5}Linguaggi e strumenti}{27}{subsection.105}%
+\contentsline {chapter}{\numberline {5}Verifica e convalida}{29}{chapter.106}%
+\contentsline {section}{\numberline {5.1}Progettazione dei casi di test}{29}{section.107}%
+\contentsline {section}{\numberline {5.2}Descrizione dei casi di testi in JUnit}{29}{section.108}%
+\contentsline {subsection}{\numberline {5.2.1}Metodo \texttt {selectToggleFilter()}}{30}{subsection.111}%
+\contentsline {subsection}{\numberline {5.2.2}Metodo \texttt {setDate()}}{33}{subsection.113}%
+\contentsline {section}{\numberline {5.3}Testing lato back-end}{36}{section.115}%
+\contentsline {subsection}{\numberline {5.3.1}Test plan: creazione di una issue}{36}{subsection.116}%
+\contentsline {subsection}{\numberline {5.3.2}Metodo \texttt {creaIssue()} }{36}{subsection.117}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}Criterio di copertura delle classi di equivalenza}{41}{subsubsection.118}%
+\contentsline {section}{\numberline {5.4}Test plan: creazione di una issue}{41}{section.119}%
+\contentsline {subsection}{\numberline {5.4.1}Obiettivo}{41}{subsection.120}%
+\contentsline {subsection}{\numberline {5.4.2}Oggetti del test}{41}{subsection.121}%
+\contentsline {subsection}{\numberline {5.4.3}Ambiente di testing}{41}{subsection.122}%
+\contentsline {subsection}{\numberline {5.4.4}Criteri di superamento}{41}{subsection.123}%
