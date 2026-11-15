@@ -1,10 +1,12 @@
-PWD /home/casper/Documentazione/Documentazione finale
+PWD /home/casper/Git/Github/GiandomenicoIameo/BugBoard26/Documentazione/Documentazione finale/tex/Documentazione
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/casper/Documentazione/Documentazione finale/main.tex
+INPUT /home/casper/Git/Github/GiandomenicoIameo/BugBoard26/Documentazione/Documentazione finale/tex/Documentazione/main.tex
 OUTPUT main.log
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT ./HKUThesis.cls
 INPUT ./HKUThesis.cls
 INPUT HKUThesis.cls
@@ -760,6 +762,19 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
@@ -814,6 +829,19 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
@@ -1927,6 +1955,9 @@ INPUT ./Chapters/Chapter3.tex
 INPUT Chapters/Chapter3.tex
 INPUT ./Chapters/Chapter3.tex
 INPUT Chapters/Chapter3.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplbi8t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplbi8t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
 INPUT ./Chapters/Mockup-1.png
 INPUT ./Chapters/Mockup-1.png
 INPUT Chapters/Mockup-1.png
@@ -1952,6 +1983,31 @@ INPUT ./Chapters/Mockup-5.png
 INPUT Chapters/Mockup-5.png
 INPUT ./Chapters/Mockup-5.png
 INPUT ./Chapters/Mockup-5.png
+INPUT ./Chapters/m1.png
+INPUT ./Chapters/m1.png
+INPUT Chapters/m1.png
+INPUT ./Chapters/m1.png
+INPUT ./Chapters/m1.png
+INPUT ./Chapters/m2.png
+INPUT ./Chapters/m2.png
+INPUT Chapters/m2.png
+INPUT ./Chapters/m2.png
+INPUT ./Chapters/m2.png
+INPUT ./Chapters/m3.png
+INPUT ./Chapters/m3.png
+INPUT Chapters/m3.png
+INPUT ./Chapters/m3.png
+INPUT ./Chapters/m3.png
+INPUT ./Chapters/m4.png
+INPUT ./Chapters/m4.png
+INPUT Chapters/m4.png
+INPUT ./Chapters/m4.png
+INPUT ./Chapters/m4.png
+INPUT ./Chapters/m5.png
+INPUT ./Chapters/m5.png
+INPUT Chapters/m5.png
+INPUT ./Chapters/m5.png
+INPUT ./Chapters/m5.png
 INPUT ./Chapters/Chapter4.tex
 INPUT ./Chapters/Chapter4.tex
 INPUT ./Chapters/Chapter4.tex
@@ -1962,9 +2018,6 @@ INPUT ./Chapters/Chapter4.tex
 INPUT Chapters/Chapter4.tex
 INPUT ./Chapters/Chapter4.tex
 INPUT Chapters/Chapter4.tex
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplbi8t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplbi8t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
 INPUT ./Chapters/pattern-front-end.png
 INPUT ./Chapters/pattern-front-end.png
 INPUT Chapters/pattern-front-end.png

@@ -20,116 +20,78 @@ gli eventi. \\
 \indent Si fa presente al lettore che le tabelle seguenti contengono riferimenti a \textit{mock-up}. Per una maggiore comprensione si raccomanda di consultare questi artefatti quando vengono citati. Questo paragrafo è suddiviso nei seguenti sottoparagrafi: \\
 
 \begin{enumerate}
-    \item \textit{Template di Cockburn}: Presentazione del \textit{template di Cockburn} applicato a un \textit{caso d'uso} significativo: \textit{Filtra issues}.
+    \item \textit{Template di Cockburn}: Presentazione del \textit{template di Cockburn} applicato a due \textit{caso d'uso} significativi: \textit{Filtra issues} e \textit{Crea utente}.
     \item \textit{Prototipazione visuale via Mock-up}: Le schermate dell'interfaccia coinvolte in ciascun caso d'uso, nell'ordine in cui compaiono nello scenario principale.
 \end{enumerate}
 
-\newpage
-\subsection{Template di Cockburn}
+\subsection{Template di Cockburn per \textit{Filtra/Ordina issues}}
 
 \begin{center}
     \vspace*{-1em}
     \renewcommand{\arraystretch}{2.0}
-    \begin{tabular}{|p{0.25\linewidth}|p{0.10\linewidth}|p{0.43\linewidth}|p{0.22\linewidth}|}
+    \setlength{\rowht}{\arraystretch\baselineskip}
+    \setlength{\tabcolsep}{4pt}
+    \arrayrulecolor{tealline}
+    \color{navytext}
+    \begin{tabular}{|p{0.22\linewidth}|p{0.11\linewidth}|p{0.38\linewidth}|p{0.19\linewidth}|}
         \hline
-        \textbf{Use case \#1} & \multicolumn{3}{l|}{\emph{Filtra/Ordina issues}} \\
+        \textbf{USE CASE \#3} & \multicolumn{3}{l|}{\textbf{Filtra/Ordina issues}} \\
+        \Xhline{2\arrayrulewidth}
+        \rowcolor{tealfill}
+        \textbf{Goal in Context} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{Consente all'utente di ordinare e filtrare le issue in base a diversi criteri} \\
         \hline
-        \textbf{Goal in Context} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{Consente all'utente di ordinare e filtrare le issue in base a diversi criteri}} \\
+        \textbf{Preconditions} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{L'utente deve possedere un proprio account} \\
         \hline
-        \textbf{Preconditions} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{L'utente deve possedere un proprio account}} \\
+        \rowcolor{tealfill}
+        \textbf{Success End Condition} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{Il sistema restituisce i risultati della ricerca avanzata} \\
         \hline
-        \textbf{Success End Condition} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{Il sistema restituisce i risultati della ricerca avanzata}} \\
+        \textbf{Failed End Condition} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{Il sistema non produce nessun risultato di ricerca} \\
         \hline
-        \textbf{Failed End Condition} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{Il sistema non produce nessun risultato di ricerca}} \\
-        \hline
+        \rowcolor{tealfill}
         \textbf{Primary Actor} & \multicolumn{3}{l|}{Utente} \\
         \hline
-        \textbf{Trigger} & \multicolumn{3}{p{0.71\linewidth}|}{\emph{L'utente clicca sul pulsante \fbox{{Filtra}}}} \\
+        \textbf{Trigger} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{L'utente clicca sul pulsante \fbox{Filtra}} \\
         \hline
+        % --- Main Scenario ---
+        \rowcolor{tealfill}
         \textbf{Main Scenario} & \textbf{Step n.} & \textbf{Utente} & \textbf{Sistema} \\
-        \cline{2-4}
-        & 1 & & \emph{Mostra M1} \\
-        \cline{2-4}
-        & 2 & \emph{Clicca sul pulsante \fbox{{Cerca}}} & \\
-        \cline{2-4}
-        & 3 & & \emph{Mostra M2} \\
-        \cline{2-4}
-        & 4 & \emph{Clicca sul pulsante \fbox{{Filtra}}} & \\
-        \cline{2-4}
-        & 5 & & \emph{Mostra M3} \\
-        \cline{2-4}
-        & 6 & \emph{Seleziona il tipo di filtro} & \\
-        \cline{2-4}
-        & 7 & & \emph{Mostra M4} \\
-        \cline{2-4}
-        & 8 & \emph{Clicca sul pulsante \fbox{{Apply}}} & \\
-        \cline{2-4}
-        & 9 & & \emph{Mostra M5} \\
+        \fillline
+        \cellcolor{tealfill} & 1 & & Mostra M1 \\
+        \fillline
+        \rowcolor{tealfill}
+        & 2 & Clicca sul pulsante \fbox{Cerca} & \\
+        \fillline
+        \cellcolor{tealfill} & 3 & & Mostra M2 \\
+        \fillline
+        \rowcolor{tealfill}
+        & 4 & Clicca sul pulsante \fbox{Filtra} & \\
+        \fillline
+        \cellcolor{tealfill} & 5 & & Mostra M3 \\
+        \fillline
+        \rowcolor{tealfill}
+        & 6 & Seleziona il tipo di filtro & \\
+        \fillline
+        \cellcolor{tealfill} & 7 & & Mostra M4 \\
+        \fillline
+        \rowcolor{tealfill}
+        & 8 & Clicca sul pulsante \fbox{Apply} & \\
+        \fillline
+        \cellcolor{tealfill} & 9 & & Mostra M5 \\
+        \hline
+        % --- Extension A ---
+        \cellcolor{tealfill} & 6a & Nessun filtro selezionato & \\
+        \fillline
+        \rowcolor{tealfill}
+        & 7a & & Mostra M3 \\
+        \fillline
+        \cellcolor{tealfill} & 8a & Clicca sul pulsante \fbox{Apply} & \\
+        \fillline
+        \rowcolor{tealfill}
+        \raisebox{3\rowht}[0pt][0pt]{\shortstack[l]{\textbf{Extension A:}\\ Nessun filtro}}
+        & 9a & & Mostra M1 \\
         \hline
     \end{tabular}
 \end{center}
-
-% \begin{center}
-% 	\vspace*{-1em}
-% \def\arraystretch{2.0}
-
-% \begin{tabular}{|p{0.3\linewidth}|p{0.7\linewidth}|}
-% \hline 
-% \textbf{Primary Actor} & Utente  \\
-% \hline
-% \textbf{Trigger} & \emph{L'utente clicca sul pulsante "Filtra/Ordina"} \\
-% \hline
-% \textbf{Main Scenario} &  \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
-%                     \textbf{Step n.} &
-%                     \textbf{Utente} &
-%                     \textbf{Sistema} \\
-%                     \hline
-%                     \end{tabular} \\
-% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
-%                     1 &
-%                      &
-%                     \emph{Mostra M1} \\
-%                     \hline
-%                     \end{tabular} \\
-% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
-%                     2 &
-%                      \emph{Clicca sul pulsante "Filtra/Ordina"} &
-%                      \\
-%                     \hline
-%                     \end{tabular} \\
-% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
-%                     3 &
-%                       &
-%                      \emph{Mostra M2} \\
-%                     \hline
-%                     \end{tabular} \\
-% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
-%                     4 &
-%                      \emph{Seleziona il tipo di filtro} &
-%                      \\
-%                     \hline
-%                     \end{tabular} \\
-% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
-%                     5 &
-%                      &
-%                      \emph{Mostra M3} \\
-%                     \hline
-%                     \end{tabular} \\
-% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
-%                     6 &
-%                     \emph{Clicca sul pulsante "Cerca"}  &
-%                     \\
-%                     \hline
-%                     \end{tabular} \\
-% & \begin{tabular}{p{0.12\linewidth}|p{0.55\linewidth}|p{0.21\linewidth}}
-%                     7 &
-%                       &
-%                     \emph{Mostra M4} \\
-%                     \hline
-%                     \end{tabular} \\
-% \hline
-% \end{tabular} 
-% \end{center}
 
 \clearpage
 
@@ -159,6 +121,8 @@ gli eventi. \\
 \label{fig:f1} 
 \end{figure}
 
+\clearpage
+
 \begin{figure}[!ht] 
 \begin{center}
 \includegraphics[width=10cm]{Chapters/Mockup-4.png}
@@ -170,6 +134,117 @@ gli eventi. \\
 \begin{figure}[!ht] 
 \begin{center}
 \includegraphics[width=10cm]{Chapters/Mockup-5.png}
+\end{center}
+\caption{Mock-up \textit{M5}}
+\label{fig:f1} 
+\end{figure}
+
+\subsection{Template di Cockburn per \textit{Crea utente}}
+
+\begin{center}
+    \vspace*{-1em}
+    \renewcommand{\arraystretch}{2.0}
+    \setlength{\tabcolsep}{4pt}
+    \arrayrulecolor{tealline}
+    \color{navytext}
+    \begin{tabular}{|p{0.22\linewidth}|p{0.11\linewidth}|p{0.38\linewidth}|p{0.19\linewidth}|}
+        \hline
+        \textbf{USE CASE \#1} & \multicolumn{3}{l|}{\textbf{Crea utente}} \\
+        \Xhline{2\arrayrulewidth}
+        \rowcolor{tealfill}
+        \textbf{Goal in Context} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{Consente all'utente Amministratore di creare nuovi utenti} \\
+        \hline
+        \textbf{Preconditions} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{L'utente deve possedere un account Amministratore ed essere loggato} \\
+        \hline
+        \rowcolor{tealfill}
+        \textbf{Success End Condition} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{Il nuovo utente è registrato nel sistema con il ruolo e le credenziali inserite} \\
+        \hline
+        \textbf{Failed End Condition} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{Il sistema non crea nessun utente} \\
+        \hline
+        \rowcolor{tealfill}
+        \textbf{Primary Actor} & \multicolumn{3}{l|}{Utente Amministratore} \\
+        \hline
+        \textbf{Trigger} & \multicolumn{3}{p{\dimexpr 0.68\linewidth+4\tabcolsep\relax}|}{L'utente clicca sul pulsante \fbox{New user}} \\
+        \hline
+        % --- Main Scenario ---
+        \rowcolor{tealfill}
+        \textbf{Main Scenario} & \textbf{Step n.} & \textbf{Utente} & \textbf{Sistema} \\
+        \fillline
+        \cellcolor{tealfill} & 1 & & Mostra M1 \\
+        \fillline
+        \rowcolor{tealfill}
+        & 2 & Clicca sul pulsante \fbox{New user} & \\
+        \fillline
+        \cellcolor{tealfill} & 3 & & Mostra M2 \\
+        \fillline
+        \rowcolor{tealfill}
+        & 4 & Inserisci le credenziali & \\
+        \fillline
+        \cellcolor{tealfill} & 5 & & Mostra M3 \\
+        \fillline
+        \rowcolor{tealfill}
+        & 6 & Seleziona il ruolo & \\
+        \fillline
+        \cellcolor{tealfill} & 7 & & Mostra M4 \\
+        \fillline
+        \rowcolor{tealfill}
+        & 8 & Clicca sul pulsante \fbox{Add} & \\
+        \fillline
+        \cellcolor{tealfill} & 9 & & Mostra M5 \\
+        \hline
+        % --- Extension A ---
+        \cellcolor{tealfill} & 4a & Clicca sul pulsante \fbox{Cancel} & \\
+        \fillline
+        \rowcolor{tealfill}
+        \multirow{-2}{*}{\raisebox{1\baselineskip}{\shortstack[l]{\textbf{Extension A:}\\ Annullamento}}}
+        & 5a & & Mostra M1 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\clearpage
+
+\subsection{Prototipazione visuale via Mock-up}
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/m1.png}
+\end{center}
+\caption{Mock-up \textit{M1}}
+\label{fig:f1} 
+\end{figure}
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/m2.png}
+\end{center}
+\caption{Mock-up \textit{M2}}
+\label{fig:f1} 
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/m3.png}
+\end{center}
+\caption{Mock-up \textit{M3}}
+\label{fig:f1} 
+\end{figure}
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/m4.png}
+\end{center}
+\caption{Mock-up \textit{M4}}
+\label{fig:f1} 
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!ht] 
+\begin{center}
+\includegraphics[width=10cm]{Chapters/m5.png}
 \end{center}
 \caption{Mock-up \textit{M5}}
 \label{fig:f1} 

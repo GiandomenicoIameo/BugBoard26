@@ -22,22 +22,28 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
+\PassOptionsToPackage{table}{xcolor}   % <-- NUOVA RIGA, prima di \documentclass
 
 \documentclass[
-10pt, % The default document font size, options: 10pt, 11pt, 12pt
-%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
-english, % ngerman for German
-onehalfspacing, % Single line spacing (singlespacing), alternatives: onehalfspacing or doublespacing
-% draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
-% nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
-liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
-%toctotoc, % Uncomment to add the main table of contents to the table of contents
-parskip, % Uncomment to add space between paragraphs
-%nohyperref, % Uncomment to not load the hyperref package
-headsepline, % Uncomment to get a line under the header
-%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
-% consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
-]{HKUThesis} % The class file specifying the document structure
+10pt,
+english,
+onehalfspacing,
+liststotoc,
+parskip,
+headsepline,
+]{HKUThesis}
+
+\usepackage{makecell}
+\usepackage{xcolor}   % <-- senza opzioni (puoi anche cancellarla)
+
+\definecolor{tealline}{HTML}{1B7A8A}
+\definecolor{tealfill}{HTML}{CCDFE3}
+\definecolor{navytext}{HTML}{0E2841}
+
+\newcommand{\fillline}{%
+    \arrayrulecolor{tealfill}\cline{1-1}%
+    \arrayrulecolor{tealline}\cline{2-4}%
+}
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
@@ -65,6 +71,7 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[normalem]{ulem} % Required to add dashed underlines
 
+\newlength{\rowht}
 \setlength\parindent{2em}
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
