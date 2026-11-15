@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="newUserModal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="614.0" style="-fx-border-color: rgba(73, 69, 79, 0.25); -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-background-color: #fafafb;" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="newUserModal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="614.0" style="-fx-border-color: rgba(73, 69, 79, 0.25); -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-background-color: #fafafb;" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" prefHeight="47.0" style="-fx-background-color: #ebebeb; -fx-background-radius: 10 10 0 0;">
          <children>
@@ -22,7 +22,7 @@
                   <Font name="Cantarell Regular" size="16.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" prefHeight="44.0" prefWidth="369.0" text="Add newUserCard" textFill="#241f31">
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="369.0" text="Add user" textFill="#241f31">
                <font>
                   <Font name="Cantarell Bold" size="16.0" />
                </font>
@@ -50,7 +50,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="name" prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-newUserCard">
+                  <TextField fx:id="name" prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-issue">
                      <HBox.margin>
                         <Insets left="60.0" />
                      </HBox.margin>
@@ -73,7 +73,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="surname" prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-newUserCard">
+                  <TextField fx:id="surname" prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-issue">
                      <HBox.margin>
                         <Insets left="60.0" />
                      </HBox.margin>
@@ -117,7 +117,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="email" prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-newUserCard">
+                        <TextField fx:id="email" prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-issue">
                            <font>
                               <Font name="Cantarell Regular" size="18.0" />
                            </font>
@@ -140,7 +140,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <TextField prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-newUserCard">
+                        <TextField prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-issue">
                            <font>
                               <Font name="Cantarell Regular" size="18.0" />
                            </font>
@@ -176,7 +176,7 @@
             </HBox>
             <HBox prefHeight="65.0" prefWidth="550.0">
                <children>
-                  <TextArea editable="false" prefHeight="73.0" prefWidth="507.0" styleClass="input-area" text="Gli amministratori possono aggiungere e rimuovere utenti e possono modificare le impostazioni di tutti gli utenti. I controlliparentali non possono essere applicati agli amministratori." wrapText="true">
+                  <TextArea editable="false" prefHeight="73.0" prefWidth="507.0" style="-fx-background-color: transparent; -fx-text-inner-color: #555555;" text="Gli amministratori possono aggiungere e possono modificare le impostazioni di tutti gli utenti. I controlli parentali non possono essere applicati agli amministratori." wrapText="true">
                      <font>
                         <Font name="Cantarell Regular" size="14.0" />
                      </font></TextArea>
@@ -220,7 +220,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <PasswordField fx:id="password" prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-newUserCard">
+                        <PasswordField fx:id="password" prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-issue">
                            <HBox.margin>
                               <Insets left="40.0" />
                            </HBox.margin>
@@ -243,7 +243,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <PasswordField prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-newUserCard">
+                        <PasswordField prefHeight="63.0" prefWidth="406.0" styleClass="input-card-add-issue">
                            <HBox.margin>
                               <Insets left="40.0" />
                            </HBox.margin>

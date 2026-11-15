@@ -139,16 +139,48 @@
 }
 
 .input-area {
-       -fx-background-color: #ffffff;
-       -fx-control-inner-background: #ffffff;
-       -fx-background: #ffffff;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-color: rgba(73, 69, 79, 0.20);
 
-       -fx-focus-color: transparent;
-       -fx-faint-focus-color: transparent;
-       -fx-text-box-border: transparent;
+    -fx-background-color: #ffffff;
+    -fx-background: #ffffff;
 
-       -fx-prompt-text-fill: #A9A9A9;
-       -fx-text-fill: #555555;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-box-border: transparent;
+
+    -fx-prompt-text-fill: #A9A9A9;
+    -fx-text-fill: #555555;
+    -fx-text-inner-color: #555555;
+    -fx-padding: 0;
+}
+
+/* Stesso colore del testo per TextField e TextArea */
+.text-field,
+.input-area {
+    -fx-text-fill: #555555;
+    -fx-text-inner-color: #555555;
+}
+
+.input-area .content .text {
+    -fx-fill: #555555;
+}
+
+.input-area .content,
+.input-area .scroll-pane,
+.input-area .scroll-pane .viewport {
+     -fx-background-color: white;
+     -fx-background-radius: 10px;
+     -fx-background-insets: 0;
+}
+
+.input-area:focused {
+    -fx-border-color: #386DCC;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-insets: 0;
+    -fx-focused-color: transparent;
 }
 
 .input-card-add-issue {

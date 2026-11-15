@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="sidebar" prefHeight="733.0" prefWidth="309.0" style="-fx-background-color: #ebebeb; -fx-background-radius: 10px 0 0 10px; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 1 0 0;" stylesheets="@../../../style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="sidebar" prefHeight="733.0" prefWidth="309.0" style="-fx-background-color: #ebebeb; -fx-background-radius: 10px 0 0 10px; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 1 0 0;" stylesheets="@../../../style/style.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="47.0" style="-fx-background-color: #ebebeb; -fx-border-color: rgba(73, 69, 79, 0.20); -fx-border-width: 0 0 1 0px; -fx-background-radius: 10 0 0 0;">
          <children>
@@ -21,7 +21,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <ToggleButton alignment="CENTER_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#viewFeed" prefHeight="47.0" prefWidth="289.0" selected="true" styleClass="btn-sidebar" stylesheets="@../../../style/style.css" text="Open" textFill="#49454f">
+      <ToggleButton alignment="CENTER_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#viewFeed" prefHeight="47.0" prefWidth="289.0" selected="true" styleClass="btn-sidebar" stylesheets="@../../../style/style.css" text="Issues" textFill="#49454f">
          <font>
             <Font name="Cantarell Regular" size="17.0" />
          </font>

@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="feedbar" prefHeight="206.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="feedbar" prefHeight="206.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="97.0" stylesheets="@../../style/style.css" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
@@ -33,7 +33,7 @@
                                     <Insets right="5.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label fx:id="issues" text="4" textFill="#5a5861cc">
+                              <Label fx:id="issues" text="0" textFill="#5a5861cc">
                                  <font>
                                     <Font name="Cantarell Regular" size="18.0" />
                                  </font>
@@ -49,7 +49,7 @@
                            </children>
                         </HBox>
                         <Pane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
-                        <MenuButton alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" style="-fx-background-radius: 10px;" styleClass="btn-close" stylesheets="@../../style/style.css" text="Sorted" textFill="#49454f">
+                        <MenuButton alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" style="-fx-background-radius: 10px;" styleClass="btn-close" stylesheets="@../../style/style.css" text="Sort by" textFill="#49454f">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#onSortedSelected" text="Latest" />
                               <MenuItem mnemonicParsing="false" onAction="#onSortedSelected" text="Oldest" />
@@ -77,7 +77,7 @@
       </ScrollPane>
       <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="47.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: #ebebeb; -fx-border-width: 0 0 1 0px; -fx-background-radius: 0 10 0 0;" stylesheets="@../../style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" layoutY="15.0" text="Open issues" textFill="#49454f" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label alignment="CENTER" layoutY="15.0" text="All issues" textFill="#49454f" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="Cantarell Bold" size="16.0" />
                </font>
@@ -135,7 +135,7 @@
             <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="39.0" prefWidth="337.0" style="-fx-border-color: #386DCC; -fx-border-radius: 10px; -fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 1.5;">
                <children>
                   <Pane prefHeight="32.0" prefWidth="0.0" />
-                  <TextField fx:id="search" maxHeight="-Infinity" prefHeight="35.0" onAction="#searchByKeyword" prefWidth="288.0" promptText="[keyword]/[typology]/[priority]" style="-fx-background-color: transparent;">
+                  <TextField fx:id="search" maxHeight="-Infinity" onAction="#searchByKeyword" prefHeight="35.0" prefWidth="288.0" promptText="[keyword]/[typology]/[priority]" style="-fx-background-color: transparent;">
                      <font>
                         <Font name="Cantarell Regular" size="18.0" />
                      </font>
