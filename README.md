@@ -34,3 +34,9 @@ Su Windows la procedura è molto più semplice: basta scaricare il file `.zip` d
 
 > [!IMPORTANT]
 > **Avviso SmartScreen su Windows**
+> Al primo avvio Windows può mostrare l'avviso di Microsoft Defender SmartScreen
+> ("Microsoft Defender SmartScreen ha impedito l'avvio di un'app non riconosciuta").
+> Il motivo è che i file scaricati da internet vengono contrassegnati da Windows
+> con il *Mark of the Web*, e l'eseguibile di BugBoard26 non è firmato
+> digitalmente, quindi Windows non lo riconosce come app nota. Non indica un
+> problema dell'applicazione.
