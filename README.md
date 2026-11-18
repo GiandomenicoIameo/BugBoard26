@@ -31,3 +31,6 @@ sudo apt --fix-broken install
 ```
 ## Installazione su Windows (`.zip`)
 Su Windows la procedura è molto più semplice: basta scaricare il file `.zip` dalla sezione Releases, decomprimerlo e avviare l'eseguibile dell'applicazione.
+
+> [!IMPORTANT]
+> **Avviso SmartScreen su Windows**
