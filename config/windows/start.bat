@@ -1,10 +1,9 @@
 @echo off
 setlocal
 
-:: Spostati nella cartella config/windows per sicurezza, oppure usa il percorso relativo
 cd /d "%~dp0"
 
-:: Controlla se docker compose è disponibile (puntando al file un livello sopra con -f)
+:: Viene controllato se docker compose è disponibile (puntando al file un livello sopra con -f)
 docker compose version >nul 2>&1
 if %errorlevel% equ 0 (
     set "COMPOSE_CMD=docker compose -f ../compose.yml"
