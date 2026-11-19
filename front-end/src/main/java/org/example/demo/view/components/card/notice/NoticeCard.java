@@ -10,11 +10,11 @@ import org.example.demo.view.shared.Date;
 import java.time.LocalDateTime;
 
 public class NoticeCard extends Card implements NoticeCardView {
-    @FXML private HBox noticeCard;
 
+    @FXML private HBox noticeCard;
     @FXML private Label id;
     @FXML protected Label date;
-    @FXML private Label newNotice;
+    @FXML private Label description;
 
     public NoticeCard() {
         show("notice-card.fxml");
@@ -24,15 +24,14 @@ public class NoticeCard extends Card implements NoticeCardView {
         this.id.setText(id.toString());
     }
 
+    public void setDescription(String description) {
+        this.description.setText(description);
+    }
+
     public void setDate(LocalDateTime date) {
         Date d = new Date();
         d.setDate(date);
         this.date.setText(d.toString());
-    }
-
-    public void setRead(boolean read) {
-        newNotice.setManaged(read);
-        newNotice.setVisible(read);
     }
 
     @Override

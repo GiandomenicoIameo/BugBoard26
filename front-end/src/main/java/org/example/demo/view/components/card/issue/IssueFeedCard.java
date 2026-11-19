@@ -240,7 +240,8 @@ public class IssueFeedCard extends IssueCard implements IssueFeedCardView {
     }
 
     @FXML
-    public void showAssignment() {
+    public void showAssignment() throws IOException,
+            InterruptedException {
         AssignIssueModal assignIssueModal =
                 new AssignIssueModal();
         addComponent(assignIssueModal);

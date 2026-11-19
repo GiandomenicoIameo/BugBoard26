@@ -610,11 +610,11 @@
     -fx-min-height: 30; -fx-pref-height: 30; -fx-max-height: 30;
 }
 
-.icon-bell-mark-notice {
-    -fx-shape: "M628.77-94.62 472.62-250.77l42.15-42.15 114 114 226.77-226.77 42.15 42.15L628.77-94.62ZM480-520l313.85-200h-627.7L480-520Zm0 62.31L160-662.31v410q0 5.39 3.46 8.85t8.85 3.46H371l60 60H172.31Q142-180 121-201q-21-21-21-51.31v-455.38Q100-738 121-759q21-21 51.31-21h615.38Q818-780 839-759q21 21 21 51.31v185.54l-60 60v-200.16L480-457.69Zm0 6.54Zm0-68.85Zm0 62.31Z";
+.icon-bell-notice {
+    -fx-shape: "M4.5,18.88v-1.5H6.31V9.92q0-2.02 1.25-3.57t3.2-1.98V3.75q0-0.52 0.36-0.89T12,2.5t0.89,0.36t0.37,0.89V4.37q1.95,0.43 3.2,1.98t1.25,3.57v7.46H19.5v1.5H4.5ZM12,11.56ZM12,21.69q-0.75,0-1.28-0.53t-0.53-1.28h3.62q0,0.75-0.53,1.28T12,21.69ZM7.81,17.38h8.38V9.92q0-1.74-1.23-2.96T12,5.73T9.04,6.96T7.81,9.92v7.46Z";
     -fx-background-color: #49454f;
-    -fx-min-width: 18;  -fx-pref-width: 18;  -fx-max-width: 18;
-    -fx-min-height: 18; -fx-pref-height: 18; -fx-max-height: 18;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
 }
 
 .icon-bell-arrow-right-notice {
@@ -623,6 +623,14 @@
     -fx-min-width: 8;  -fx-pref-width: 8;  -fx-max-width: 8;
     -fx-min-height: 10; -fx-pref-height: 10; -fx-max-height: 10;
 }
+
+.icon-bell-notice-arrived {
+    -fx-shape: "M12,21.69q-0.75,0-1.28-0.53t-0.53-1.28h3.62q0,0.75-0.53,1.28T12,21.69Zm0-10.13ZM4.5,18.88v-1.5H6.31V9.92q0-2.02 1.25-3.57t3.2-1.98V3.75q0-0.52 0.36-0.89T12,2.5t0.89,0.36t0.37,0.89v0.2Q13,4.39 12.86,4.85T12.68,5.81q-0.17-0.03-0.33-0.05T12,5.73q-1.74,0-2.96,1.23T7.81,9.92v7.46h8.38V11.13q0.34,0.12 0.73,0.19t0.77,0.06v6H19.5v1.5H4.5ZM15.53,8.4q-0.8-0.8-0.8-1.95t0.8-1.95t1.95-0.8t1.95,0.8t0.8,1.95T19.43,8.4T17.48,9.2T15.53,8.4Z";
+    -fx-background-color: #49454f;
+    -fx-min-width: 20;  -fx-pref-width: 20;  -fx-max-width: 20;
+    -fx-min-height: 20; -fx-pref-height: 20; -fx-max-height: 20;
+}
+
 .icon-circle {
     -fx-background-color: #dbe9fb;     /* azzurro chiaro */
     -fx-background-radius: 30;         /* metà della larghezza = cerchio */
@@ -682,3 +690,7 @@ progress-indicator {
     -fx-background-color: #ffffff;
 }
 
+.notification-card {
+    -fx-border-color: rgba(0,0,0,0.12);
+    -fx-border-width: 0 0 1px 0;
+}

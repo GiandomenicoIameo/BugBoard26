@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="issueFeedCard" alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="920.0" stylesheets="@../../../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="issueFeedCard" alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="920.0" stylesheets="@../../../style/style.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="TOP_CENTER" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" VBox.vgrow="ALWAYS">
+      <HBox alignment="TOP_CENTER" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets />
          </VBox.margin>
          <children>
-            <AnchorPane id="card-issues" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px; -fx-border-radius: 10px;" HBox.hgrow="ALWAYS">
+            <AnchorPane id="card-issues" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px; -fx-border-radius: 20px;" HBox.hgrow="ALWAYS">
                <children>
                   <Label fx:id="title" layoutX="57.0" layoutY="7.0" prefHeight="39.0" prefWidth="500.0" text="Validation: ask and see the ones written as a tuple" textFill="#49454f" wrapText="true" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="69.0">
                      <font>

@@ -29,6 +29,10 @@ public class NoticeResponseDTO {
         return date;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public boolean isRead() {
         return isRead;
     }

@@ -17,9 +17,9 @@ public class MapperNotice {
         card.setDate(response.getDate());
     }
 
-    private static void mapperIsRead(NoticeCardView card,
-                                     NoticeResponseDTO response) {
-        card.setRead(response.isRead());
+    private static void mapperDescription(NoticeCardView card,
+                                          NoticeResponseDTO response) {
+        card.setDescription(response.getDescription());
     }
 
     private static <T extends NoticeCardView> T mapper(
@@ -28,7 +28,7 @@ public class MapperNotice {
                 response);
         mapperDate(notice,
                 response);
-        mapperIsRead(notice,
+        mapperDescription(notice,
                 response);
         return notice;
     }

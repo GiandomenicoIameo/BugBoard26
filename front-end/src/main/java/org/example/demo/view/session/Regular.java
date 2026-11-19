@@ -6,6 +6,8 @@ import org.example.demo.view.components.bar.regular.Assignmentbar;
 import org.example.demo.view.components.bar.regular.SidebarRegular;
 import org.example.demo.view.listeners.SidebarRegularListener;
 
+import java.io.IOException;
+
 public class Regular extends Dock
         implements SidebarRegularListener {
 

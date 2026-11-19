@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="groupbar" alignment="TOP_CENTER" prefHeight="685.0" prefWidth="823.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@../../../style/style.css" visible="false" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="groupbar" alignment="TOP_CENTER" prefHeight="685.0" prefWidth="823.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@../../../style/style.css" visible="false" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="823.0">
          <children>
@@ -62,7 +62,7 @@
             </AnchorPane>
          </children>
       </HBox>
-      <HBox fx:id="newUserCard" alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0" style="-fx-border-radius: 10px; -fx-border-color: rgba(0,0,0,0.12);">
+      <HBox fx:id="newUserCard" alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0" style="-fx-border-radius: 20px; -fx-border-color: rgba(0,0,0,0.12);">
          <children>
             <VBox alignment="CENTER">
                <children>
@@ -140,6 +140,9 @@
          <VBox.margin>
             <Insets left="100.0" right="100.0" top="50.0" />
          </VBox.margin>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
       </HBox>
       <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="920.0">
          <children>
@@ -171,7 +174,7 @@
       </HBox>
       <HBox alignment="CENTER">
          <children>
-            <ScrollPane fx:id="scroll" fitToHeight="true" fitToWidth="true" style="-fx-border-radius: 10px; -fx-border-color: rgba(0,0,0,0.12);" visible="false">
+            <ScrollPane fx:id="scroll" fitToHeight="true" fitToWidth="true" style="-fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: rgba(0,0,0,0.12);" visible="false">
                <HBox.margin>
                   <Insets bottom="30.0" />
                </HBox.margin>
@@ -180,6 +183,9 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </VBox>
                </content>
             </ScrollPane>

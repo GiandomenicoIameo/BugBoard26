@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="feedbar" prefHeight="206.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="feedbar" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="97.0" stylesheets="@../../style/style.css" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
@@ -23,9 +23,9 @@
                <children>
                   <HBox alignment="BOTTOM_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="920.0">
                      <children>
-                        <HBox alignment="CENTER">
+                        <HBox alignment="BOTTOM_CENTER">
                            <children>
-                              <Label text="Feed ·" textFill="#5a5861cc">
+                              <Label text="Feed ·" textFill="#5a5861">
                                  <font>
                                     <Font name="Cantarell Regular" size="18.0" />
                                  </font>
@@ -33,7 +33,7 @@
                                     <Insets right="5.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label fx:id="issues" text="0" textFill="#5a5861cc">
+                              <Label fx:id="issues" text="0" textFill="#5a5861">
                                  <font>
                                     <Font name="Cantarell Regular" size="18.0" />
                                  </font>
@@ -41,7 +41,7 @@
                                     <Insets right="5.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label text="issues" textFill="#5a5861cc">
+                              <Label text="issues" textFill="#5a5861">
                                  <font>
                                     <Font name="Cantarell Regular" size="18.0" />
                                  </font>
@@ -63,9 +63,9 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <VBox fx:id="cardContainer" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="920.0" style="-fx-background-radius: 10px; -fx-background-color: white; -fx-border-color: rgba(0,0,0,0.12); -fx-border-radius: 10px;">
+                  <VBox fx:id="cardContainer" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="920.0" style="-fx-background-radius: 20px; -fx-background-color: white; -fx-border-color: rgba(0,0,0,0.12); -fx-border-radius: 20px;">
                      <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
+                        <Insets bottom="40.0" top="10.0" />
                      </VBox.margin>
                   </VBox>
                </children>

@@ -1,7 +1,9 @@
 package org.example.demo.view.components.bar.regular;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.CustomMenuItem;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import org.example.demo.view.components.bar.Sidebar;
 import org.example.demo.view.components.modal.Modal;
 import org.example.demo.view.components.modal.NoticeModal;
@@ -11,6 +13,8 @@ import java.io.IOException;
 
 public class SidebarRegular extends Sidebar<SidebarRegularListener> {
     @FXML private AnchorPane menubar;
+    @FXML private VBox cardContainer;
+    @FXML private CustomMenuItem customMenu;
 
     public SidebarRegular() {
         show("sidebar.fxml");
@@ -24,7 +28,7 @@ public class SidebarRegular extends Sidebar<SidebarRegularListener> {
     }
 
     @FXML
-    public void viewNotice() {
+    public void viewNotice()  {
         Modal.show(new NoticeModal()
                 .getRoot(), menubar);
     }

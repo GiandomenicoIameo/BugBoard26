@@ -18,7 +18,7 @@
    <children>
       <BorderPane style="-fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@../../../style/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox fx:id="emailBox" alignment="TOP_CENTER" prefHeight="957.0" prefWidth="432.0" style="-fx-background-color: #fafafb; -fx-border-width: 0 1 0 0; -fx-border-color: transparent #dedede transparent transparent;" BorderPane.alignment="TOP_CENTER">
+            <VBox fx:id="emailBox" alignment="TOP_CENTER" style="-fx-background-color: #fafafb; -fx-border-width: 0 1 0 0; -fx-border-color: transparent #dedede transparent transparent;" BorderPane.alignment="TOP_CENTER">
                <children>
                   <AnchorPane fx:id="topbarCard" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="47.0" style="-fx-background-color: #ebebeb;" stylesheets="@../../../style/style.css">
                      <children>
@@ -117,7 +117,7 @@
          <center>
             <VBox alignment="TOP_CENTER" style="-fx-background-color: #fafafb; -fx-background-radius: 10px; -fx-border-radius: 10px;" BorderPane.alignment="TOP_CENTER">
                <children>
-                  <AnchorPane fx:id="topbarDescription" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="47.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: #ebebeb; -fx-border-width: 0 0 1 0px; -fx-background-radius: 0 10 0 0;" stylesheets="@../../../style/style.css" VBox.vgrow="ALWAYS">
+                  <AnchorPane fx:id="topbarDescription" maxHeight="-Infinity" prefHeight="47.0" style="-fx-border-color: rgba(73, 69, 79, 0.20); -fx-background-color: #ebebeb; -fx-border-width: 0 0 1 0px; -fx-background-radius: 0 10 0 0;" stylesheets="@../../../style/style.css" VBox.vgrow="ALWAYS">
                      <children>
                         <Label alignment="CENTER" layoutY="2.0" text="Issue #" textFill="#49454f" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
                            <font>
