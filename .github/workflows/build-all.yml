@@ -61,7 +61,7 @@ jobs:
         run: |
           jpackage \
             --type deb \
-            --name bugboard \
+            --name BugBoard \
             --app-version 1.0.0 \
             --dest front-end/target/dist \
             --runtime-image front-end/target/image \
@@ -116,7 +116,7 @@ jobs:
         run: |
           jpackage `
             --type app-image `
-            --name bugboard `
+            --name BugBoard `
             --app-version 1.0.0 `
             --dest front-end/target/dist `
             --runtime-image front-end/target/image `
