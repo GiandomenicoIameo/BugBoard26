@@ -51,8 +51,9 @@ dpkg-deb -b extracted/ bugboard_1.0.0_amd64.deb
 Come ultimo passaggio ci basta installare il nuovo file `.deb` riconfigurato (dalla stessa directory in cui è stato creato, ad esempio `/tmp/`):
 
 ```bash
+cd /tmp/
 sudo apt install ./bugboard_1.0.0_amd64.deb
-rm -rf /tmp/extracted/
+rm -rf extracted/
 ```
 
 ## Installazione su Windows (`.zip`)
