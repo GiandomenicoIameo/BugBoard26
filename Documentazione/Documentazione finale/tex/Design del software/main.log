@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.27)  19 NOV 2026 21:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.27)  22 NOV 2026 20:22
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1502,7 +1502,7 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 
  (./Chapters/Chapter4.tex
 Capitolo 1.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 442.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 18.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
@@ -1514,10 +1514,10 @@ File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 <Chapters/Modello.png, id=159, 1563.8425pt x 1707.37875pt>
 File: Chapters/Modello.png Graphic file (type png)
 <use Chapters/Modello.png>
-Package pdftex.def Info: Chapters/Modello.png  used on input line 464.
+Package pdftex.def Info: Chapters/Modello.png  used on input line 40.
 (pdftex.def)             Requested size: 426.79134pt x 465.9484pt.
 
-Overfull \hbox (45.52455pt too wide) in paragraph at lines 464--465
+Overfull \hbox (45.52455pt too wide) in paragraph at lines 40--41
  [][] 
  []
 
@@ -1525,21 +1525,21 @@ Overfull \hbox (45.52455pt too wide) in paragraph at lines 464--465
 <Chapters/composite.png, id=171, 1705.37125pt x 606.265pt>
 File: Chapters/composite.png Graphic file (type png)
 <use Chapters/composite.png>
-Package pdftex.def Info: Chapters/composite.png  used on input line 490.
+Package pdftex.def Info: Chapters/composite.png  used on input line 66.
 (pdftex.def)             Requested size: 381.26678pt x 135.54341pt.
  [4 <./Chapters/composite.png>]
 <Chapters/composizione.png, id=178, 1402.23875pt x 646.415pt>
 File: Chapters/composizione.png Graphic file (type png)
 <use Chapters/composizione.png>
-Package pdftex.def Info: Chapters/composizione.png  used on input line 517.
+Package pdftex.def Info: Chapters/composizione.png  used on input line 93.
 (pdftex.def)             Requested size: 369.88582pt x 170.51007pt.
 <Chapters/presenter.png, id=179, 1427.3325pt x 531.9875pt>
 File: Chapters/presenter.png Graphic file (type png)
 <use Chapters/presenter.png>
-Package pdftex.def Info: Chapters/presenter.png  used on input line 535.
+Package pdftex.def Info: Chapters/presenter.png  used on input line 111.
 (pdftex.def)             Requested size: 426.79134pt x 159.06984pt.
 
-Overfull \hbox (45.52455pt too wide) in paragraph at lines 535--536
+Overfull \hbox (45.52455pt too wide) in paragraph at lines 111--112
  [] 
  []
 
@@ -1547,42 +1547,42 @@ Overfull \hbox (45.52455pt too wide) in paragraph at lines 535--536
 <Chapters/IView.png, id=188, 1912.14375pt x 550.055pt>
 File: Chapters/IView.png Graphic file (type png)
 <use Chapters/IView.png>
-Package pdftex.def Info: Chapters/IView.png  used on input line 557.
+Package pdftex.def Info: Chapters/IView.png  used on input line 133.
 (pdftex.def)             Requested size: 381.26678pt x 109.67332pt.
  [6 <./Chapters/IView.png>]
 <Chapters/presenter_service.png, id=195, 1745.52126pt x 530.98375pt>
 File: Chapters/presenter_service.png Graphic file (type png)
 <use Chapters/presenter_service.png>
-Package pdftex.def Info: Chapters/presenter_service.png  used on input line 598.
+Package pdftex.def Info: Chapters/presenter_service.png  used on input line 174.
 (pdftex.def)             Requested size: 381.26678pt x 115.97415pt.
 <Chapters/assembler-mapper.png, id=196, 1286.8075pt x 857.2025pt>
 File: Chapters/assembler-mapper.png Graphic file (type png)
 <use Chapters/assembler-mapper.png>
-Package pdftex.def Info: Chapters/assembler-mapper.png  used on input line 617.
+Package pdftex.def Info: Chapters/assembler-mapper.png  used on input line 193.
 (pdftex.def)             Requested size: 381.26678pt x 253.97125pt.
  [7 <./Chapters/presenter_service.png> <./Chapters/assembler-mapper.png>]
 <Chapters/service_dto.png, id=205, 1395.2125pt x 789.95125pt>
 File: Chapters/service_dto.png Graphic file (type png)
 <use Chapters/service_dto.png>
-Package pdftex.def Info: Chapters/service_dto.png  used on input line 645.
+Package pdftex.def Info: Chapters/service_dto.png  used on input line 221.
 (pdftex.def)             Requested size: 426.79134pt x 241.63991pt.
 
-Overfull \hbox (45.52455pt too wide) in paragraph at lines 645--646
+Overfull \hbox (45.52455pt too wide) in paragraph at lines 221--222
  [] 
  []
 
 
-Overfull \hbox (3.73247pt too wide) in paragraph at lines 651--663
+Overfull \hbox (3.73247pt too wide) in paragraph at lines 227--239
 \T1/ppl/m/n/10 po \T1/cmtt/m/n/10 RequestDTO \T1/ppl/m/n/10 ri-ce-vu-to co-me pa-ra-me-tro. La crea-zio-ne de-gli og-get-ti di ti-po \T1/cmtt/m/n/10 ResponseDTO
  []
 
 <Chapters/modello di dominio.jpg, id=206, 2026.57124pt x 650.43pt>
 File: Chapters/modello di dominio.jpg Graphic file (type jpg)
 <use Chapters/modello di dominio.jpg>
-Package pdftex.def Info: Chapters/modello di dominio.jpg  used on input line 672.
+Package pdftex.def Info: Chapters/modello di dominio.jpg  used on input line 248.
 (pdftex.def)             Requested size: 381.26678pt x 122.36223pt.
 [8 <./Chapters/service_dto.png>] [9 <./Chapters/modello di dominio.jpg>]
-Overfull \hbox (2.2634pt too wide) in paragraph at lines 708--710
+Overfull \hbox (2.2634pt too wide) in paragraph at lines 284--286
 []\T1/ppl/m/n/10 Service "at-to-re" (Am-mi-ni-stra-to-re-Ser-vi-ce, Uten-teIn-ter-no-Ser-vi-ce, Uten-te-Nor-ma-le-Ser-
  []
 
@@ -1590,19 +1590,19 @@ Overfull \hbox (2.2634pt too wide) in paragraph at lines 708--710
 <Chapters/schema ER.png, id=227, 569.12625pt x 582.175pt>
 File: Chapters/schema ER.png Graphic file (type png)
 <use Chapters/schema ER.png>
-Package pdftex.def Info: Chapters/schema ER.png  used on input line 831.
+Package pdftex.def Info: Chapters/schema ER.png  used on input line 407.
 (pdftex.def)             Requested size: 284.52756pt x 291.06013pt.
  [12]
 <Chapters/report.png, id=232, 483.8805pt x 265.0995pt>
 File: Chapters/report.png Graphic file (type png)
 <use Chapters/report.png>
-Package pdftex.def Info: Chapters/report.png  used on input line 854.
+Package pdftex.def Info: Chapters/report.png  used on input line 430.
 (pdftex.def)             Requested size: 381.26678pt x 208.88022pt.
  [13 <./Chapters/schema ER.png>]
 <Chapters/report1.png, id=238, 483.2235pt x 272.3265pt>
 File: Chapters/report1.png Graphic file (type png)
 <use Chapters/report1.png>
-Package pdftex.def Info: Chapters/report1.png  used on input line 877.
+Package pdftex.def Info: Chapters/report1.png  used on input line 453.
 (pdftex.def)             Requested size: 381.26678pt x 214.86548pt.
 ) [14 <./Chapters/report.png> <./Chapters/report1.png>]
 
@@ -1630,7 +1630,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  96i,20n,131p,1133b,1348s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (18 pages, 1115247 bytes).
+Output written on main.pdf (18 pages, 1115253 bytes).
 PDF statistics:
  292 PDF objects out of 1000 (max. 8388607)
  233 compressed objects within 3 object streams
