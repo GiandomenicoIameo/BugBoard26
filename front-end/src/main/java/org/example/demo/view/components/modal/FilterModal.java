@@ -32,8 +32,8 @@ public class FilterModal extends Component implements FilterModalView {
         this.callback = callback;
     }
 
-    private void setGroup(ToggleGroup group,
-                         String roleValue) {
+    private void selectToggleFilter(ToggleGroup group,
+                                    String roleValue) {
         if (roleValue == null || roleValue
                 .isEmpty()) {
             group.selectToggle(null);
@@ -54,15 +54,15 @@ public class FilterModal extends Component implements FilterModalView {
     }
 
     public void setPriority(String priority) {
-        setGroup(priorityGroup, priority);
+        selectToggleFilter(priorityGroup, priority);
     }
 
     public void setTypology(String typology) {
-        setGroup(typeGroup, typology);
+        selectToggleFilter(typeGroup, typology);
     }
 
     public void setState(String state) {
-        setGroup(stateGroup, state);
+        selectToggleFilter(stateGroup, state);
     }
 
     public String getKeyword() {
